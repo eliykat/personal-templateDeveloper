@@ -1,0 +1,13 @@
+{
+    "actiontypes": [
+        {
+            "name": "Conveyancing - Sale"
+        },
+        {
+            "name": "Conveyancing - Purchase"
+        },
+        {
+            "name": "Wills and Estates"
+        }
+    ]
+}

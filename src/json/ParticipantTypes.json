@@ -1,0 +1,19 @@
+{
+    "participanttypes": [
+        {
+            "name": "Client"
+        },
+        {
+            "name": "Client_Primary_Contact"
+        },
+        {
+            "name": "Lawyer"
+        },
+        {
+            "name": "Buyer"
+        },
+        {
+            "name": "Seller"
+        }
+    ]
+}
