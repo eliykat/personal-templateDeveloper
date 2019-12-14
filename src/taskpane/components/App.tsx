@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
 import { FieldsTab } from './FieldsTab';
 import { OptionsTab } from './OptionsTab';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import { IStyleSet } from 'office-ui-fabric-react';
 
 export default class App extends React.Component {
 
