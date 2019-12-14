@@ -5,109 +5,130 @@ import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
+import { stackTokens } from '../shared/sharedTokens';
 import { getActionTypes } from '../../Helpers/getActionTypes';
+import { Stack } from 'office-ui-fabric-react';
+import { InsertButton } from './InsertButton';
 
 // Required for checkboxes
 initializeIcons();
 
-interface IProps {
-    [key:string]: any;
-};
+export function OptionsTab (props) {
 
-interface IState {
-    [key:string]: any;
-}
+    const actionTypeList: IDropdownOption[] = getActionTypes();
 
-export class OptionsTab extends React.Component<IProps, IState> {
+    const newLineList: IDropdownOption[] = [
+        { key: "na", text: "Not applicable" },
+        { key: "before", text: "1 line before" },
+        { key: "2before", text: "2 lines before" },
+        { key: "after", text: "1 line after" },
+        { key: "2after", text: "2 lines after" },
+        { key: "both", text: "1 line before & after" },
+        { key: "2both", text: "2 lines before & after" }
+    ];
 
-    actionTypeList: IDropdownOption[];
-    newLineList: IDropdownOption[];
-    dateFormatList: IDropdownOption[];
-    phoneFormatList: IDropdownOption[];
+    const dateFormatList: IDropdownOption[] = [
+        { key: "na", text: "Use system format (Default)" },
+        { key: "%A, %-e_%B_%Y", text: "Monday, 1 January 1990" },
+        { key: "%-e_%B_%Y", text: "1 January 1990" },
+        { key: "%-e_%b_%Y", text: "1 Jan 1990" },
+        { key: "%nth_day_of_%B_%Y", text: "1st day of January 1990" },
+        { key: "%d/%m/%Y", text: "01/01/1990" },
+        { key: "%d/%m/%y", text: "01/01/90" },
+        { key: "%-e/%-m/%Y", text: "1/1/1990" },
+        { key: "%-e/%-m/%y", text: "1/1/90" },
+        { key: "description", text: "Date memo" }
+    ];
 
-    constructor(props: object) {
-        super(props);
-
-        this.actionTypeList = getActionTypes();
-
-        this.newLineList = [
-            { key: "na", text: "Not applicable" },
-            { key: "before", text: "1 line before" },
-            { key: "2before", text: "2 lines before" },
-            { key: "after", text: "1 line after" },
-            { key: "2after", text: "2 lines after" },
-            { key: "both", text: "1 line before & after" },
-            { key: "2both", text: "2 lines before & after" },
-        ];
-
-        this.dateFormatList = [
-            { key: "na", text: "Use system format (Default)" },
-            { key: "%A, %-e_%B_%Y", text: "Monday, 1 January 1990" },
-            { key: "%-e_%B_%Y", text: "1 January 1990" },
-            { key: "%-e_%b_%Y", text: "1 Jan 1990" },
-            { key: "%nth_day_of_%B_%Y", text: "1st day of January 1990" },
-            { key: "%d/%m/%Y", text: "01/01/1990" },
-            { key: "%d/%m/%y", text: "01/01/90" },
-            { key: "%-e/%-m/%Y", text: "1/1/1990" },
-            { key: "%-e/%-m/%y", text: "1/1/90" },
-            { key: "description", text: "Date memo" }
-        ];
-
-        this.phoneFormatList = [
-            {key: "na", text: "+64 (21) 555 1212 (Default)"},
-            {key: "a", text: "64 21 555 1212" },
-            {key: "c", text: "(021) 555 1212"},
-            {key: "d", text: "021 555 1212"},
-            {key: "e", text: "(21) 555 1212"},
-            {key: "f", text: "21 555 1212"}
-        ];
-    }
-
-    render() {
+    const phoneFormatList: IDropdownOption[] = [
+        {key: "na", text: "+64 (21) 555 1212 (Default)"},
+        {key: "a", text: "64 21 555 1212" },
+        {key: "c", text: "(021) 555 1212"},
+        {key: "d", text: "021 555 1212"},
+        {key: "e", text: "(21) 555 1212"},
+        {key: "f", text: "21 555 1212"}
+    ];
         
-        const handleChange = this.props.handleChange;
-        const insertField = this.props.insertField;
-        const formState = this.props.formState;
+    const { handleChange, insertField, formState } = props;
 
-        return (
-            <div>
+    return (
+        <div>
+            <Stack tokens={stackTokens} verticalFill={true}>
 
-                <Dropdown id="actionType" 
-                    label="Action Type" 
-                    selectedKey={formState.actionType ? formState.actionType.key : undefined} 
-                    onChange={handleChange} 
-                    placeholder="Select an Action type" 
-                    options={this.actionTypeList} />
+                <Stack.Item>
+                    <Dropdown id="actionType" 
+                        label="Action Type" 
+                        selectedKey={formState.actionType ? formState.actionType.key : undefined} 
+                        onChange={handleChange} 
+                        placeholder="Select an Action type" 
+                        options={actionTypeList} />
+                </Stack.Item>
 
-                <Checkbox id="useMailMergeFields" label="Use mail merge fields instead of square brackets" onChange={handleChange} checked={formState.useMailMergeFields} />
+                <Stack.Item>
+                    <Checkbox id="useMailMergeFields" 
+                        label="Use mail merge fields instead of square brackets" 
+                        onChange={handleChange} 
+                        checked={formState.useMailMergeFields} />
+                </Stack.Item>
 
-                <Checkbox id="resetOnChange" label="Reset options when a different field is selected" onChange={handleChange} checked={formState.resetOnChange} />
+                <Stack.Item>
+                    <Checkbox id="resetOnChange" 
+                        label="Reset options when a different field is selected" 
+                        onChange={handleChange} 
+                        checked={formState.resetOnChange} />
+                </Stack.Item>
 
-                <Dropdown id="dateFormat" 
-                    label="Date Format" 
-                    selectedKey={formState.dateFormat ? formState.dateFormat.key : undefined} 
-                    onChange={handleChange} 
-                    placeholder="Select date format" 
-                    options={this.dateFormatList} />
+                <Stack.Item>
+                    <Dropdown id="dateFormat" 
+                        label="Date Format" 
+                        selectedKey={formState.dateFormat ? formState.dateFormat.key : undefined} 
+                        onChange={handleChange} 
+                        placeholder="Select date format" 
+                        options={dateFormatList} />
+                </Stack.Item>
 
-                <Dropdown id="phoneFormat" 
-                    label="New Line" 
-                    selectedKey={formState.newLine ? formState.newLine.key : undefined} 
-                    onChange={handleChange} 
-                    placeholder="Select new line(s) to be inserted" 
-                    options={this.newLineList} />
+                <Stack.Item>
+                    <Dropdown id="phoneFormat" 
+                        label="Phone number format" 
+                        selectedKey={formState.phoneFormat ? formState.phoneFormat.key : undefined} 
+                        onChange={handleChange} 
+                        placeholder="Select phone number format" 
+                        options={phoneFormatList} />
+                </Stack.Item>
                 
-                <Checkbox id="currencyToWords" label="Convert currency field to words" onChange={handleChange} checked={formState.currencyToWords} />
+                <Stack.Item>
+                    <Dropdown id="newLine" 
+                        label="New Line" 
+                        selectedKey={formState.newLine ? formState.newLine.key : undefined} 
+                        onChange={handleChange} 
+                        placeholder="Select new lines to insert around field" 
+                        options={phoneFormatList} />
+                </Stack.Item>
+                
+                <Stack.Item>
+                    <Checkbox id="currencyToWords" 
+                        label="Convert currency field to words" 
+                        onChange={handleChange} 
+                        checked={formState.currencyToWords} />
+                </Stack.Item>
 
-                <Checkbox id="noCurrencySymbol" label="Remove currency symbol" onChange={handleChange} checked={formState.noCurrencySymbol} />
+                <Stack.Item>
+                    <Checkbox id="noCurrencySymbol" 
+                        label="Remove currency symbol" 
+                        onChange={handleChange} 
+                        checked={formState.noCurrencySymbol} />
+                </Stack.Item>
 
-                <TextField id="customOption" label="Custom option" onChange={handleChange} value={formState.prefix} />
+                <Stack.Item>
+                    <TextField id="customOption" 
+                        label="Custom option" 
+                        onChange={handleChange} 
+                        value={formState.prefix} />
+                </Stack.Item>
+            </Stack>
 
-                {/* BUTTONS */}
+            <InsertButton insertField={insertField} />
 
-                <PrimaryButton text="Insert Field" onClick={insertField} />
-
-            </div>
-        )
-    }
+        </div>
+    )
 }

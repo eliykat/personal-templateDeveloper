@@ -14,17 +14,14 @@
 /* The following ensures that the body of each taskpane view takes up the entire height of the pane */
 /* Some of this should be achievable via the office-ui-react styles prop, but I couldn't figure it out */
 
- .box {
-     display: flex;
- }
-
- .item {
-     flex: 1 1 auto;
- }
-
- .item > div, [role = "tabpanel"], [role = "tabpanel"] > div  {
-     height: 97%;
- }
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+}
 
  /* From the template - to be reviewed and probably removed later */
  
