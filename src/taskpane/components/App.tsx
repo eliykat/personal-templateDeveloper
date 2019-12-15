@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Pivot, PivotItem, IPivotStyles } from 'office-ui-fabric-react/lib/Pivot';
+import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { FieldsTab } from './FieldsTab';
 import { OptionsTab } from './OptionsTab';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { IStyleSet } from 'office-ui-fabric-react';
+import { ConditionalTab } from './ConditionalTab';
 
 export default class App extends React.Component {
 
@@ -29,7 +29,14 @@ export default class App extends React.Component {
             phoneFormat: "na",
             currencyToWords: false,
             noCurrencySymbol: false,
-            customOption: ""
+            customOption: "",
+
+            // Conditional tab
+            condition1: "",
+            condition1IsField: false,
+            conditionalOperator: undefined,
+            condition2: "",
+            condition2IsField: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -63,10 +70,7 @@ export default class App extends React.Component {
                     <OptionsTab handleChange={this.handleChange} insertField={this.insertField} formState={this.state} />
                 </PivotItem>
                 <PivotItem headerText="Conditional">
-                    TODO CONDITIONAL
-                </PivotItem>
-                <PivotItem headerText="Repeat">
-                    TODO REPEAT
+                    <ConditionalTab handleChange={this.handleChange} formState={this.state} />
                 </PivotItem>
             </Pivot>
         )
