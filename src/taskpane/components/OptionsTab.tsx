@@ -2,7 +2,6 @@ import * as React from 'react';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
 import { stackTokens } from '../shared/sharedTokens';
@@ -102,7 +101,7 @@ export function OptionsTab (props) {
                         selectedKey={formState.newLine ? formState.newLine.key : undefined} 
                         onChange={handleChange} 
                         placeholder="Select new lines to insert around field" 
-                        options={phoneFormatList} />
+                        options={newLineList} />
                 </Stack.Item>
                 
                 <Stack.Item>
