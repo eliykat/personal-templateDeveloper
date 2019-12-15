@@ -63,7 +63,7 @@ export function ConditionalTab(props) {
                 
             </Stack>
 
-            <InsertButton insertField={insertConditional} />
+            <InsertButton handleClick={insertConditional} buttonText="Insert Condition" />
 
         </div>
     )

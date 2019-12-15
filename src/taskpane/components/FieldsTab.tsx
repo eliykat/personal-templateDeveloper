@@ -94,7 +94,7 @@ export function FieldsTab(props: IFieldsTab) {
 
             </Stack>
 
-            <InsertButton insertField={insertField} />
+            <InsertButton handleClick={insertField} buttonText="Insert Field" />
 
         </div>
 

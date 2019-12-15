@@ -47,6 +47,13 @@ export function OptionsTab (props) {
         {key: "e", text: "(21) 555 1212"},
         {key: "f", text: "21 555 1212"}
     ];
+
+    const caseList: IDropdownOption[] = [
+        { key: "na", text: "No change" },
+        { key: "uclowerwords", text: "Title Case" },
+        { key: "upper", text: "UPPER CASE" },
+        { key: "lower", text: "lower case" },
+    ]
         
     const { handleChange, insertField, formState } = props;
 
@@ -75,6 +82,15 @@ export function OptionsTab (props) {
                         label="Reset options when a different field is selected" 
                         onChange={handleChange} 
                         checked={formState.resetOnChange} />
+                </Stack.Item>
+
+                <Stack.Item>                    
+                    <Dropdown id="case" 
+                        defaultSelectedKey="na"
+                        selectedKey={formState.case ? formState.case.key : undefined }
+                        options={caseList} 
+                        onChange={handleChange}
+                        label="Case" />
                 </Stack.Item>
 
                 <Stack.Item>
@@ -126,7 +142,7 @@ export function OptionsTab (props) {
                 </Stack.Item>
             </Stack>
 
-            <InsertButton insertField={insertField} />
+            <InsertButton handleClick={insertField} buttonText="Insert Field" />
 
         </div>
     )

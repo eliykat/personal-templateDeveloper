@@ -2,13 +2,18 @@ import * as React from 'react';
 import { PrimaryButton } from "office-ui-fabric-react";
 
 
-export function InsertButton(props) {
+interface IInsertButtonProps {
+    handleClick: any,
+    buttonText: string
+}
 
-    const { insertField } = props;
+export function InsertButton(props: IInsertButtonProps) {
+
+    const { handleClick, buttonText } = props;
 
     return (
         <div className="footer">
-            <PrimaryButton text="Insert Field" onClick={insertField} />
+            <PrimaryButton text={buttonText} onClick={handleClick} />
         </div>
     )
 }
