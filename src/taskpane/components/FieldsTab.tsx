@@ -42,27 +42,28 @@ export function FieldsTab(props: IFieldsTab) {
                         options={dataSourceList} />
                 </Stack.Item>
 
+                { (formState.dataSource && (formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data - System" )) && (
                 <Stack.Item>
-                    { (formState.dataSource && (formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data - System" )) && (
                     <Dropdown id="participantType" 
                         label="Participant Type" 
                         selectedKey={formState.participantType ? formState.participantType.key : undefined} 
                         onChange={handleChange} 
                         placeholder="Select an option" 
                         options={participantTypeList} />
-                    )}
                 </Stack.Item>
+                )}
 
+                { (formState.dataSource && formState.dataSource.key == "Custom Data") && (
                 <Stack.Item>
-                    { (formState.dataSource && formState.dataSource.key == "Custom Data") && (
+                    
                     <Dropdown id="dataCollection" 
                         label="Custom Data Collection" 
                         selectedKey={formState.dataCollection ? formState.dataCollection.key : undefined} 
                         onChange={handleChange} 
                         placeholder="Select an option" 
                         options={dataCollectionList} />
-                    )}
-                </Stack.Item>
+                </Stack.Item>                    
+                )}
 
                 <Stack.Item>
                     <Dropdown id="field" 
