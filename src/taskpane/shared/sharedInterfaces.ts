@@ -1,5 +1,3 @@
-import { IChoiceGroupOption } from "office-ui-fabric-react";
-
 export interface IFormState {
 
     // Fields tab
@@ -7,16 +5,17 @@ export interface IFormState {
     participantType: IOptions,
     dataCollection: IOptions,
     field: IField,
+    ifNull: string,
     ignoreIfNull: boolean,
+    recordNo: string,
     repeatrn: boolean,
     prefix: string,
     suffix: string,
 
     // Options tab
-    actionType: IOptions,
     useMailMergeFields: boolean,
     resetOnChange: boolean,
-    case: IChoiceGroupOption,
+    case: IOptions,
     dateFormat: IOptions,
     phoneFormat: IOptions,
     newLine: IOptions,
@@ -32,7 +31,7 @@ export interface IFormState {
     condition2IsField: boolean
 }
 
-interface IOptions {
+export interface IOptions {
     key: string,
     text: string
 }

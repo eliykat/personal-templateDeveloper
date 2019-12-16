@@ -15,8 +15,9 @@ initializeIcons();
 
 interface IFieldsTab {
     handleChange: any,
-    insertField: any,
-    formState: any
+    insertFieldBtn: any,
+    formState: any,
+    handleChangeRestricted: any
 }
 
 export function FieldsTab(props: IFieldsTab) {
@@ -25,10 +26,11 @@ export function FieldsTab(props: IFieldsTab) {
     const participantTypeList:IDropdownOption[] = getParticipantTypes();   // API call
     const dataCollectionList:IDropdownOption[] = [];
 
-    const { handleChange, insertField, formState } = props;
+    const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
 
     return (
         <div>
+
             <Stack tokens={stackTokens} verticalFill={true}>
 
                 {/* MAIN DROPDOWNS */}
@@ -77,24 +79,52 @@ export function FieldsTab(props: IFieldsTab) {
                 {/* OPTIONS */}
 
                 <Stack.Item>
-                    <Checkbox id="ignoreIfNull" label="Ignore if null" onChange={handleChange} checked={formState.ignoreIfNull} />
+                    <TextField id="ifNull" 
+                        label="If null" 
+                        onChange={handleChange} 
+                        disabled={formState.ignoreIfNull} 
+                        value={formState.ifNull} />
                 </Stack.Item>
 
                 <Stack.Item>
-                    <Checkbox id="repeatrn" label="Inside REPEAT block" onChange={handleChange} checked={formState.repeatrn} />
+                    <Checkbox id="ignoreIfNull" 
+                        label="Ignore if null" 
+                        onChange={handleChange} 
+                        checked={formState.ignoreIfNull} />
+                </Stack.Item>
+
+                <Stack.Item>
+                    <TextField id="recordNo" 
+                        label="Record number (inside REPEAT block)" 
+                        onChange={handleChangeRestricted} 
+                        disabled={formState.repeatrn} 
+                        value={formState.recordNo} />
+                </Stack.Item>
+
+                <Stack.Item>
+                    <Checkbox id="repeatrn" 
+                        label="Repeat record (inside REPEAT block)" 
+                        onChange={handleChange} 
+                        checked={formState.repeatrn} />
                 </Stack.Item>
                 
                 <Stack.Item>
-                    <TextField id="prefix" label="Prefix" onChange={handleChange} value={formState.prefix} />
+                    <TextField id="prefix" 
+                        label="Prefix" 
+                        onChange={handleChange} 
+                        value={formState.prefix} />
                 </Stack.Item>
 
                 <Stack.Item>
-                    <TextField id="suffix" label="Suffix" onChange={handleChange} value={formState.suffix} />
+                    <TextField id="suffix" 
+                        label="Suffix" 
+                        onChange={handleChange} 
+                        value={formState.suffix} />
                 </Stack.Item>
 
             </Stack>
 
-            <InsertButton handleClick={insertField} buttonText="Insert Field" />
+            <InsertButton handleClick={insertFieldBtn} buttonText="Insert Field" />
 
         </div>
 

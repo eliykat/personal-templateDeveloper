@@ -3,13 +3,15 @@ import { Stack, TextField, Checkbox, Dropdown, IDropdownOption } from 'office-ui
 import { stackTokens } from '../shared/sharedTokens';
 import { InsertButton } from './InsertButton';
 
-function insertConditional(formState) {
-    
+interface IConditionalTab {
+    handleChange: any,
+    insertConditionalBtn: any,
+    formState: any
 }
 
-export function ConditionalTab(props) {
+export function ConditionalTab(props: IConditionalTab) {
 
-    const { handleChange, formState } = props;
+    const { handleChange, formState, insertConditionalBtn } = props;
 
     const conditionalOperatorList: IDropdownOption[] = [
         { key: "==", text: "is equal to" },
@@ -63,7 +65,7 @@ export function ConditionalTab(props) {
                 
             </Stack>
 
-            <InsertButton handleClick={insertConditional} buttonText="Insert Condition" />
+            <InsertButton handleClick={insertConditionalBtn} buttonText="Insert Condition" />
 
         </div>
     )

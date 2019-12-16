@@ -5,20 +5,35 @@ interface IASField {
     label: string
 }
 
-export function insertField(useMailMergeFields: boolean, startField: IASField, endField: IASField | undefined) {
+export function insertField(useMailMergeFields: boolean, startField: IASField, endField: IASField | undefined): void {
     if (useMailMergeFields) {
-        insertMailMerge(startField, endField);
+        insertMailMergeField(startField, endField);
     }
     else {
         insertBracketField(startField, endField);
     }
 }
 
-export function buildFieldCode(formState: IFormState) {
+// Used when testing whether text input fields are blank
+// to avoid users leaving spaces behind
+function stripSpaces(string: string): string {
+    return string.replace(/ /g, '');
+}
+
+function replaceSpaces(string: string): string {
+    return string.replace(/ /g, '_');
+}
+
+export function buildFieldCode(formState: IFormState): IASField | void {
 
     let field = {
         label: formState.field.key,
         code: formState.field.key
+    }
+
+    if (formState.dataSource === undefined || formState.field === undefined) {
+        console.log("Error: dataSource or field === undefined");
+        return;
     }
     
     if (formState.dataSource.key == 'Participant Data' || formState.dataSource.key == 'Participant Data - System') {
@@ -37,22 +52,22 @@ export function buildFieldCode(formState: IFormState) {
 
     if (formState.ignoreIfNull) {
         field.code += "|ifnull=ignore";
-    // } else if (state.ifNull) {
-    //     field.code += "|ifnull=" + state.ifNull;
+    } else if (stripSpaces(formState.ifNull)) {
+        field.code += "|ifnull=" + replaceSpaces(formState.ifNull);
     }
 
     if (formState.repeatrn) {
         field.code += "|rn=*";
-    // } else if (state.recordNo) {
-    //     field.code += "|rn=" + state.recordNo;
+    } else if (formState.recordNo) {
+        field.code += "|rn=" + formState.recordNo;
     }
 
-    if (formState.prefix) {
-        field.code += "|prefix=" + formState.prefix.replace(/ /g, '_');
+    if (stripSpaces(formState.prefix)) {
+        field.code += "|prefix=" + replaceSpaces(formState.prefix);
     }
 
-    if (formState.suffix) {
-        field.code += "|suffix=" + formState.suffix.replace(/ /g, '_');
+    if (stripSpaces(formState.suffix)) {
+        field.code += "|suffix=" + replaceSpaces(formState.suffix);
     }
 
     if (formState.newLine.key != "na") {
@@ -110,7 +125,7 @@ function insertBracketField(startField: IASField, endField: IASField | undefined
     }); //.catch(errorhandler);
 }
 
-function insertMailMerge(startField: IASField, endField: IASField | undefined) {
+function insertMailMergeField(startField: IASField, endField: IASField | undefined) {
 
     let startXML, endXML;
 
