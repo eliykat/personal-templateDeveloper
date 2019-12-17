@@ -131,37 +131,38 @@ function insertMailMergeField(startField: IASField, endField: IASField | undefin
 
     const xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = () => {
-        if (this.readyState == 4 && this.status == 200) {
-
-            startXML = xhr.responseText;
-            endXML = xhr.responseText;
-            
-            // Replace field code and field text for startXML
-            startXML = startXML.replace('FIELD_CODE', startField.code);
-            startXML = startXML.replace('FIELD_TEXT', startField.label);
-    
-            Word.run( (context) => {
-    
-                const range = context.document.getSelection();
-    
-                if (endField === undefined) {
-                    range.insertOoxml(startXML, "Replace");
-                } else {
-                    endXML = endXML.replace('FIELD_CODE', endField.code);
-                    endXML = endXML.replace('FIELD_TEXT', endField.label);
-    
-                    range.insertOoxml(startXML, "Before");
-                    range.insertOoxml(endXML, "After");
-                }
-    
-                return context.sync().then(() => {
-                    console.log('Sync success');
-                });
-            }); //.catch(errorHandler);
+    xhr.onload = () => {
+        if (xhr.status != 200) {
+            console.log("Error retrieving XML");
         }
+
+        startXML = xhr.responseText;
+        endXML = xhr.responseText;
+        
+        // Replace field code and field text for startXML
+        startXML = startXML.replace('FIELD_CODE', startField.code);
+        startXML = startXML.replace('FIELD_TEXT', startField.label);
+
+        Word.run( (context) => {
+
+            const range = context.document.getSelection();
+
+            if (endField === undefined) {
+                range.insertOoxml(startXML, "Replace");
+            } else {
+                endXML = endXML.replace('FIELD_CODE', endField.code);
+                endXML = endXML.replace('FIELD_TEXT', endField.label);
+
+                range.insertOoxml(startXML, "Before");
+                range.insertOoxml(endXML, "After");
+            }
+
+            return context.sync().then(() => {
+                console.log('Sync success');
+            });
+        }); //.catch(errorHandler);
     };
 
-    xhr.open("GET", "./OOXML/mergefield.xml", true);
+    xhr.open("GET", "assets/mergefield.xml", true);
     xhr.send();
 }

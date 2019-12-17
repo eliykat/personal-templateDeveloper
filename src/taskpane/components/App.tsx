@@ -74,9 +74,7 @@ export default class App extends React.Component {
     }
 
     insertFieldBtn() {
-        
-        console.log(this.state.case);
-        
+                
         const field = buildFieldCode(this.state);
 
         if (field) {
