@@ -24,7 +24,6 @@ export function FieldsTab(props: IFieldsTab) {
 
     const dataSourceList:IDropdownOption[] = dataSources.dataSources;
     const participantTypeList:IDropdownOption[] = getParticipantTypes();   // API call
-    const dataCollectionList:IDropdownOption[] = [];
 
     const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
 
@@ -44,28 +43,15 @@ export function FieldsTab(props: IFieldsTab) {
                         options={dataSourceList} />
                 </Stack.Item>
 
-                { (formState.dataSource && (formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data - System" )) && (
                 <Stack.Item>
                     <Dropdown id="participantType" 
                         label="Participant Type" 
                         selectedKey={formState.participantType ? formState.participantType.key : undefined} 
                         onChange={handleChange} 
                         placeholder="Select an option" 
-                        options={participantTypeList} />
+                        options={participantTypeList}
+                        disabled={(!formState.dataSource || !(formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data - System" ))} />
                 </Stack.Item>
-                )}
-
-                { (formState.dataSource && formState.dataSource.key == "Custom Data") && (
-                <Stack.Item>
-                    
-                    <Dropdown id="dataCollection" 
-                        label="Custom Data Collection" 
-                        selectedKey={formState.dataCollection ? formState.dataCollection.key : undefined} 
-                        onChange={handleChange} 
-                        placeholder="Select an option" 
-                        options={dataCollectionList} />
-                </Stack.Item>                    
-                )}
 
                 <Stack.Item>
                     <Dropdown id="field" 
