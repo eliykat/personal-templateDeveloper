@@ -13,10 +13,10 @@
 const papa = require('papaparse');
 const fs = require('fs');
 
-const csv = process.argv[2];
-const csv_string = fs.readFileSync(csv).toString('utf-8');
+const csv:string = process.argv[2];
+const csv_string:string = fs.readFileSync(csv).toString('utf-8');
 
-let prevDataSource;
+let prevDataSource:string;
 
 const json = {
     dataSources: []
@@ -43,15 +43,6 @@ papa.parse(csv_string, {
             let code = results.data[i][3];
             let format = results.data[i][13];
 
-            // Manually insert placeholder for Participant Data - System after Participant Data
-            if (prevDataSource == 'Participant Data' && source != prevDataSource) {
-                dataSources.push({
-                    key: 'Participant Data - System',
-                    text: 'Participant Data - System',
-                    fields: []
-                });
-            }
-
             // Create new datasource if required. This assumes the source file is ordered by data source
             if (source != prevDataSource) {
                 currentIndex = dataSources.push(
@@ -75,7 +66,7 @@ papa.parse(csv_string, {
             
         }
 
-        const stringified_json = JSON.stringify(json);
+        const stringified_json:string = JSON.stringify(json);
 
         fs.writeFile('static.json', stringified_json, (err) => {
             console.log('Success');
