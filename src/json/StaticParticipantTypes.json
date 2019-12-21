@@ -1,0 +1,59 @@
+{
+    "staticparticipanttypes": [
+        {
+            "name": "Check_Payee",
+            "description": "Check Payee (printed cheques only)",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Check__Payor",
+            "description": "Check Payor (printed cheques only)",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Trust__client",
+            "description": "Client participants associated with trust funds",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Current__user",
+            "description": "Current user",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Div__action",
+            "description": "Division of the action",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Div__user",
+            "description": "Division of the current user",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Div__root",
+            "description": "Division - root",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Sp__theirname",
+            "description": "Other party (for invoices/quotes/orders only)",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Selected__Participant",
+            "description": "Selected party (merging against participant)",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Action__assigned_to",
+            "description": "User the action is assigned to",
+            "isBaseParticipantType": false
+        },
+        {
+            "name": "Spi__TaskParticipant",
+            "description": "User for time entry (invoice line items only)",
+            "isBaseParticipantType": false
+        }
+    ]
+}
