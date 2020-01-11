@@ -24,7 +24,8 @@
     ]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "offline scripts"
   ],
   "compileOnSave": false,
   "buildOnSave": false

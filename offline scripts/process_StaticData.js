@@ -13,17 +13,17 @@
 const papa = require('papaparse');
 const fs = require('fs');
 
-const csv:string = process.argv[2];
-const csv_string:string = fs.readFileSync(csv).toString('utf-8');
+const csv = process.argv[2];
+const csv_string = fs.readFileSync(csv).toString('utf-8');
 
-let prevDataSource:string;
+let prevDataSource;
 
 const json = {
     dataSources: []
 };
 
 let dataSources = json.dataSources;
-let currentIndex: number;
+let currentIndex;
 
 papa.parse(csv_string, {
     complete: function (results){
@@ -66,7 +66,7 @@ papa.parse(csv_string, {
             
         }
 
-        const stringified_json:string = JSON.stringify(json);
+        const stringified_json = JSON.stringify(json);
 
         fs.writeFile('static.json', stringified_json, (err) => {
             console.log('Success');
