@@ -1,4 +1,5 @@
 import { IFormState } from "../taskpane/shared/sharedInterfaces";
+import { replaceSpaces } from "../taskpane/shared/sharedFunctions";
 
 interface IASField {
     code: string,
@@ -18,10 +19,6 @@ export function insertField(useMailMergeFields: boolean, startField: IASField, e
 // to avoid users leaving spaces behind
 function stripSpaces(string: string): string {
     return string.replace(/ /g, '');
-}
-
-function replaceSpaces(string: string): string {
-    return string.replace(/ /g, '_');
 }
 
 export function buildFieldCode(formState: IFormState): IASField | void {
@@ -102,7 +99,7 @@ export function buildFieldCode(formState: IFormState): IASField | void {
     } 
 
     if (formState.customOption) {
-        field.code += "|" + formState.customOption.replace(/ /g, '_');
+        field.code += "|" + replaceSpaces(formState.customOption);
     }
 
     return(field);
