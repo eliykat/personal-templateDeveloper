@@ -1,59 +1,48 @@
 {
     "staticparticipanttypes": [
         {
-            "name": "Check_Payee",
-            "description": "Check Payee (printed cheques only)",
-            "isBaseParticipantType": false
+            "key": "Check_Payee",
+            "text": "Check Payee (printed cheques only)"
         },
         {
-            "name": "Check__Payor",
-            "description": "Check Payor (printed cheques only)",
-            "isBaseParticipantType": false
+            "key": "Check__Payor",
+            "text": "Check Payor (printed cheques only)"
         },
         {
-            "name": "Trust__client",
-            "description": "Client participants associated with trust funds",
-            "isBaseParticipantType": false
+            "key": "Trust__client",
+            "text": "Client participants associated with trust funds"
         },
         {
-            "name": "Current__user",
-            "description": "Current user",
-            "isBaseParticipantType": false
+            "key": "Current__user",
+            "text": "Current user"
         },
         {
-            "name": "Div__action",
-            "description": "Division of the action",
-            "isBaseParticipantType": false
+            "key": "Div__action",
+            "text": "Division of the action"
         },
         {
-            "name": "Div__user",
-            "description": "Division of the current user",
-            "isBaseParticipantType": false
+            "key": "Div__user",
+            "text": "Division of the current user"
         },
         {
-            "name": "Div__root",
-            "description": "Division - root",
-            "isBaseParticipantType": false
+            "key": "Div__root",
+            "text": "Division - root"
         },
         {
-            "name": "Sp__theirname",
-            "description": "Other party (for invoices/quotes/orders only)",
-            "isBaseParticipantType": false
+            "key": "Sp__theirname",
+            "text": "Other party (for invoices/quotes/orders only)"
         },
         {
-            "name": "Selected__Participant",
-            "description": "Selected party (merging against participant)",
-            "isBaseParticipantType": false
+            "key": "Selected__Participant",
+            "text": "Selected party (merging against participant)"
         },
         {
-            "name": "Action__assigned_to",
-            "description": "User the action is assigned to",
-            "isBaseParticipantType": false
+            "key": "Action__assigned_to",
+            "text": "User the action is assigned to"
         },
         {
-            "name": "Spi__TaskParticipant",
-            "description": "User for time entry (invoice line items only)",
-            "isBaseParticipantType": false
+            "key": "Spi__TaskParticipant",
+            "text": "User for time entry (invoice line items only)"
         }
     ]
 }
