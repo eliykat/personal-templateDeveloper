@@ -6,9 +6,10 @@ import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
 import * as dataSources from '../../json/static.json';
-import { getParticipantTypes } from '../../Helpers/getParticipantTypes';
 import { InsertButton } from './InsertButton';
 import { stackTokens } from '../shared/sharedTokens';
+import { IDataSource } from '../shared/sharedInterfaces';
+import { compileParticipantsList } from '../shared/sharedFunctions';
 
 // Required for checkboxes
 initializeIcons();
@@ -18,12 +19,12 @@ interface IFieldsTab {
     insertFieldBtn: any,
     formState: any,
     handleChangeRestricted: any
-}
+} 
 
 export function FieldsTab(props: IFieldsTab) {
 
-    const dataSourceList:IDropdownOption[] = dataSources.dataSources;
-    const participantTypeList:IDropdownOption[] = getParticipantTypes();   // API call
+    const dataSourceList:IDataSource[] = dataSources.dataSources;
+    const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
     const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
 
