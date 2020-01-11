@@ -36,7 +36,7 @@ export interface IOptions {
     text: string
 }
 
-interface IDataSource extends IOptions {
+export interface IDataSource extends IOptions {
     field: IField[]
 }
 
