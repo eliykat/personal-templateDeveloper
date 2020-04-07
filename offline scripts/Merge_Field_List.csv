@@ -102,52 +102,6 @@ ID,Action Type Name,Data Source,Merge Field Name,Data-Collection Name,Data-Colle
 590,(Common),Check,Check_SP_OurReferenceList,,,List of Sale/Purchase Our Reference associated with check,check_our_reference,T,,,,,s
 589,(Common),Check,Check_SP_TheirReferenceList,,,List of Sale/Purchase Their Reference associated with check,check_their_reference,T,,,,,s
 179,(Common),Check,Check_Void,,,Check Void Text (VOID or empty if not void),void_text,F,,,,,s
-816,Conveyancing - Purchase,Custom Data,Dates_Balance_Deposit,Dates,Balance_Deposit,Data collection field - auto created,Balance_Deposit,F,,,,,d
-833,Conveyancing - Sale,Custom Data,Dates_Balance_Deposit,Dates,Balance_Deposit,Data collection field - auto created,Balance_Deposit,F,,,,,d
-834,Conveyancing - Sale,Custom Data,Dates_Building_Pest,Dates,Building_Pest,Data collection field - auto created,Building_Pest,F,,,,,d
-814,Conveyancing - Purchase,Custom Data,Dates_Building_Pest,Dates,Building_Pest,Data collection field - auto created,Building_Pest,F,,,,,d
-832,Conveyancing - Sale,Custom Data,Dates_Contract,Dates,Contract,Data collection field - auto created,Contract,F,,,,,d
-818,Conveyancing - Purchase,Custom Data,Dates_Contract,Dates,Contract,Data collection field - auto created,Contract,F,,,,,d
-851,Conveyancing - Purchase,Custom Data,Dates_CoolingOff,Dates,CoolingOff,Data collection field - auto created,CoolingOff,F,,,,,d
-835,Conveyancing - Sale,Custom Data,Dates_Finance,Dates,Finance,Data collection field - auto created,Finance,F,,,,,d
-815,Conveyancing - Purchase,Custom Data,Dates_Finance,Dates,Finance,Data collection field - auto created,Finance,F,,,,,d
-812,Conveyancing - Purchase,Custom Data,Dates_Initial_Deposit,Dates,Initial_Deposit,Data collection field - auto created,Initial_Deposit,F,,,,,d
-836,Conveyancing - Sale,Custom Data,Dates_Initial_Deposit,Dates,Initial_Deposit,Data collection field - auto created,Initial_Deposit,F,,,,,d
-837,Conveyancing - Sale,Custom Data,Dates_Pool,Dates,Pool,Data collection field - auto created,Pool,F,,,,,d
-813,Conveyancing - Purchase,Custom Data,Dates_Pool,Dates,Pool,Data collection field - auto created,Pool,F,,,,,d
-838,Conveyancing - Sale,Custom Data,Dates_Settlement,Dates,Settlement,Data collection field - auto created,Settlement,F,,,,,d
-817,Conveyancing - Purchase,Custom Data,Dates_Settlement,Dates,Settlement,Data collection field - auto created,Settlement,F,,,,,d
-850,Conveyancing - Purchase,Custom Data,Details_BalanceDeposit,Details,BalanceDeposit,Data collection field - auto created,BalanceDeposit,F,,,,,c
-854,Conveyancing - Sale,Custom Data,Details_BalanceDeposit,Details,BalanceDeposit,Data collection field - auto created,BalanceDeposit,F,,,,,c
-849,Conveyancing - Purchase,Custom Data,Details_InitialDeposit,Details,InitialDeposit,Data collection field - auto created,InitialDeposit,F,,,,,c
-855,Conveyancing - Sale,Custom Data,Details_InitialDeposit,Details,InitialDeposit,Data collection field - auto created,InitialDeposit,F,,,,,c
-856,Conveyancing - Sale,Custom Data,Details_PurchasePrice,Details,PurchasePrice,Data collection field - auto created,PurchasePrice,F,,,,,c
-848,Conveyancing - Purchase,Custom Data,Details_PurchasePrice,Details,PurchasePrice,Data collection field - auto created,PurchasePrice,F,,,,,c
-857,Conveyancing - Sale,Custom Data,Details_RegistrationFees,Details,RegistrationFees,Data collection field - auto created,RegistrationFees,F,,,,,c
-853,Conveyancing - Purchase,Custom Data,Details_RegistrationFees,Details,RegistrationFees,Data collection field - auto created,RegistrationFees,F,,,,,c
-852,Conveyancing - Purchase,Custom Data,Details_StampDuty,Details,StampDuty,Data collection field - auto created,StampDuty,F,,,,,c
-821,Conveyancing - Sale,Custom Data,Property_BuildingName,Property,BuildingName,Data collection field - auto created,BuildingName,F,,,,,s
-820,Conveyancing - Purchase,Custom Data,Property_BuildingName,Property,BuildingName,Data collection field - auto created,BuildingName,F,,,,,s
-803,Conveyancing - Purchase,Custom Data,Property_LotNumber,Property,LotNumber,Data collection field - auto created,LotNumber,F,,,,,s
-827,Conveyancing - Sale,Custom Data,Property_LotNumber,Property,LotNumber,Data collection field - auto created,LotNumber,F,,,,,s
-829,Conveyancing - Sale,Custom Data,Property_PlanNumber,Property,PlanNumber,Data collection field - auto created,PlanNumber,F,,,,,s
-805,Conveyancing - Purchase,Custom Data,Property_PlanNumber,Property,PlanNumber,Data collection field - auto created,PlanNumber,F,,,,,s
-828,Conveyancing - Sale,Custom Data,Property_PlanType,Property,PlanType,Data collection field - auto created,PlanType,F,,,,,s
-804,Conveyancing - Purchase,Custom Data,Property_PlanType,Property,PlanType,Data collection field - auto created,PlanType,F,,,,,s
-810,Conveyancing - Purchase,Custom Data,Property_Postcode,Property,Postcode,Data collection field - auto created,Postcode,F,,,,,s
-826,Conveyancing - Sale,Custom Data,Property_Postcode,Property,Postcode,Data collection field - auto created,Postcode,F,,,,,s
-811,Conveyancing - Purchase,Custom Data,Property_PurchasePrice,Property,PurchasePrice,Data collection field - auto created,PurchasePrice,F,,,,,c
-824,Conveyancing - Sale,Custom Data,Property_StreetName,Property,StreetName,Data collection field - auto created,StreetName,F,,,,,s
-808,Conveyancing - Purchase,Custom Data,Property_StreetName,Property,StreetName,Data collection field - auto created,StreetName,F,,,,,s
-823,Conveyancing - Sale,Custom Data,Property_StreetNo,Property,StreetNo,Data collection field - auto created,StreetNo,F,,,,,s
-807,Conveyancing - Purchase,Custom Data,Property_StreetNo,Property,StreetNo,Data collection field - auto created,StreetNo,F,,,,,s
-809,Conveyancing - Purchase,Custom Data,Property_Suburb,Property,Suburb,Data collection field - auto created,Suburb,F,,,,,s
-825,Conveyancing - Sale,Custom Data,Property_Suburb,Property,Suburb,Data collection field - auto created,Suburb,F,,,,,s
-830,Conveyancing - Sale,Custom Data,Property_TitleReference,Property,TitleReference,Data collection field - auto created,TitleReference,F,,,,,s
-806,Conveyancing - Purchase,Custom Data,Property_TitleReference,Property,TitleReference,Data collection field - auto created,TitleReference,F,,,,,s
-819,Conveyancing - Purchase,Custom Data,Property_Unit,Property,Unit,Data collection field - auto created,Unit,F,,,,,s
-822,Conveyancing - Sale,Custom Data,Property_Unit,Property,Unit,Data collection field - auto created,Unit,F,,,,,s
-859,Trusts,Custom Data,Trust_Name,Trust,Name,Data collection field - auto created,Name,F,,,,,s
 244,(Common),Deposit slip,DS_AccountName,,,Deposit Slip: Chart-of-Accounts Account Name,ac_account_name,F,,,,,s
 243,(Common),Deposit slip,DS_AccountNumber,,,Deposit Slip: Chart-of-Accounts Account Number,ac_account_number,F,,,,,n
 241,(Common),Deposit slip,DS_BankAccountName,,,Deposit Slip: Bank Account Name,bank_account_name,F,,,,,s
