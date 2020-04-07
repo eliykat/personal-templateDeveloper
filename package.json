@@ -60,7 +60,7 @@
     "less-loader": "^5.0.0",
     "office-addin-cli": "^1.0.3",
     "office-addin-debugging": "^3.0.17",
-    "office-addin-dev-certs": "^1.4.10",
+    "office-addin-dev-certs": "^1.5.0",
     "office-addin-lint": "^1.0.15",
     "office-addin-prettier-config": "^1.0.10",
     "postcss-loader": "3.0.0",
