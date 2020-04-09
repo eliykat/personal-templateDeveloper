@@ -4,10 +4,10 @@ import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
-import { stackTokens } from '../shared/sharedTokens';
+import { stackTokens } from '../common/tokens';
 import { Stack } from 'office-ui-fabric-react';
 import { InsertButton } from './InsertButton';
-import { caseList, dateFormatList, newLineList, phoneFormatList } from '../shared/dropdownOptions';
+import { caseList, dateFormatList, newLineList, phoneFormatList } from '../common/dropdownOptions';
 
 // Required for checkboxes
 initializeIcons();

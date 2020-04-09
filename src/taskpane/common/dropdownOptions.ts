@@ -1,4 +1,4 @@
-import { IOptions } from './sharedInterfaces';
+import { IOptions } from './interfaces';
 
 export const defaultNewLine: IOptions = { key: "na", text: "Not applicable" };
 

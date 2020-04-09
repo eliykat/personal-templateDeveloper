@@ -1,5 +1,5 @@
-import { IFormState } from "../taskpane/shared/sharedInterfaces";
-import { replaceSpaces } from "../taskpane/shared/sharedFunctions";
+import { IFormState } from "./interfaces";
+import { replaceSpaces } from "./miscFunctions";
 
 interface IASField {
     code: string,

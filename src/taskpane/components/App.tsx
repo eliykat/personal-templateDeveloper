@@ -4,10 +4,10 @@ import { FieldsTab } from './FieldsTab';
 import { OptionsTab } from './OptionsTab';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { ConditionalTab } from './ConditionalTab';
-import { IFormState } from '../shared/sharedInterfaces';
+import { IFormState } from '../common/interfaces';
 
-import { defaultNewLine, defaultDateFormat, defaultCase, defaultPhoneFormat} from '../shared/dropdownOptions';
-import { buildFieldCode, insertField } from '../../Helpers/officeAPI';
+import { defaultNewLine, defaultDateFormat, defaultCase, defaultPhoneFormat} from '../common/dropdownOptions';
+import { buildFieldCode, insertField } from '../common/officeAPI';
 
 export default class App extends React.Component {
 

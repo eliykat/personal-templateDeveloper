@@ -1,5 +1,5 @@
 import { IDropdownOption, DropdownMenuItemType } from "office-ui-fabric-react";
-import { getParticipantTypes } from "../../Helpers/getParticipantTypes";
+import { getParticipantTypes } from "./getParticipantTypes";
 import * as systemParticipantTypesjson from "../../json/StaticParticipantTypes.json";
 
 export function replaceSpaces(string: string): string {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Stack, TextField, Checkbox, Dropdown, IDropdownOption } from 'office-ui-fabric-react';
-import { stackTokens } from '../shared/sharedTokens';
+import { stackTokens } from '../common/tokens';
 import { InsertButton } from './InsertButton';
 
 interface IConditionalTab {

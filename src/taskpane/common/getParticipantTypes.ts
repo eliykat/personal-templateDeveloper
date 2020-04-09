@@ -1,7 +1,7 @@
 // Imitates an API call to the participanttypes resource and transforms the result into the format required by IDropdownOption
-import * as json from '../json/ParticipantTypes.json';
+import * as json from '../../json/ParticipantTypes.json';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { replaceUnderscores } from '../taskpane/shared/sharedFunctions';
+import { replaceUnderscores } from './miscFunctions';
 
 interface IParticipantTypes {
     name: string

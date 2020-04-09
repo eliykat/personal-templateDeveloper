@@ -7,9 +7,9 @@ import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
 import * as dataSources from '../../json/static.json';
 import { InsertButton } from './InsertButton';
-import { stackTokens } from '../shared/sharedTokens';
-import { IDataSource } from '../shared/sharedInterfaces';
-import { compileParticipantsList } from '../shared/sharedFunctions';
+import { stackTokens } from '../common/tokens';
+import { IDataSource } from '../common/interfaces';
+import { compileParticipantsList } from '../common/miscFunctions';
 
 // Required for checkboxes
 initializeIcons();
