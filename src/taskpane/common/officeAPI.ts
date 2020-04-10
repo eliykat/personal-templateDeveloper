@@ -15,12 +15,6 @@ export function insertField(useMailMergeFields: boolean, startField: IASField, e
     }
 }
 
-// Used when testing whether text input fields are blank
-// to avoid users leaving spaces behind
-function stripSpaces(string: string): string {
-    return string.replace(/ /g, '');
-}
-
 export function buildFieldCode(formState: IFormState): IASField | void {
 
     let field = {

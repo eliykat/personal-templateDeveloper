@@ -17,7 +17,8 @@ interface IFieldsTab {
     handleChange: any,
     insertFieldBtn: any,
     formState: any,
-    handleChangeRestricted: any
+    handleChangeNumbersOnly: any
+    handleChangeReplaceSpaces: any
 } 
 
 export function FieldsTab(props: IFieldsTab) {
@@ -25,7 +26,7 @@ export function FieldsTab(props: IFieldsTab) {
     const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
-    const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
+    const { handleChange, insertFieldBtn, formState, handleChangeNumbersOnly, handleChangeReplaceSpaces } = props;
 
     return (
         <div>
@@ -67,7 +68,7 @@ export function FieldsTab(props: IFieldsTab) {
                 <Stack.Item>
                     <TextField id="ifNull" 
                         label="If null" 
-                        onChange={handleChange} 
+                        onChange={handleChangeReplaceSpaces} 
                         disabled={formState.ignoreIfNull} 
                         value={formState.ifNull} />
                 </Stack.Item>
@@ -82,7 +83,7 @@ export function FieldsTab(props: IFieldsTab) {
                 <Stack.Item>
                     <TextField id="recordNo" 
                         label="Record number (inside REPEAT block)" 
-                        onChange={handleChangeRestricted} 
+                        onChange={handleChangeNumbersOnly} 
                         disabled={formState.repeatrn} 
                         value={formState.recordNo} />
                 </Stack.Item>
@@ -97,14 +98,14 @@ export function FieldsTab(props: IFieldsTab) {
                 <Stack.Item>
                     <TextField id="prefix" 
                         label="Prefix" 
-                        onChange={handleChange} 
+                        onChange={handleChangeReplaceSpaces} 
                         value={formState.prefix} />
                 </Stack.Item>
 
                 <Stack.Item>
                     <TextField id="suffix" 
                         label="Suffix" 
-                        onChange={handleChange} 
+                        onChange={handleChangeReplaceSpaces} 
                         value={formState.suffix} />
                 </Stack.Item>
 

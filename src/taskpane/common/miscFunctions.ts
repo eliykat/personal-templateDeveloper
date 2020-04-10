@@ -8,10 +8,6 @@ export function replaceSpaces(string: string): string {
     return string.replace(/ /g, '_');
 }
 
-export function replaceUnderscores(string: string): string {
-    return string.replace(/_/g, ' ');
-}
-
 export function compileParticipantsList(): IDropdownOption[] {
    
     const userParticipantTypes = getParticipantTypes();

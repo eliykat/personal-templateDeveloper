@@ -15,12 +15,13 @@ initializeIcons();
 interface IOptionsTab {
     handleChange: any,
     insertFieldBtn: any,
-    formState: any
+    formState: any,
+    handleChangeReplaceSpaces: any
 }
 
 export function OptionsTab (props: IOptionsTab) {
         
-    const { handleChange, insertFieldBtn, formState } = props;
+    const { handleChange, insertFieldBtn, formState, handleChangeReplaceSpaces } = props;
 
     return (
         <div>
@@ -99,8 +100,8 @@ export function OptionsTab (props: IOptionsTab) {
                 <Stack.Item>
                     <TextField id="customOption" 
                         label="Custom option" 
-                        onChange={handleChange} 
-                        value={formState.prefix} />
+                        onChange={handleChangeReplaceSpaces} 
+                        value={formState.customOption} />
                 </Stack.Item>
             </Stack>
 
