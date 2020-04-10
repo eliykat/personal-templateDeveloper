@@ -37,9 +37,12 @@ export interface IOptions {
 }
 
 export interface IDataSource extends IOptions {
-    field: IField[]
+    fields: IField[]
 }
 
-interface IField extends IOptions {
-    format: "s" | "d" | "c" | "n" | "p"
+type formatTypes = 's' | 'd' | 'c' | 'n' | 'p' | 'h';
+
+export interface IField extends IOptions {
+    format: formatTypes
+    //format: string
 }
