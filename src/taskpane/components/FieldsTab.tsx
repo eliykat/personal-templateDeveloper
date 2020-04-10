@@ -9,7 +9,7 @@ import * as dataSources from '../../json/static.json';
 import { InsertButton } from './InsertButton';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
-import { compileParticipantsList } from '../common/miscFunctions';
+import { compileParticipantsList, insertDropdownHeader } from '../common/miscFunctions';
 
 // Required for checkboxes
 initializeIcons();
@@ -23,7 +23,7 @@ interface IFieldsTab {
 
 export function FieldsTab(props: IFieldsTab) {
 
-    const dataSourceList:IDataSource[] = dataSources.dataSources;
+    const dataSourceList:IDataSource[] = insertDropdownHeader(dataSources.dataSources as IDataSource[]);
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
     const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
