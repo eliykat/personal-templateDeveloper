@@ -9,6 +9,7 @@ import { InsertButton } from './InsertButton';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
+import { Separator } from 'office-ui-fabric-react';
 
 // Required for checkboxes
 initializeIcons();
@@ -64,6 +65,10 @@ export function FieldsTab(props: IFieldsTab) {
                 </Stack.Item>
 
                 {/* OPTIONS */}
+                <Stack.Item>
+                    <Separator>Quick options</Separator>
+                </Stack.Item>
+
 
                 <Stack.Item>
                     <TextField id="ifNull" 
