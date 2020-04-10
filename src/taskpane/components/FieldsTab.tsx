@@ -5,11 +5,10 @@ import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
-import * as dataSources from '../../json/static.json';
 import { InsertButton } from './InsertButton';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
-import { compileParticipantsList, insertDropdownHeader } from '../common/miscFunctions';
+import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
 
 // Required for checkboxes
 initializeIcons();
@@ -23,7 +22,7 @@ interface IFieldsTab {
 
 export function FieldsTab(props: IFieldsTab) {
 
-    const dataSourceList:IDataSource[] = insertDropdownHeader(dataSources.dataSources as IDataSource[]);
+    const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
     const { handleChange, insertFieldBtn, formState, handleChangeRestricted } = props;
@@ -51,7 +50,7 @@ export function FieldsTab(props: IFieldsTab) {
                         onChange={handleChange} 
                         placeholder="Select an option" 
                         options={participantTypeList}
-                        disabled={(!formState.dataSource || !(formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data - System" ))} />
+                        disabled={(!formState.dataSource || !(formState.dataSource.key == "Participant Data"))} />
                 </Stack.Item>
 
                 <Stack.Item>
