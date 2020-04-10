@@ -74,7 +74,14 @@ export function OptionsTab (props: IOptionsTab) {
                         placeholder="Select new lines to insert around field" 
                         options={newLineList} />
                 </Stack.Item>
-                
+
+                <Stack.Item>
+                    <Checkbox id="stripSpaces" 
+                        label="Strip spaces" 
+                        onChange={handleChange} 
+                        checked={formState.stripSpaces} />
+                </Stack.Item>
+
                 <Stack.Item>
                     <Checkbox id="currencyToWords" 
                         label="Convert currency field to words" 

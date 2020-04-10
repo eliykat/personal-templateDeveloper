@@ -40,7 +40,6 @@ export function compileDataSourceList(): IDataSource[] {
                 } else {
                     return field;
                 }})
-            console.log(dataSource);
         }
     })
 

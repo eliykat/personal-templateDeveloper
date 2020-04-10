@@ -39,6 +39,7 @@ export default class App extends React.Component {
             currencyToWords: false,
             noCurrencySymbol: false,
             customOption: "",
+            stripSpaces: false,
 
             // Conditional tab
             condition1: "",

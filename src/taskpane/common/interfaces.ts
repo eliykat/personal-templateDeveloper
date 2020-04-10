@@ -22,6 +22,7 @@ export interface IFormState {
     currencyToWords: boolean,
     noCurrencySymbol: boolean,
     customOption: string,
+    stripSpaces: boolean,
 
     // Conditional tab
     condition1: string,

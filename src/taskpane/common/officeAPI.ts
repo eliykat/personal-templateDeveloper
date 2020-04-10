@@ -49,7 +49,7 @@ export function buildFieldCode(formState: IFormState): IASField | void {
 
     if (formState.ignoreIfNull) {
         field.code += "|ifnull=ignore";
-    } else if (stripSpaces(formState.ifNull)) {
+    } else if (formState.ifNull) {
         field.code += "|ifnull=" + replaceSpaces(formState.ifNull);
     }
 
@@ -59,16 +59,20 @@ export function buildFieldCode(formState: IFormState): IASField | void {
         field.code += "|rn=" + formState.recordNo;
     }
 
-    if (stripSpaces(formState.prefix)) {
+    if (formState.prefix) {
         field.code += "|prefix=" + replaceSpaces(formState.prefix);
     }
 
-    if (stripSpaces(formState.suffix)) {
+    if (formState.suffix) {
         field.code += "|suffix=" + replaceSpaces(formState.suffix);
     }
 
     if (formState.newLine.key != "na") {
         field.code += "|newline=" + formState.newLine.key;
+    }
+
+    if (formState.stripSpaces) {
+        field.code += "|strip_spaces=T";
     }
 
     // Case option only applies if it is not participant data (capitalisation set in option) 
