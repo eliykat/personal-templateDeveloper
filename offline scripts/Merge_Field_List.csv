@@ -1,515 +1,514 @@
-ID,Action Type Name,Data Source,Merge Field Name,Data-Collection Name,Data-Collection Field Name,Merge Field Description,Parameters,Repeat,R1,R2,F1,F2,
-225,(Common),Action,Action_CreatedDate,,,Action Created Date,date_created,F,,,,,d
-50,(Common),Action,Action_ID,,,Action ID,action_id,F,,,,,n
-49,(Common),Action,Action_Name,,,Name of Action,action_name,F,,,,,s
-314,(Common),Action,Action_SalesInvoicesTotalExcl,,,Total Sales Invoices Amount (Excluding Taxes),sp_invoices_total_exclusive,F,,,,,c
-313,(Common),Action,Action_SalesInvoicesTotalIncl,,,Total Sales Invoices Amount (Including Taxes),sp_invoices_total_inclusive,F,,,,,c
-349,(Common),Action,Action_Status,,,Status of Action,action_status,F,,,,,s
-226,(Common),Action,Action_Type,,,Action Type Name,action_type_name,F,,,,,s
-48,(Common),Action,File_Reference,,,File Reference,file_reference,F,,,,,s
-299,(Common),Action Sale Data,ActionSale_ActualSaleAmount,,,Actual Sale Amount,actual_sale_amount,F,,,,,c
-300,(Common),Action Sale Data,ActionSale_ActualSaleDate,,,Actual Sale Date,actual_sale_date,F,,,,,d
-285,(Common),Action Sale Data,ActionSale_CurrencyCode,,,Currency Code,currency_code,F,,,,,s
-284,(Common),Action Sale Data,ActionSale_ExpectedSaleAmount,,,Expected Sale Amount,expected_sale_amount,F,,,,,c
-286,(Common),Action Sale Data,ActionSale_ExpectedSaleDate,,,Expected Sale Date,expected_sale_date,F,,,,,d
-287,(Common),Action Sale Data,ActionSale_LeadSourceNotes,,,Lead Source Notes,sales_lead_source_notes,F,,,,,s
-297,(Common),Action Sale Data,ActionSale_LinkedOrderDate,,,Linked Order (Sale/Purchase) Sale/Purchase Date,linked_order_date,F,,,,,d
-295,(Common),Action Sale Data,ActionSale_LinkedOrderDescription,,,Linked Order (Sale/Purchase) Description,linked_order_description,F,,,,,s
-294,(Common),Action Sale Data,ActionSale_LinkedOrderOurReference,,,Linked Order (Sale/Purchase) Our Reference,linked_order_our_reference,F,,,,,s
-296,(Common),Action Sale Data,ActionSale_LinkedOrderSalePurchaseId,,,Linked Order (Sale/Purchase) Sale/Purchase ID,linked_order_sale_purchase_id,F,,,,,n
-293,(Common),Action Sale Data,ActionSale_LinkedQuoteDate,,,Linked Quote (Sale/Purchase) Sale/Purchase Date,linked_quote_date,F,,,,,d
-291,(Common),Action Sale Data,ActionSale_LinkedQuoteDescription,,,Linked Quote (Sale/Purchase) Description,linked_quote_description,F,,,,,s
-290,(Common),Action Sale Data,ActionSale_LinkedQuoteOurReference,,,Linked Quote (Sale/Purchase) Our Reference,linked_quote_our_reference,F,,,,,s
-292,(Common),Action Sale Data,ActionSale_LinkedQuoteSalePurchaseId,,,Linked Quote (Sale/Purchase) Sale/Purchase ID,linked_quote_sale_purchase_id,F,,,,,n
-289,(Common),Action Sale Data,ActionSale_MarketingEvent,,,Marketing Event Name,marketing_event,F,,,,,s
-288,(Common),Action Sale Data,ActionSale_MarketingMedium,,,Marketing Medium,marketing_medium,F,,,,,s
-283,(Common),Action Sale Data,ActionSale_Probability,,,Sale Probability,probability,F,,,,,n
-298,(Common),Action Sale Data,ActionSale_Status,,,Current Status (Sold alias or Opportunity alias),action_sale_status,F,,,,,s
-311,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_DueOnStepName,,,Due on Step Name,due_on_step_name,F,,,,,s
-303,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_ExpectedAmount,,,Expected Payment Amount,expected_payment_amount,F,,,,,c
-305,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_ExpectedDate,,,Expected date (calculated from Days after Sale),expected_date,F,,,,,d
-304,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_ExpectedDaysAfterSale,,,Payment expected days after Sale Date,days_after_sale,F,,,,,n
-308,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_InvoiceAmountExcl,,,Linked Invoice Item Amount (Excl Tax),invoice_item_amount_excl,F,,,,,c
-307,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_InvoiceAmountIncl,,,Linked Invoice Item Amount (Incl Tax),invoice_item_amount_incl,F,,,,,c
-306,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_InvoiceDate,,,Linked Invoice Date,invoice_date,F,,,,,d
-310,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_InvoiceTotalAmountExcl,,,Linked Invoice Amount (Excl Tax),invoice_total_amount_excl,F,,,,,c
-309,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_InvoiceTotalAmountIncl,,,Linked Invoice Amount (Incl Tax),invoice_total_amount_incl,F,,,,,c
-302,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_PaymentDescription,,,Description,description,F,,,,,s
-301,(Common),Action Sale Payments Data,ActionSalePaymentSchedule_PaymentNumber,,,Payment Number,payment_number,F,,,,,n
-839,(Common),Bill consolidation,BillConsolidation_ActionID,,,The Action/Matter ID for the invoice in the consolidation,action_id,F,,,,,n
-840,(Common),Bill consolidation,BillConsolidation_ActionName,,,The Action/Matter Name for the invoice in the consolidation,action_name,F,,,,,s
-841,(Common),Bill consolidation,BillConsolidation_FileReference,,,The Action/Matter File Reference for the invoice in the consolidation,file_reference,F,,,,,n
-843,(Common),Bill consolidation,BillConsolidation_HoursAndMinutes,,,Quantity expressed as hours:minutes for all time entries in the invoice in the consolidation,hours_and_minutes,F,,,,,s
-842,(Common),Bill consolidation,BillConsolidation_HoursAsDecimal,,,Quantity as a decimal (ie Hours) for all time entries in the invoice in the consolidation,hours_as_decimal,F,,,,,n
-846,(Common),Bill consolidation,BillConsolidation_Total,,,"The total price (excl tax, all items) for the invoice in the consolidation",total,F,,,,,c
-845,(Common),Bill consolidation,BillConsolidation_TotalExpenses,,,The total price (excl tax) of the expenses for the invoice in the consolidation,total_expenses,F,,,,,c
-844,(Common),Bill consolidation,BillConsolidation_TotalFees,,,The total price (excl tax) of the fees for the invoice in the consolidation,total_fees,F,,,,,c
-455,(Common),Bill expenses/disbursements,BillExpenses_Action_ID,,,Action ID of this item,action_id,F,,,,,n
-456,(Common),Bill expenses/disbursements,BillExpenses_Action_Name,,,Action Name of this item,action_name,F,,,,,s
-454,(Common),Bill expenses/disbursements,BillExpenses_Date,,,Date of the expense (not set if the group/sum flag set),date,F,,,,,d
-450,(Common),Bill expenses/disbursements,BillExpenses_Description,,,Description of the expense as per the invoice items,description,F,,,,,s
-522,(Common),Bill expenses/disbursements,BillExpenses_GstCode,,,Gst code of the expense as per the invoice items,gst_code,F,,,,,s
-523,(Common),Bill expenses/disbursements,BillExpenses_GstPercent,,,Gst percent of the expense as per the invoice items,gst_percentage,F,,,,,n
-452,(Common),Bill expenses/disbursements,BillExpenses_Quantity,,,Total quantity of the expense (or expenses if group/sum enabled),quantity,F,,,,,n
-449,(Common),Bill expenses/disbursements,BillExpenses_Title,,,Title of the expense as per the invoice items,title,F,,,,,s
-453,(Common),Bill expenses/disbursements,BillExpenses_TotalPriceExcludingTax,,,Total price of the expense (excluding tax),total_price_excluding_tax,F,,,,,c
-451,(Common),Bill expenses/disbursements,BillExpenses_UnitPriceExcludingTax,,,Unit price (excluding tax) of the expense,unit_price_excluding_tax,F,,,,,c
-529,(Common),Bill expenses/disbursements,BillExpenses_UtbmsActivityCode,,,UTBMS Activity Code,utbms_activity_code,F,,,,,s
-532,(Common),Bill expenses/disbursements,BillExpenses_UtbmsExpenseCode,,,UTBMS Expense Code,utbms_expense_code,F,,,,,s
-530,(Common),Bill expenses/disbursements,BillExpenses_UtbmsTaskCode,,,UTBMS Task Code,utbms_task_code,F,,,,,s
-531,(Common),Bill expenses/disbursements,BillExpenses_UtbmsTimekeeperCode,,,UTBMS Timekeeper Code,utbms_timekeeper_code,F,,,,,s
-464,(Common),Bill fees,BillFees_Action_ID,,,Action ID of this item,action_id,F,,,,,n
-465,(Common),Bill fees,BillFees_Action_Name,,,Action Name of this item,action_name,F,,,,,s
-459,(Common),Bill fees,BillFees_Date,,,Date of the fee item as per invoice item,date,F,,,,,d
-458,(Common),Bill fees,BillFees_Description,,,Description of the fee item as per invoice item,description,F,,,,,s
-520,(Common),Bill fees,BillFees_GstCode,,,Gst code of the fee item as per invoice item,gst_code,F,,,,,s
-521,(Common),Bill fees,BillFees_GstPercent,,,Gst percent of the fee item as per invoice item,gst_percentage,F,,,,,n
-462,(Common),Bill fees,BillFees_HoursAndMinutes,,,Quantity expressed as hours:minutes of the invoice item,hours_and_minutes,F,,,,,s
-461,(Common),Bill fees,BillFees_HoursAsDecimal,,,Quantity as a decimal of the invoice item (ie Hours),hours_as_decimal,F,,,,,n
-460,(Common),Bill fees,BillFees_Rate,,,Unit price of the fee item as per invoice item,rate,F,,,,,n
-787,(Common),Bill fees,BillFees_RateLabel,,,Rate label of the fee item as per invoice item,rate_label,F,,,,,s
-512,(Common),Bill fees,BillFees_TimekeeperInitials,,,Timekeeper initials,initials,F,,,,,s
-457,(Common),Bill fees,BillFees_Title,,,Title of the fee item as per invoice item,title,F,,,,,s
-463,(Common),Bill fees,BillFees_TotalPriceExcludingTax,,,The total price (excl tax) of the invoice item,total_price_excluding_tax,F,,,,,c
-525,(Common),Bill fees,BillFees_UtbmsActivityCode,,,UTBMS Activity Code,utbms_activity_code,F,,,,,s
-528,(Common),Bill fees,BillFees_UtbmsExpenseCode,,,UTBMS Expense Code,utbms_expense_code,F,,,,,s
-526,(Common),Bill fees,BillFees_UtbmsTaskCode,,,UTBMS Task Code,utbms_task_code,F,,,,,s
-527,(Common),Bill fees,BillFees_UtbmsTimekeeperCode,,,UTBMS Timekeeper Code,utbms_timekeeper_code,F,,,,,s
-475,(Common),Bill payments,BillStatementPayments_Amount,,,Payment/Adjustment Amount,amount,F,,,,,c
-472,(Common),Bill payments,BillStatementPayments_Date,,,Date of the payment/adjustment,date,F,,,,,d
-474,(Common),Bill payments,BillStatementPayments_Description,,,Description of the payment/adjustment,description,F,,,,,s
-473,(Common),Bill payments,BillStatementPayments_PaymentReference,,,Payment reference,payment_reference,F,,,,,s
-519,(Common),Bill payments,BillStatementPayments_PaymentReferenceLong,,,Longer version of the payment reference (no abbreviations used),payment_reference_long,F,,,,,s
-470,(Common),Bill retainers,BillRetainer_Action_ID,,,Action Id of the retainer,action_id,F,,,,,n
-471,(Common),Bill retainers,BillRetainer_Action_Name,,,Action Name of the retainer,action_name,F,,,,,s
-469,(Common),Bill retainers,BillRetainer_AmountDue,,,The amount due on this invoice (as a replenishment) for this retainer,amount_due,F,,,,,c
-468,(Common),Bill retainers,BillRetainer_CurrentBalance,,,The current balance of the retainer (after any payments),current_balance,F,,,,,c
-466,(Common),Bill retainers,BillRetainer_Description,,,Name/description of the Retainer (General or Trust),description,F,,,,,s
-467,(Common),Bill retainers,BillRetainer_MinimumBalance,,,The minimum balance for this retainer (if set),minimum_balance,F,,,,,c
-479,(Common),Bill trust statement,BillStatementTrust_Amount,,,Amount of the entry,amount,F,,,,,c
-480,(Common),Bill trust statement,BillStatementTrust_Balance,,,Running balance,balance,F,,,,,c
-476,(Common),Bill trust statement,BillStatementTrust_Date,,,Date of the entry,date,F,,,,,d
-478,(Common),Bill trust statement,BillStatementTrust_Description,,,Description of the entry,description,F,,,,,s
-477,(Common),Bill trust statement,BillStatementTrust_PaymentReference,,,Entry payment reference,payment_reference,F,,,,,s
-847,(Common),Calculated Field,PropertyFullAddress,,,Full property address,None,F,,,,,s
-431,(Common),Check,Check_Action_ID,,,Action ID associated with a Check (where applicable),action_id,F,,,,,n
-176,(Common),Check,Check_Amount,,,Check Amount (Currency),amount,F,,,,,c
-177,(Common),Check,Check_AmountText,,,Check Amount (English Words),amount_text,F,,,,,s
-175,(Common),Check,Check_Date,,,Check Date,date,F,,,,,d
-180,(Common),Check,Check_Memo,,,Check Memo,memo,F,,,,,s
-174,(Common),Check,Check_Number,,,Check Number,check_number,F,,,,,n
-178,(Common),Check,Check_Payee,,,Check Payee/Pay TO Text,pay_to,F,,,,,s
-590,(Common),Check,Check_SP_OurReferenceList,,,List of Sale/Purchase Our Reference associated with check,check_our_reference,T,,,,,s
-589,(Common),Check,Check_SP_TheirReferenceList,,,List of Sale/Purchase Their Reference associated with check,check_their_reference,T,,,,,s
-179,(Common),Check,Check_Void,,,Check Void Text (VOID or empty if not void),void_text,F,,,,,s
-244,(Common),Deposit slip,DS_AccountName,,,Deposit Slip: Chart-of-Accounts Account Name,ac_account_name,F,,,,,s
-243,(Common),Deposit slip,DS_AccountNumber,,,Deposit Slip: Chart-of-Accounts Account Number,ac_account_number,F,,,,,n
-241,(Common),Deposit slip,DS_BankAccountName,,,Deposit Slip: Bank Account Name,bank_account_name,F,,,,,s
-242,(Common),Deposit slip,DS_BankAccountNumber,,,Deposit Slip: Bank Account Number,bank_account_number,F,,,,,n
-246,(Common),Deposit slip,DS_BankBranchName,,,Deposit Slip: Bank Branch Name,branch_name,F,,,,,s
-245,(Common),Deposit slip,DS_BankName,,,Deposit Slip: Bank Name,bank_name,F,,,,,s
-247,(Common),Deposit slip,DS_DepositDate,,,Deposit Slip: Deposit Date,deposit_date,F,,,,,d
-240,(Common),Deposit slip,DS_DepositNumber,,,Deposit Slip: Deposit Number,deposit_number,F,,,,,n
-254,(Common),Deposit slip,DS_Holder,,,Deposit Slip: Holder,holder,F,,,,,s
-250,(Common),Deposit slip,DS_TotalCashAmount,,,Deposit Slip: Total Cash (Notes+Coins) Amount (Currency),total_cash_amount,F,,,,,c
-251,(Common),Deposit slip,DS_TotalCheckAmount,,,Deposit Slip: Total Check Amount (Currency),total_check_amount,F,,,,,c
-249,(Common),Deposit slip,DS_TotalCoinsAmount,,,Deposit Slip: Total Coins Amount (Currency),total_coins_amount,F,,,,,c
-252,(Common),Deposit slip,DS_TotalCreditCardAmount,,,Deposit Slip: Total Credit Card Amount (Currency),total_credit_card_amount,F,,,,,c
-253,(Common),Deposit slip,DS_TotalDepositAmount,,,Deposit Slip: Total Deposit Amount (Cash+Check+CreditCard) (Currency),total_deposit_amount,F,,,,,c
-248,(Common),Deposit slip,DS_TotalNotesAmount,,,Deposit Slip: Total Notes Amount (Currency),total_notes_amount,F,,,,,c
-255,(Common),Deposit slip,DS_Transit,,,Deposit Slip: Transit,transit,F,,,,,s
-267,(Common),Deposit slip items,DSI_ActionId,,,Deposit Slip Item: Action ID,action_id,F,,,,,n
-259,(Common),Deposit slip items,DSI_Amount,,,Deposit Slip Item: Total Deposit Amount,amount,F,,,,,c
-261,(Common),Deposit slip items,DSI_AmountCash,,,Deposit Slip Item: Cash Deposit Amount,amount_cash,F,,,,,c
-260,(Common),Deposit slip items,DSI_AmountCheck,,,Deposit Slip Item: Check Deposit Amount,amount_check,F,,,,,c
-262,(Common),Deposit slip items,DSI_AmountCreditCard,,,Deposit Slip Item: Credit Card Deposit Amount,amount_credit_card,F,,,,,c
-263,(Common),Deposit slip items,DSI_CheckDate,,,Deposit Slip Item: Check Date (if available),check_date,F,,,,,d
-264,(Common),Deposit slip items,DSI_CheckNumber,,,Deposit Slip Item: Check Number (if available),check_number,F,,,,,n
-265,(Common),Deposit slip items,DSI_Memo,,,Deposit Slip Item: Memo,memo,F,,,,,s
-319,(Common),Deposit slip items,DSI_PayeeBankBranch,,,Deposit Slip Item: PAyee Bank Branch (if available),payee_bank_branch,F,,,,,s
-258,(Common),Deposit slip items,DSI_PayeeBankName,,,Deposit Slip Item: Payee Bank Name (if available),payee_bank_name,F,,,,,s
-257,(Common),Deposit slip items,DSI_PayeeName,,,Deposit Slip Item: Payee Name,payee_name,F,,,,,s
-266,(Common),Deposit slip items,DSI_PaymentMethod,,,Deposit Slip Item: Payment Method,payment_method,F,,,,,s
-256,(Common),Deposit slip items,DSI_TransactionId,,,Deposit Slip Item: GL Transaction ID,transaction_id,F,,,,,s
-82,(Common),Division/Company Data,DivisionLogo,,,RTF Logo of the Division,logo_image_rtf,F,,,,,s
-335,(Common),Document Data,Document_CreatedDate,,,Document Created Date (date created/uploaded in Actionstep),created_date,F,,,,,d
-333,(Common),Document Data,Document_Date,,,Document Date (a user defined date),document_date,F,,,,,d
-332,(Common),Document Data,Document_Filename,,,Document File Name (with file extension),file_name,F,,,,,s
-334,(Common),Document Data,Document_LastModifiedDate,,,Document Last Modified Date (in Actionstep),last_modified_date,F,,,,,d
-331,(Common),Document Data,Document_Name,,,Document Name (with no file extension),document_name,F,,,,,s
-55,(Common),Grammar,pronoun1,,,I/We/You/He/She/It/They depending on person (1st/2nd/3rd).,none,F,,,,,s
-56,(Common),Grammar,pronoun2,,,Me/Us/You/Him/Her/Them/It depending on person (1st/2nd/3rd).,none,F,,,,,s
-57,(Common),Grammar,pronoun3,,,My/Our/Your/His/Her/Their/Its depending on person (1st/2nd/3rd).,none,F,,,,,s
-58,(Common),Grammar,pronoun4,,,Mine/Ours/Yours/His/Hers/Theirs/Its depending on person (1st/2nd/3rd).,none,F,,,,,s
-52,(Common),Grammar,s_p,,,Singular or Plural text substitution,none,F,,,,,s
-346,(Common),Misc/Other,document_id,,,Document ID (where applicable) is the unique identifier for a document stored inside an action,log_id,F,",",and,,,n
-53,(Common),Misc/Other,i_c,,,Individual or Company text substitution.,none,F,,,,,s
-54,(Common),Misc/Other,m_f,,,Male or Female text substitution.,none,F,,,,,s
-171,(Common),Participant Data,AdditionalEmail,,,Additional Email Address,additional_email,F,,,,,s
-37,(Common),Participant Data,AddressLine,,,Address_line1 + Address_line2,"address_line_1, address_line_2",F,,,_\par_,_\par_,s
-38,(Common),Participant Data,AddressLine1,,,Physical Address_line1,address_line_1,F,,,,,s
-39,(Common),Participant Data,AddressLine2,,,Physical Address_line2,address_line_2,F,,,,,s
-66,(Common),Participant Data,AddressLineComma,,,"Address_line1, Address_line2","address_line_1, address_line_2",F,,,",",",",s
-31,(Common),Participant Data,age_in_years,,,Age in years,age_in_years,F,,,,,n
-318,(Common),Participant Data,CitizenOfCountry,,,Citizenship,citizen_of_country,F,,,,,s
-42,(Common),Participant Data,City,,,City,city,F,,,,,s
-47,(Common),Participant Data,CompanyName,,,Company Name,company_name,F,,,,,s
-337,(Common),Participant Data,CompanyNameList,,,"List of Company Names e.g. Name1, Name2 and Name3",company_name,T,",",and,,,s
-43,(Common),Participant Data,Country,,,Country of Physical Address,country,F,,,,,s
-44,(Common),Participant Data,CountryIfForeign,,,Country of Physical Address if Foreign,country_if_foreign,F,,,,,s
-316,(Common),Participant Data,County,,,Address County,county,F,,,,,s
-312,(Common),Participant Data,date_of_death,,,Date of Death,date_of_death,F,,,,,d
-30,(Common),Participant Data,dob,,,Date of Birth,date_of_birth,F,,,,,d
-32,(Common),Participant Data,E_Mail,,,E-Mail Address,e_mail,F,,,,,s
-28,(Common),Participant Data,Fax,,,Fax,fax,F,,,,,p
-6,(Common),Participant Data,FirstInitial,,,Initial of First Name e.g John Henry Smith would be J,first_initial,F,,,,,s
-13,(Common),Participant Data,FirstInitialLastName,,,First Initial followed by last name e.g John Henry Smith would be J Smith,"first_initial, last_or_company_name",F,,,_,_,s
-14,(Common),Participant Data,FirstInitialLastNameList,,,First Initial followed by last name e.g John Henry Smith would be J Smith,"first_initial, last_or_company_name",T,",",and,_,_,s
-425,(Common),Participant Data,FirstInitialLastNameWithSalutation,,,FirstInitial with LastName and Salutation prefix (Mr/Mrs etc),first_initial_last_name_with_salutation,F,,,,,s
-426,(Common),Participant Data,FirstInitialLastNameWithSalutationList,,,FirstInitial with LastName and Salutation prefix (Mr/Mrs etc),first_initial_last_name_with_salutation,T,",",and,,,s
-7,(Common),Participant Data,FirstInitialList,,,List of Initials of First Names for this participant type,first_initial,T,",",and,,,s
-4,(Common),Participant Data,FirstName,,,First Name,first_name,F,,,,,s
-338,(Common),Participant Data,FirstNameLastName,,,First Name + Last Name (or Company name if a company),first_name_last_name,F,",",and,,,s
-339,(Common),Participant Data,FirstNameLastNameList,,,List of First Name + Last Name (or Company name if a company),first_name_last_name,T,",",and,,,s
-5,(Common),Participant Data,FirstNameList,,,List of First Name,first_name,T,",",and,,,s
-16,(Common),Participant Data,FirstNames,,,"First Name, Middle Name","first_name, middle_name",F,,,,,s
-1,(Common),Participant Data,FullName,,,"First, Middle, Last Names",legal_name,F,,,,,s
-420,(Common),Participant Data,FullNameInitialsWithSalutation,,,Salutation FirstName {Middle Initial(s)} Last Name,legal_name_initials_with_salutation,F,,,,,s
-421,(Common),Participant Data,FullNameInitialsWithSalutationList,,,List of Salutation FirstName {Middle Initial(s)} Last Name,legal_name_initials_with_salutation,T,",",and,,,s
-2,(Common),Participant Data,FullNameList,,,"List of Full Names e.g. Name1, Name2, and Name3",legal_name,T,",",and,,,s
-416,(Common),Participant Data,FullNameWithSalutation,,,Same as FullName but with the Salutation prefix (Mr/Mrs etc),legal_name_with_salutation,F,,,,,s
-417,(Common),Participant Data,FullNameWithSalutationList,,,Same as FullName but with the Salutation prefix (Mr/Mrs etc),legal_name_with_salutation,T,",",and,,,s
-29,(Common),Participant Data,Gender,,,Gender,gender,F,,,,,s
-9,(Common),Participant Data,Initials,,,Initials of First and Middle Names e.g John Henry Smith would be J H,"first_initial, middle_initial",F,,,_,_,s
-239,(Common),Participant Data,InitialsAll,,,"All initials, with spaces, including last name. (Use |strip_spaces=T to remove spaces). Example John Henry Robert Smith would be J H R S (or JHRS with spaces removed)","first_initial, middle_initial, last_initial",F,,,,,s
-11,(Common),Participant Data,InitialsLastName,,,Initials followed by last name e.g John Henry Smith would be J H Smith,"first_initial, middle_initial, last_or_company_name",F,,,_,_,s
-12,(Common),Participant Data,InitialsLastNameList,,,Initials followed by last name e.g John Henry Smith would be J H Smith,"first_initial, middle_initial, last_or_company_name",T,",",and,_,_,s
-10,(Common),Participant Data,InitialsList,,,List Initials of all participants of this type,"first_initial, middle_initial",T,",",and,_,_,s
-33,(Common),Participant Data,IRD_Number,,,IRD Number,tax_number,F,,,,,n
-524,(Common),Participant Data,LastInitial,,,Initial of Last Name e.g John Henry Smith would be S,last_initial,F,,,,,s
-15,(Common),Participant Data,LastName,,,Last Name,last_name,F,,,,,s
-270,(Common),Participant Data,LastNameList,,,List of Last Name,last_name,T,",",and,,,s
-418,(Common),Participant Data,LastNameWithSalutation,,,Same as LastName but with the Salutation prefix (Mr/Mrs etc),last_name_with_salutation,F,,,,,s
-419,(Common),Participant Data,LastNameWithSalutationList,,,Same as LastName but with the Salutation prefix (Mr/Mrs etc),last_name_with_salutation,T,",",and,,,s
-35,(Common),Participant Data,MailingAddressLine,,,MailingAddress_line1 + MailingAddress_line2,"mailing_address_line_1, mailing_address_line_2",F,,,_\par_,_\par_,s
-40,(Common),Participant Data,MailingAddressLine1,,,Mailing Address_line1,mailing_address_line_1,F,,,,,s
-41,(Common),Participant Data,MailingAddressLine2,,,Mailing Address_line2,mailing_address_line_2,F,,,,,s
-67,(Common),Participant Data,MailingAddressLineComma,,,"Mailing_Address_line1, Mailing_Address_line2","mailing_address_line_1, mailing_address_line_2",F,,,",",",",s
-36,(Common),Participant Data,MailingCity,,,Mailing City,mailing_city,F,,,,,s
-45,(Common),Participant Data,MailingCountry,,,Country of Mailing Address,mailing_country,F,,,,,s
-46,(Common),Participant Data,MailingCountryIfForeign,,,Country of Mailing Address if Foreign,mailing_country_if_foreign,F,,,,,s
-317,(Common),Participant Data,MailingCounty,,,Mailing Address County,mailing_county,F,,,,,s
-62,(Common),Participant Data,MailingPostCode,,,Mailing Zip/Postal Code,mailing_post_code,F,,,,,s
-61,(Common),Participant Data,MailingStateProvince,,,Mailing State/Province,mailing_state_province,F,,,,,s
-273,(Common),Participant Data,MaritalStatus,,,"Marital Status (Married, Single etc)",marital_status,F,,,,,s
-274,(Common),Participant Data,MaritalStatusList,,,List of Marital Status,marital_status,T,",",and,,,s
-8,(Common),Participant Data,MiddleInitial,,,Initial of Middle Name e.g John Henry Smith would be H,middle_initial,F,,,,,s
-271,(Common),Participant Data,MiddleName,,,Middle Name(s),middle_name,F,,,,,s
-272,(Common),Participant Data,MiddleNameList,,,List of Middle Name(s),middle_name,T,",",and,,,s
-34,(Common),Participant Data,Occupation,,,Occupation,occupation,F,,,,,s
-518,(Common),Participant Data,ParticipantHasSignature,,,Returns T if there is a signature and F if not (used for conditional statement to hide/show a signature),participanthassignature,F,,,,,s
-209,(Common),Participant Data,ParticipantID,,,Participant ID,participant_id,F,,,,,s
-268,(Common),Participant Data,ParticipantImage,,,The user uploaded image for the participant,participantimage,F,,,,,s
-517,(Common),Participant Data,ParticipantSignature,,,The signature assigned to a participant,participantsignature,F,,,,,s
-277,(Common),Participant Data,ParticipantTypeName,,,Participant Type Name,participant_type_name,F,,,,,s
-20,(Common),Participant Data,Phone_Assistant,,,Phone_Assistant,phone_assistant,F,,,,,p
-18,(Common),Participant Data,Phone_Business,,,Phone Business,phone_business,F,,,,,p
-19,(Common),Participant Data,Phone_Business_2,,,Phone_Business_2,phone_business_2,F,,,,,p
-25,(Common),Participant Data,Phone_Direct_Dial,,,Phone Direct Dial,phone_direct_dial,F,,,,,p
-21,(Common),Participant Data,Phone_Home,,,Phone_Home,phone_home,F,,,,,p
-22,(Common),Participant Data,Phone_Home_2,,,Phone_Home_2,phone_home_2,F,,,,,p
-26,(Common),Participant Data,Phone_Home_Fax,,,Phone Home Fax,phone_home_fax,F,,,,,p
-23,(Common),Participant Data,Phone_Mobile,,,Phone_Mobile,phone_mobile,F,,,,,p
-24,(Common),Participant Data,Phone_Mobile_2,,,Phone_Mobile_2,phone_mobile_2,F,,,,,p
-27,(Common),Participant Data,Phone_Other,,,Phone_Other,phone_other,F,,,,,p
-17,(Common),Participant Data,Phone1,,,Phone1,phone1,F,,,,,p
-279,(Common),Participant Data,Phone2,,,Phone2,phone2,F,,,,,p
-280,(Common),Participant Data,Phone3,,,Phone3,phone3,F,,,,,p
-281,(Common),Participant Data,Phone4,,,Phone4,phone4,F,,,,,p
-60,(Common),Participant Data,PostCode,,,Physical Zip/Postal Code,post_code,F,,,,,s
-64,(Common),Participant Data,PreferredName,,,Preferred Name,preferred_name,F,,,,,s
-340,(Common),Participant Data,PreferredNameLastName,,,Preferred Name (or First Name if not set) + Last Name (or Company name if a company),preferred_name_last_name,F,",",and,,,s
-341,(Common),Participant Data,PreferredNameLastNameList,,,List of Preferred Name (or First Name if not set) + Last Name (or Company name if a company),preferred_name_last_name,T,",",and,,,s
-65,(Common),Participant Data,PreferredNameList,,,List of Preferred Name,preferred_name,T,",",and,,,s
-3,(Common),Participant Data,Salutation,,,"Mr, Mrs. etc.",salutation,F,,,,,s
-228,(Common),Participant Data,ShippingAddressLine,,,ShippingAddressLine1 + ShippingAddressLine2,"shipping_address_line_1, shipping_address_line_2",F,,,_\par_,_\par_,s
-230,(Common),Participant Data,ShippingAddressLine1,,,Shipping Address Line 1,shipping_address_line_1,F,,,,,s
-231,(Common),Participant Data,ShippingAddressLine2,,,Shipping Address Line 2,shipping_address_line_2,F,,,,,s
-236,(Common),Participant Data,ShippingAddressLineComma,,,"ShippingAddressLine1, ShippingAddressLine2","shipping_address_line_1, shipping_address_line_2",F,,,",",",",s
-229,(Common),Participant Data,ShippingCity,,,Shipping City,shipping_city,F,,,,,s
-232,(Common),Participant Data,ShippingCountry,,,Country of Shipping Address,shipping_country,F,,,,,s
-233,(Common),Participant Data,ShippingCountryIfForeign,,,Country of Shipping Address if Foreign,shipping_country_if_foreign,F,,,,,s
-235,(Common),Participant Data,ShippingPostCode,,,Shipping Zip/Postal Code,shipping_post_code,F,,,,,s
-234,(Common),Participant Data,ShippingStateProvince,,,Shipping Sate/Province,shipping_state_province,F,,,,,s
-59,(Common),Participant Data,StateProvince,,,Physical State/Province,state_province,F,,,,,s
-330,(Common),Participant Data,Suffix,,,"Name Suffix (jr, snr etc)",suffix,F,,,,,s
-275,(Common),Participant Data,TaxNumber,,,"Tax Number (aka Social Security Number, IRD Number etc)",tax_number,F,,,,,n
-276,(Common),Participant Data,TaxNumberList,,,List of Tax Number(s),tax_number,T,",",and,,,n
-591,(Common),Participant Data,TextSMS,,,Text or SMS number,text_sms,F,,,,,p
-63,(Common),Participant Data,Website,,,Website Address,website,F,,,,,s
-445,(Common),Receipt Actions,ReceiptAction_ActionAmount,,,Receipt Action - Action Amount,action_amount,F,,,,,c
-442,(Common),Receipt Actions,ReceiptAction_ActionID,,,Receipt Action - Action ID,action_id,F,,,,,n
-444,(Common),Receipt Actions,ReceiptAction_ActionName,,,Receipt Action - Action Name,action_name,F,,,,,s
-443,(Common),Receipt Actions,ReceiptAction_ClientNames,,,Receipt Action - Client Name(s),client_names,F,,,,,s
-446,(Common),Receipt Data,Receipt_AccountName,,,Receipt - Account Name,account_name,F,,,,,s
-350,(Common),Receipt Data,Receipt_ActionSummary,,,Summary of action information associated with the receipt,action_summary,F,,,,,s
-195,(Common),Receipt Data,Receipt_Amount,,,Receipt - Amount (Currency),amount,F,,,,,c
-196,(Common),Receipt Data,Receipt_AmountText,,,Receipt - Amount (Text),amount_text,F,,,,,s
-198,(Common),Receipt Data,Receipt_Beneficiary,,,Receipt - Beneficiary,beneficiary,F,,,,,s
-422,(Common),Receipt Data,Receipt_DatePaymentReceived,,,"The date the payment was received (only available in some regions, otherwise defaults to the date the record was entered into actionstep)",date_payment_received,F,,,,,d
-199,(Common),Receipt Data,Receipt_Description,,,Receipt - Description/Memo,description,F,,,,,s
-189,(Common),Receipt Data,Receipt_ID,,,Receipt - Receipt ID,receipt_id,F,,,,,n
-194,(Common),Receipt Data,Receipt_PaymentDate,,,"This is the date on the payment associated to the Receipt, for example the date of a Cheque (Check)",payment_date,F,,,,,d
-200,(Common),Receipt Data,Receipt_PaymentMethod,,,Receipt - Payment Method,payment_method,F,,,,,s
-447,(Common),Receipt Data,Receipt_PaymentReference,,,Receipt - Payment Reference,payment_reference,F,,,,,s
-193,(Common),Receipt Data,Receipt_ReceiptDate,,,This is the physical date/time that the user issued a receipt for payment,receipt_date,F,,,,,d
-278,(Common),Receipt Data,Receipt_ReceiptEntryDate,,,This is the physical date/time that the receipt was created in Actionstep,receipt_entry_date,F,,,,,d
-192,(Common),Receipt Data,Receipt_ReceiptIssuedBy,,,Receipt - Issued By Name,receipt_issued_by,F,,,,,s
-191,(Common),Receipt Data,Receipt_ReceiptNumber,,,Receipt - Receipt Number,receipt_number,F,,,,,n
-197,(Common),Receipt Data,Receipt_ReceivedFrom,,,Receipt - Received From Name,received_from,F,,,,,s
-396,(Common),Receipt Data,Receipt_ReceivedFromAddressMultiLine,,,Received from address (trust receipts only),received_from_address_multi,F,,,,,s
-395,(Common),Receipt Data,Receipt_ReceivedFromAddressOneLine,,,Received from address (trust receipts only),received_from_address_single,F,,,,,s
-415,(Common),Receipt Data,Receipt_RegulatoryText,,,Text required by compliance plugin regulations,regulatory_text,F,,,,,s
-516,(Common),Receipt Data,Receipt_Title,,,Title for receipt templates,title,F,,,,,s
-329,(Common),Receipt Data,Receipt_TransactionDate,,,The General Ledger transaction date (which should also be the bank deposit date) for the GL Transaction assocated to the receipt,transaction_date,F,,,,,d
-190,(Common),Receipt Data,Receipt_TransactionID,,,Receipt - GL Transaction ID,transaction_id,F,,,,,s
-432,(Common),Receipt Data,Receipt_TrustAccountAlias,,,Trust/Client/Controlled Money Account,trust_account_alias,F,,,,,s
-433,(Common),Receipt Data,Receipt_TrustAccountNumber,,,The bank account number,trust_account_number,F,,,,,n
-169,(Common),Sale/Purchase Data,SP_ActionId,,,Sale/Purchase Action Id,action_id,F,,,,,n
-188,(Common),Sale/Purchase Data,SP_AdditionalNotes,,,Sale/Purchase Additional Notes,additional_notes,F,,,,,s
-172,(Common),Sale/Purchase Data,SP_AmountPaid,,,Sale/Purchase Total Amount Paid,amount_paid,F,,,,,c
-150,(Common),Sale/Purchase Data,SP_AmountsIncludeTax,,,Sale/Purchase Amounts Include Tax,amounts_include_tax,F,,,,,c
-448,(Common),Sale/Purchase Data,SP_AnyPaymentTotalAppliedOnInvoiceCreatedDate,,,Any payments,any_payment_total_applied_on_invoice_created_date,F,,,,,c
-173,(Common),Sale/Purchase Data,SP_BalanceDue,,,Sale/Purchase Total Balance Due,balance_due,F,,,,,c
-138,(Common),Sale/Purchase Data,SP_BankAccountNumber,,,Sale/Purchase Bank Account Number,bank_account_number,F,,,,,n
-139,(Common),Sale/Purchase Data,SP_BankName,,,Sale/Purchase Bank Name,bank_name,F,,,,,s
-152,(Common),Sale/Purchase Data,SP_BillingAddress,,,Sale/Purchase Billing Address,billing_address,F,,,,,s
-203,(Common),Sale/Purchase Data,SP_BillingAddressNoCountry,,,"Sale/Purchase Billing Address, where the Country is removed for the local country",billing_address_no_country,F,,,,,s
-336,(Common),Sale/Purchase Data,SP_BillPayInvoiceLink,,,Bill-Pay Link to pay the invoice,bill_pay_invoice_link,F,,,,,s
-157,(Common),Sale/Purchase Data,SP_CreatedBy,,,Sale/Purchase Created By,created_by,F,,,,,s
-158,(Common),Sale/Purchase Data,SP_CreatedDate,,,Sale/Purchase Created Date,created_date,F,,,,,d
-141,(Common),Sale/Purchase Data,SP_CurrencyCode,,,Sale/Purchase Currency Code,currency_code,F,,,,,s
-170,(Common),Sale/Purchase Data,SP_DebtCollectionActionId,,,Sale/Purchase Debt Collection Action Id,debt_collection_action_id,F,,,,,n
-168,(Common),Sale/Purchase Data,SP_Description,,,Sale/Purchase Description,description,F,,,,,s
-227,(Common),Sale/Purchase Data,SP_DistinctActionIdList,,,Sale/Purchase - Distinct list of Action ID's used in the sale/purchase record,distinct_action_id_list,F,,,,,n
-151,(Common),Sale/Purchase Data,SP_ExchangeRate,,,Sale/Purchase Exchange Rate,exchange_rate,F,,,,,n
-155,(Common),Sale/Purchase Data,SP_ExpectedShippingDate,,,Sale/Purchase Expected Shipping Date,expected_shipping_date,F,,,,,d
-488,(Common),Sale/Purchase Data,SP_ExpensesTotalExcludingTax,,,,expenses_total_excluding_tax,F,,,,,c
-482,(Common),Sale/Purchase Data,SP_FeeDateSummary,,,A list of dates for the fees,fee_date_summary,F,,,,,d
-510,(Common),Sale/Purchase Data,SP_FeeDiscountAmount,,,Discount on fees amount,discount_amount,F,,,,,c
-509,(Common),Sale/Purchase Data,SP_FeeDiscountDescription,,,Discount on fees description as per system settings,discount_description,F,,,,,c
-481,(Common),Sale/Purchase Data,SP_FeeTitlesCombined,,,"All ""Fee"" line items ""line titles"" group together as a long string of sentences in their date order to be used as a description field.",fee_titles_combined,F,,,,,s
-483,(Common),Sale/Purchase Data,SP_FeeTotalExcludingTax,,,,fee_total_excluding_tax,F,,,,,c
-511,(Common),Sale/Purchase Data,SP_FeeTotalExcludingTaxAfterDiscount,,,,fee_total_excluding_tax_after_discount,F,,,,,c
-487,(Common),Sale/Purchase Data,SP_FeeTotalHoursAndMinutes,,,Sum of the quantity for Fee entries as a hours:minutes,fee_total_hours_and_minutes,F,,,,,s
-486,(Common),Sale/Purchase Data,SP_FeeTotalHoursAsDecimal,,,Sum of the quantity for Fee entries as a decimal,fee_total_hours_as_decimal,F,,,,,n
-484,(Common),Sale/Purchase Data,SP_HasExpenseEntries,,,Boolean to allow hide/show of expenses sections,has_expense_entries,F,,,,,b
-485,(Common),Sale/Purchase Data,SP_HasFeeEntries,,,Boolean to allow hide/show of fee sections,has_fee_entries,F,,,,,b
-493,(Common),Sale/Purchase Data,SP_HasOtherPaymentAppliedOnInvoiceCreatedDate,,,"Flag if there is a Non-Trust, Non-Retainer Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date)",has_other_payment_applied_on_invoice_created_date,F,,,,,b
-491,(Common),Sale/Purchase Data,SP_HasRetainerPaymentAppliedOnInvoiceCreatedDate,,,Flag if there is a Retainer Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date),has_retainer_payment_applied_on_invoice_created_date,F,,,,,b
-492,(Common),Sale/Purchase Data,SP_HasTrustPaymentAppliedOnInvoiceCreatedDate,,,Flag if there is a Trust Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date),has_trust_payment_applied_on_invoice_created_date,F,,,,,b
-513,(Common),Sale/Purchase Data,SP_HideFeeAmounts,,,"Hide fee amounts, used for bills with fee adjustments",hide_fee_amounts,F,,,,,b
-165,(Common),Sale/Purchase Data,SP_LastSendDate,,,Sale/Purchase Last Send Date,last_send_date,F,,,,,d
-166,(Common),Sale/Purchase Data,SP_LastSentBy,,,Sale/Purchase Last Sent By,last_sent_by,F,,,,,s
-164,(Common),Sale/Purchase Data,SP_LastSentMethod,,,Sale/Purchase Last Sent Method,last_sent_method,F,,,,,s
-159,(Common),Sale/Purchase Data,SP_LastUpdatedBy,,,Sale/Purchase Last Updated By,last_updated_by,F,,,,,s
-160,(Common),Sale/Purchase Data,SP_LastUpdatedDate,,,Sale/Purchase Last Updated Date,last_updated_date,F,,,,,d
-497,(Common),Sale/Purchase Data,SP_NetOwingOnInvoiceCreatedDate,,,Total Inclusive minus any payments on the invoice created date,new_owing_on_invoice_created_date,F,,,,,c
-496,(Common),Sale/Purchase Data,SP_OtherPaymentTotalAppliedOnInvoiceCreatedDate,,,Total amount of Non-Retainer + Non-Trust Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),other_payment_total_applied_on_invoice_created_date,F,,,,,c
-142,(Common),Sale/Purchase Data,SP_OurReference,,,Sale/Purchase Our Reference,our_reference,F,,,,,s
-143,(Common),Sale/Purchase Data,SP_OurReferenceAlias,,,Sale/Purchase Our Reference Alias,our_reference_alias,F,,,,,s
-269,(Common),Sale/Purchase Data,SP_OurReferenceBpay,,,Sale/Purchase BPAY Calculation for Our Reference,our_reference_bpay,F,,,,,n
-149,(Common),Sale/Purchase Data,SP_PaymentDueDate,,,Sale/Purchase Payment Due Date,payment_due_date,F,,,,,d
-148,(Common),Sale/Purchase Data,SP_PaymentTerms,,,Sale/Purchase Payment Terms,payment_terms,F,,,,,s
-508,(Common),Sale/Purchase Data,SP_QuotedAmount,,,Quoted amount,quoted_amount,F,,,,,c
-147,(Common),Sale/Purchase Data,SP_QuoteValidUntilDate,,,Sale/Purchase Quote Valid Until Date,quote_valid_until_date,F,,,,,d
-494,(Common),Sale/Purchase Data,SP_RetainerTotalAppliedOnInvoiceCreatedDate,,,Total amount of Retainer Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),retainer_total_applied_on_invoice_created_date,F,,,,,c
-146,(Common),Sale/Purchase Data,SP_SalePurchaseDate,,,Sale/Purchase Sale Purchase Date,sale_purchase_date,F,,,,,d
-133,(Common),Sale/Purchase Data,SP_SalePurchaseId,,,Sale/Purchase Sale Purchase Id,sale_purchase_id,F,,,,,n
-156,(Common),Sale/Purchase Data,SP_SalePurchaseStatus,,,Sale/Purchase Sale Purchase Status,sale_purchase_status,F,,,,,s
-136,(Common),Sale/Purchase Data,SP_SalePurchaseType,,,Sale/Purchase Sale Purchase Type,sale_purchase_type,F,,,,,s
-137,(Common),Sale/Purchase Data,SP_SalePurchaseTypeTitle,,,Sale/Purchase Sale Purchase Type Title,sale_purchase_type_title,F,,,,,s
-140,(Common),Sale/Purchase Data,SP_SalesPersonName,,,Sale/Purchase Sales Person Name,sales_person_name,F,,,,,s
-515,(Common),Sale/Purchase Data,SP_ServicesDateMax,,,Maximum date for all time entries + expenses on the invoice. When none exist it will fall back to the Invoice date,services_date_to,F,,,,,d
-514,(Common),Sale/Purchase Data,SP_ServicesDateMin,,,Minimum date for all time entries + expenses on the invoice. When none exist it will fall back to the Invoice date,services_date_from,F,,,,,d
-153,(Common),Sale/Purchase Data,SP_ShippingAddress,,,Sale/Purchase Shipping Address,shipping_address,F,,,,,s
-204,(Common),Sale/Purchase Data,SP_ShippingAddressNoCountry,,,"Sale/Purchase Shipping Address, where the Country is removed for the local country",shipping_address_no_country,F,,,,,s
-154,(Common),Sale/Purchase Data,SP_ShippingDetails,,,Sale/Purchase Shipping Details,shipping_details,F,,,,,s
-788,(Common),Sale/Purchase Data,SP_ShowBillPaySection,,,Boolean flag to hide/show the BillPay section (if available),show_bill_pay_section,F,,,,,b
-506,(Common),Sale/Purchase Data,SP_StatementAmountDueExcludingRetainer,,,Subtotal of Bill Statement Info (Excluding Retainer replenishment amount),statement_amount_due_excluding_retainer,F,,,,,c
-507,(Common),Sale/Purchase Data,SP_StatementAmountDueIncludingRetainer,,,The amount due from the Statement PLUS the retainer replenishment amount,statement_amount_due_including_retainer,F,,,,,c
-503,(Common),Sale/Purchase Data,SP_StatementCurrentExpensesExcludingTax,,,This Invoice/Current Expenses (excluding Tax),statement_curent_expenses_excluding_tax,F,,,,,c
-502,(Common),Sale/Purchase Data,SP_StatementCurrentExpensesIncludingTax,,,This Invoice/Current Expenses (including Tax),statement_current_expenses_including_tax,F,,,,,c
-501,(Common),Sale/Purchase Data,SP_StatementCurrentFeesExcludingTax,,,This Invoice/Current Fees (excluding tax),statement_current_fees_excluding_Tax,F,,,,,c
-500,(Common),Sale/Purchase Data,SP_StatementCurrentFeesIncludingTax,,,This Invoice/Current Fees (including tax),statement_current_fees_including_tax,F,,,,,c
-505,(Common),Sale/Purchase Data,SP_StatementCurrentPayment,,,"Current Payment (Trust, Retainer and Other)",statement_current_payment,F,,,,,c
-504,(Common),Sale/Purchase Data,SP_StatementCurrentTax,,,This Invoice/Tax on Fees/Expenses,statement_current_tax,F,,,,,c
-499,(Common),Sale/Purchase Data,SP_StatementPaymentAndAdjustments,,,"Total payments/adjustments as per ""BillStatementPayments"" repeat block",statement_payment_and_adjustments,F,,,,,c
-498,(Common),Sale/Purchase Data,SP_StatementPriorBalance,,,Prior/Opening balance from previous invoices,statement_prior_balance,F,,,,,c
-238,(Common),Sale/Purchase Data,SP_SumOfQuantity,,,"Sum of all line-item quantities (use |uom=A,B,C to filter)",sum_of_quantity,F,,,,,c
-490,(Common),Sale/Purchase Data,SP_TaxOnExpenses,,,,tax_on_expenses,F,,,,,c
-489,(Common),Sale/Purchase Data,SP_TaxOnFeeEntries,,,,tax_on_fee_entries,F,,,,,c
-134,(Common),Sale/Purchase Data,SP_TheirName,,,Sale/Purchase Their Name,their_name,F,,,,,s
-135,(Common),Sale/Purchase Data,SP_TheirNameAlias,,,Sale/Purchase Their Name Alias,their_name_alias,F,,,,,s
-282,(Common),Sale/Purchase Data,SP_TheirNameList,,,Sale/Purchase Their Names (comma separated if more than one),their_name_list,F,,,,,s
-323,(Common),Sale/Purchase Data,SP_TheirParticipant_CurrentBalance,,,Sale/purchase current balance (including payments allocated to date) as at the invoice date for their participant id,their_participant_current_balance,F,,,,,c
-321,(Common),Sale/Purchase Data,SP_TheirParticipant_PreviousBalance,,,Sale/purchase Previous invoice balance as at the last invoice date for their participant id,their_participant_previous_balance,F,,,,,c
-325,(Common),Sale/Purchase Data,SP_TheirParticipant_TotalPreviousPayments,,,Sale/purchase  total payments to date since the last invoice for their participant id,their_participant_total_previous_payments,F,,,,,c
-144,(Common),Sale/Purchase Data,SP_TheirReference,,,Sale/Purchase Their Reference,their_reference,F,,,,,s
-145,(Common),Sale/Purchase Data,SP_TheirReferenceAlias,,,Sale/Purchase Their Reference Alias,their_reference_alias,F,,,,,s
-322,(Common),Sale/Purchase Data,SP_ThisAction_CurrentBalance,,,Sale/purchase current balance (including payments allocated to date) as at the invoice date for the associated action id,action_current_balance,F,,,,,c
-320,(Common),Sale/Purchase Data,SP_ThisAction_PreviousBalance,,,Sale/purchase Previous invoice balance as at the last invoice date for the associated action id,action_previous_balance,F,,,,,c
-324,(Common),Sale/Purchase Data,SP_ThisAction_TotalPreviousPayments,,,Sale/purchase total payments to date since the last invoice for this action,action_total_previous_payments,F,,,,,c
-167,(Common),Sale/Purchase Data,SP_Title,,,Sale/Purchase Title,title,F,,,,,s
-162,(Common),Sale/Purchase Data,SP_TotalExclusive,,,Sale/Purchase Total Exclusive,total_exclusive,F,,,,,c
-163,(Common),Sale/Purchase Data,SP_TotalGst,,,Sale/Purchase Total Gst,total_gst,F,,,,,c
-161,(Common),Sale/Purchase Data,SP_TotalInclusive,,,Sale/Purchase Total Inclusive,total_inclusive,F,,,,,c
-201,(Common),Sale/Purchase Data,SP_TotalQuantity,,,Sale/Purchase Sum of all Line Item Quantities,total_quantity,F,,,,,c
-440,(Common),Sale/Purchase Data,SP_TrustCurrentBalance,,,Trust current balance (all accounts),trust_current_balance,F,,,,,c
-436,(Common),Sale/Purchase Data,SP_TrustPreviousBalance,,,Trust balance as-at last invoice date (all accounts),trust_previous_balance,F,,,,,c
-594,(Common),Sale/Purchase Data,SP_TrustRegulatoryText,,,Regulatory text required by Trust regulations,trust_regulatory_text,F,,,,,s
-495,(Common),Sale/Purchase Data,SP_TrustTotalAppliedOnInvoiceCreatedDate,,,Total amount of Trust Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),trust_total_applied_on_invoice_created_date,F,,,,,c
-439,(Common),Sale/Purchase Data,SP_TrustTotalInvoicePayments,,,Trust total invoice payments since last invoice date (all accounts),trust_total_invoice_payments,F,,,,,c
-437,(Common),Sale/Purchase Data,SP_TrustTotalReceipts,,,Trust total receipts since last invoice date (all accounts),trust_total_receipts,F,,,,,c
-438,(Common),Sale/Purchase Data,SP_TrustTotalWithdrawals,,,Trust total withdrawals (excl invoice payments) since last invoice date (all accounts),trust_total_withdrawals_excl_invoice_payments,F,,,,,c
-121,(Common),Sale/Purchase Line Item Data,SPI_Account,,,Sale/Purchase Line Item Account,account,F,,,,,s
-129,(Common),Sale/Purchase Line Item Data,SPI_ActionID,,,Sale/Purchase Line Item Action Id,action_id,F,,,,,n
-130,(Common),Sale/Purchase Line Item Data,SPI_ActionName,,,Sale/Purchase Line Item Action Name,action_name,F,,,,,s
-128,(Common),Sale/Purchase Line Item Data,SPI_Date,,,Sale/Purchase Line Item Date,date,F,,,,,d
-116,(Common),Sale/Purchase Line Item Data,SPI_Description,,,Sale/Purchase Line Item Description,description,F,,,,,s
-539,(Common),Sale/Purchase Line Item Data,SPI_DisplayID,,,Participant ID of Time keeper,participant_id,F,,,,,s
-538,(Common),Sale/Purchase Line Item Data,SPI_DisplayInitials,,,Initials of Time keeper,display_initials,F,,,,,s
-537,(Common),Sale/Purchase Line Item Data,SPI_DisplayName,,,Name of Time keeper,display_name,F,,,,,s
-120,(Common),Sale/Purchase Line Item Data,SPI_ExpenseAccount,,,Sale/Purchase Line Item Expense Account,expense_account,F,,,,,s
-123,(Common),Sale/Purchase Line Item Data,SPI_ExpenseGSTCode,,,Sale/Purchase Line Item Expense Gst code,expense_gst_code,F,,,,,s
-126,(Common),Sale/Purchase Line Item Data,SPI_ExpenseGSTPercent,,,Sale/Purchase Line Item Expense Gst Percent,expense_gst_percent,F,,,,,n
-124,(Common),Sale/Purchase Line Item Data,SPI_GSTCode,,,Sale/Purchase Line Item Gst Code,gst_code,F,,,,,s
-127,(Common),Sale/Purchase Line Item Data,SPI_GSTPercent,,,Sale/Purchase Line Item Gst Percent,gst_percent,F,,,,,n
-206,(Common),Sale/Purchase Line Item Data,SPI_HeadingQuantity,,,Sale/Purchase Line Item - Heading Quantity (hidden for Line-Items),heading_quantity,F,,,,,n
-119,(Common),Sale/Purchase Line Item Data,SPI_IncomeAccount,,,Sale/Purchase Line Item Income Account,income_account,F,,,,,s
-122,(Common),Sale/Purchase Line Item Data,SPI_IncomeGSTCode,,,Sale/Purchase Line Item Income Gst code,income_gst_code,F,,,,,s
-125,(Common),Sale/Purchase Line Item Data,SPI_IncomeGSTPercent,,,Sale/Purchase Line Item Income Gst Percent,income_gst_percent,F,,,,,n
-428,(Common),Sale/Purchase Line Item Data,SPI_InventoryItemBuyPrice,,,The purchase price of the inventory item,inventory_item_buy_price,F,,,,,c
-187,(Common),Sale/Purchase Line Item Data,SPI_InventoryItemCode,,,Sale/Purchase Line Item Inventory Item Code,inventory_item_code,F,,,,,s
-429,(Common),Sale/Purchase Line Item Data,SPI_InventoryItemGlobalLocal,,,The inventory item owner,inventory_item_global_local,F,,,,,s
-315,(Common),Sale/Purchase Line Item Data,SPI_InventoryItemPriceListChangedDate,,,Inventory item price last change date (if applicable),inventory_item_price_updated_date,F,,,,,d
-430,(Common),Sale/Purchase Line Item Data,SPI_InventoryItemStatus,,,The inventory item status,inventory_item_status,F,,,,,s
-207,(Common),Sale/Purchase Line Item Data,SPI_LineItemQuantity,,,Sale/Purchase Line Item - Line Item Quantity (hidden for Headings),line_item_quantity,F,,,,,n
-115,(Common),Sale/Purchase Line Item Data,SPI_LineNumber,,,Sale/Purchase Line Item Line Number,line_number,F,,,,,n
-118,(Common),Sale/Purchase Line Item Data,SPI_Quantity,,,Sale/Purchase Line Item Quantity,quantity,F,,,,,n
-237,(Common),Sale/Purchase Line Item Data,SPI_SumOfQuantity,,,"Sum of a heading's child line-item quantity (use |uom=A,B,C to filter) (value is empty for line-items)",sum_of_quantity,F,,,,,n
-224,(Common),Sale/Purchase Line Item Data,SPI_SupplierCode,,,Sale/Purchase Line Item Supplier Code / Item Code,supplier_code,F,,,,,s
-132,(Common),Sale/Purchase Line Item Data,SPI_SupplierName,,,Sale/Purchase Line Item Supplier Name,supplier_name,F,,,,,s
-131,(Common),Sale/Purchase Line Item Data,SPI_TaskID,,,Sale/Purchase Line Item Task Id,task_id,F,,,,,n
-117,(Common),Sale/Purchase Line Item Data,SPI_Title,,,Sale/Purchase Line Item Title,title,F,,,,,s
-208,(Common),Sale/Purchase Line Item Data,SPI_TopLevelQuantity,,,Sale/Purchase Line Item - Quantity for Top-Level Items/Heading (hidden for child headings/items),top_level_quantity,F,,,,,n
-107,(Common),Sale/Purchase Line Item Data,SPI_TotalCostExcl,,,Sale/Purchase Line Item Total Cost Excl,total_cost_excl,F,,,,,c
-108,(Common),Sale/Purchase Line Item Data,SPI_TotalCostIncl,,,Sale/Purchase Line Item Total Cost Incl,total_cost_incl,F,,,,,c
-113,(Common),Sale/Purchase Line Item Data,SPI_TotalExcl,,,Sale/Purchase Line Item Total Excl,total_excl,F,,,,,c
-114,(Common),Sale/Purchase Line Item Data,SPI_TotalIncl,,,Sale/Purchase Line Item Total Incl,total_incl,F,,,,,c
-109,(Common),Sale/Purchase Line Item Data,SPI_TotalSellExcl,,,Sale/Purchase Line Item Total Sell Excl,total_sell_excl,F,,,,,c
-110,(Common),Sale/Purchase Line Item Data,SPI_TotalSellIncl,,,Sale/Purchase Line Item Total Sell Incl,total_sell_incl,F,,,,,c
-103,(Common),Sale/Purchase Line Item Data,SPI_UnitCostExcl,,,Sale/Purchase Line Item Unit Cost Excl,unit_cost_excl,F,,,,,c
-104,(Common),Sale/Purchase Line Item Data,SPI_UnitCostIncl,,,Sale/Purchase Line Item Unit Cost Incl,unit_cost_incl,F,,,,,c
-111,(Common),Sale/Purchase Line Item Data,SPI_UnitExcl,,,Sale/Purchase Line Item Unit Excl,unit_excl,F,,,,,c
-112,(Common),Sale/Purchase Line Item Data,SPI_UnitIncl,,,Sale/Purchase Line Item Unit Incl,unit_incl,F,,,,,c
-105,(Common),Sale/Purchase Line Item Data,SPI_UnitSellExcl,,,Sale/Purchase Line Item Unit Sell Excl,unit_sell_excl,F,,,,,c
-106,(Common),Sale/Purchase Line Item Data,SPI_UnitSellIncl,,,Sale/Purchase Line Item Unit Sell Incl,unit_sell_incl,F,,,,,c
-205,(Common),Sale/Purchase Line Item Data,SPI_UOM,,,Sale/Purchase Line Item Unit of Measure (Symbol),uom,F,,,,,s
-202,(Common),Sale/Purchase Line Item Data,SPI_UomName,,,Sale/Purchase Line Item Unit of Measure (Singluar/Plural),uom_name,F,,,,,s
-343,(Common),Sale/Purchase Line Item Data,SPI_UtbmsActivityCode,,,UTBMS Activity Code (if applicable),utbms_activity_code,T,",",and,,,s
-345,(Common),Sale/Purchase Line Item Data,SPI_UtbmsExpenseCode,,,UTBMS Expense Code (if applicable),utbms_expense_code,T,",",and,,,s
-342,(Common),Sale/Purchase Line Item Data,SPI_UtbmsTaskCode,,,UTBMS Task Code (if applicable),utbms_task_code,F,",",and,,,s
-344,(Common),Sale/Purchase Line Item Data,SPI_UtbmsTimekeeperCode,,,UTBMS Timekeeper Code (if applicable),utbms_timekeeper_code,T,",",and,,,s
-347,(Common),System Data,ElectronicPayments_BankAccountNumber,,,Bank Account Number of the Electronic Payments system account,electronic_payments_bank_account_number,F,",",and,,,n
-348,(Common),System Data,ElectronicPayments_BankName,,,Bank Name (from the contact record) of the Electronic Payments system account,electronic_payments_bank_name,F,",",and,,,s
-181,(Common),System Data,system_ActionAlias,,,Action Alias,action_alias,F,,,,,s
-182,(Common),System Data,system_ActionAliasPlural,,,Aciton Alias (Plural),action_alias_plural,F,,,,,s
-374,(Common),System Data,system_CheckAlias,,,Check/Cheque Alias,check_alias,F,,,,,s
-184,(Common),System Data,system_CustomerAlias,,,Customer Participant Type Name,customer_alias,F,,,,,s
-51,(Common),System Data,system_date,,,Current date,date,F,,,,,d
-186,(Common),System Data,system_DisbursementAlias,,,Disbursement Alias,disbursement_alias,F,,,,,s
-183,(Common),System Data,system_GstAlias,,,GST/Tax/VAT Alias,gst_alias,F,,,,,s
-427,(Common),System Data,system_OrgKey,,,The Organization Key of the system,org_key,F,,,,,s
-414,(Common),System Data,system_RecordCount,,,Record Count for a repeat data source,datasource_record_count,F,,,,,n
-185,(Common),System Data,system_SalesPersonAlias,,,Sales Person Participant Type Name,sales_person_alias,F,,,,,s
-372,(Common),System Data,system_TrustAlias,,,Trust Alias,trust_alias,F,,,,,s
-373,(Common),System Data,system_TrustClientAlias,,,Trust Client Alias,trust_client_alias,F,,,,,s
-212,(Common),Trust Accounting Data,TRUST_AccountBalance,,,Trust (By Action) - Account Balance (Sum of All Current and Inventments Accounts),account_balance,F,,,,,c
-210,(Common),Trust Accounting Data,TRUST_CurrentBalance,,,Trust (By Action) - Current Account Balance (All Current Accounts),current_balance,F,,,,,c
-211,(Common),Trust Accounting Data,TRUST_InvestmentBalance,,,Trust (By Action) - Investment Account Balance (All Inventment Accounts),investment_balance,F,,,,,c
-219,(Common),Trust Accounting Data,TRUST_MultiAccountBalance,,,Trust (By Client) - Account Balance (Sum of All Current and Inventments Accounts),multi_account_balance,F,,,,,c
-217,(Common),Trust Accounting Data,TRUST_MultiCurrentBalance,,,Trust (By Client) - Current Account Balance (All Current Accounts),multi_current_balance,F,,,,,c
-218,(Common),Trust Accounting Data,TRUST_MultiInvestmentBalance,,,Trust (By Client) - Investment Account Balance (All Inventment Accounts),multi_investment_balance,F,,,,,c
-221,(Common),Trust Accounting Data,TRUST_MultiPaidByFirm,,,Trust (By Client) - Paid By Firm,multi_paid_by_firm,F,,,,,c
-223,(Common),Trust Accounting Data,TRUST_MultiTotalFundsLessOwingToFirm,,,Trust (By Client) - Total Funds Less Owing To Firm (AccountBalance minus TotalOwingToFirm),multi_total_funds_less_owing_to_firm,F,,,,,c
-222,(Common),Trust Accounting Data,TRUST_MultiTotalOwingToFirm,,,Trust (By Client) - Total Owing To Firm (Sum of Unpaid Sales Invoices + Paid By Firm),multi_total_owing_to_firm,F,,,,,c
-220,(Common),Trust Accounting Data,TRUST_MultiUnpaidSalesInvoices,,,Trust (By Client)- Unpaid Sales Invoices,multi_unpaid_sales_invoices,F,,,,,s
-214,(Common),Trust Accounting Data,TRUST_PaidByFirm,,,Trust (By Action) - Paid By Firm,paid_by_firm,F,,,,,c
-216,(Common),Trust Accounting Data,TRUST_TotalFundsLessOwingToFirm,,,Trust (By Action) - Total Funds Less Owing To Firm (AccountBalance minus TotalOwingToFirm),total_funds_less_owing_to_firm,F,,,,,c
-215,(Common),Trust Accounting Data,TRUST_TotalOwingToFirm,,,Trust (By Action) - Total Owing To Firm (Sum of Unpaid Sales Invoices + Paid By Firm),total_owing_to_firm,F,,,,,c
-213,(Common),Trust Accounting Data,TRUST_UnpaidSalesInvoices,,,Trust (By Action) - Unpaid Sales Invoices,unpaid_sales_invoices,F,,,,,s
-406,(Common),Trust EFT Requisition,TrustEft_Amount,,,Trust EFT Requisition - Amount,amount,F,,,,,c
-408,(Common),Trust EFT Requisition,TrustEft_AuthorizedByParticipantName,,,Trust EFT Requisition - Authorized by (Staff) Participant Name,authorized_by_participant_name,F,,,,,s
-441,(Common),Trust EFT Requisition,TrustEft_BankReference,,,Trust EFT Requisition - Bank Reference,bank_reference,F,,,,,s
-398,(Common),Trust EFT Requisition,TrustEft_Date,,,Trust EFT Requisition - Payment Date,payment_date,F,,,,,d
-397,(Common),Trust EFT Requisition,TrustEft_Number,,,Trust EFT Requisition - EFT Requisition Number,requisition_number,F,,,,,n
-401,(Common),Trust EFT Requisition,TrustEft_OnBehalfOfActionName,,,Trust EFT Requisition - On behalf of Action Name,on_behalf_of_action_name,F,,,,,s
-402,(Common),Trust EFT Requisition,TrustEft_OnBehalfOfActionReference,,,Trust EFT Requisition - On behalf of Action Reference,on_behalf_of_action_reference,F,,,,,s
-400,(Common),Trust EFT Requisition,TrustEft_OnBehalfOfParticipantName,,,Trust EFT Requisition - On behalf of Participant Name,on_behalf_of_participant_name,F,,,,,s
-404,(Common),Trust EFT Requisition,TrustEft_PayToAccountName,,,Trust EFT Requisition - Pay to Bank Account Name,pay_to_account_name,F,,,,,s
-403,(Common),Trust EFT Requisition,TrustEft_PayToAccountNumber,,,Trust EFT Requisition - Pay to Bank Account Number,pay_to_account_number,F,,,,,n
-405,(Common),Trust EFT Requisition,TrustEft_PayToRecipientName,,,Trust EFT Requisition - Pay to Recipient Name,pay_to_recipient_name,F,,,,,s
-407,(Common),Trust EFT Requisition,TrustEft_Reason,,,Trust EFT Requisition - Reason/Purpose,reason,F,,,,,s
-399,(Common),Trust EFT Requisition,TrustEft_RequestedByParticipantName,,,Trust EFT Requisition - Requested by (Staff) Participant Name,requested_by_participant_name,F,,,,,s
-388,(Common),Trust Payment Confirmation,TrustPayment_Amount,,,Trust Payment Confirmation - Amount Paid (Currency format),payment_amount,F,,,,,c
-387,(Common),Trust Payment Confirmation,TrustPayment_AmountText,,,Trust Payment Confirmation - Amount Paid (In English Text),payment_amount_text,F,,,,,s
-380,(Common),Trust Payment Confirmation,TrustPayment_Date,,,Trust Payment Confirmation - Date on Bank Entry,date_on_bank_entry,F,,,,,d
-383,(Common),Trust Payment Confirmation,TrustPayment_DateIfDifferent,,,Trust Payment Confirmation - Date Paid (empty if same as date on Bank Entry),date_on_bank_entry_if_different,F,,,,,d
-381,(Common),Trust Payment Confirmation,TrustPayment_EntryDate,,,Trust Payment Confirmation - Date Entered into System,entry_timestamp,F,,,,,d
-382,(Common),Trust Payment Confirmation,TrustPayment_EntryDateIfDifferent,,,Trust Payment Confirmation - Date Entered into System (empty if same as date on Bank Paid),entry_timestamp_if_different,F,,,,,d
-393,(Common),Trust Payment Confirmation,TrustPayment_IssuedBy,,,Trust Payment Confirmation - ,entered_by_participant_name,F,,,,,s
-389,(Common),Trust Payment Confirmation,TrustPayment_Method,,,Trust Payment Confirmation - Payment Method,payment_method,F,,,,,s
-390,(Common),Trust Payment Confirmation,TrustPayment_MethodAndReference,,,Trust Payment Confirmation - Payment Method and Payment Reference (if any),payment_method_and_reference,F,,,,,s
-379,(Common),Trust Payment Confirmation,TrustPayment_Number,,,Trust Payment Confirmation - Payment Number,entry_number,F,,,,,n
-392,(Common),Trust Payment Confirmation,TrustPayment_Reason,,,Trust Payment Confirmation - Reason/Description,entry_memo,F,,,,,s
-391,(Common),Trust Payment Confirmation,TrustPayment_Reference,,,Trust Payment Confirmation - Payment Reference (EFT Ref/Chk No. etc),payment_reference,F,,,,,s
-394,(Common),Trust Payment Confirmation,TrustPayment_RequestedByName,,,Requested by name,requested_by_participant_name,F,,,,,s
-386,(Common),Trust Payment Confirmation,TrustPayment_ToAccount,,,Trust Payment Confirmation - Paid To EFT Account,paid_to_eft_account,F,,,,,s
-384,(Common),Trust Payment Confirmation,TrustPayment_ToName,,,Trust Payment Confirmation - Paid To Name,associated_participant_name,F,,,,,s
-385,(Common),Trust Payment Confirmation,TrustPayment_ToNameAndAccount,,,Trust Payment Confirmation - Paid To Name (and account if EFT),associated_participant_name_and_account,F,,,,,s
-434,(Common),Trust Payment Confirmation,TrustPayment_TrustAccountAlias,,,Trust/Client/Controlled Money Account,trust_account_alias,F,,,,,s
-378,(Common),Trust Receipt Actions,TrustReceiptAction_ActionAmount,,,Trust Receipt Action - Action Amount,action_amount,F,,,,,n
-375,(Common),Trust Receipt Actions,TrustReceiptAction_ActionID,,,Trust Receipt Action - Action ID,action_id,F,,,,,n
-377,(Common),Trust Receipt Actions,TrustReceiptAction_ActionName,,,Trust Receipt Action - Action Name,action_name,F,,,,,s
-376,(Common),Trust Receipt Actions,TrustReceiptAction_ClientNames,,,Trust Receipt Action - Client Name(s),client_names,F,,,,,s
-351,(Common),Trust Statement,TrustStatement_AccountName,,,,account_name,F,,,,,s
-354,(Common),Trust Statement,TrustStatement_AccountOpenedDate,,,,account_opened_date,F,,,,,d
-353,(Common),Trust Statement,TrustStatement_AccountType,,,,account_type,F,,,,,s
-352,(Common),Trust Statement,TrustStatement_BankAccountNumber,,,,bank_account_number,F,,,,,n
-360,(Common),Trust Statement,TrustStatement_ClosingBalanceAmount,,,,closing_balance_amount,F,,,,,c
-359,(Common),Trust Statement,TrustStatement_ClosingBalanceDate,,,,closing_balance_date,F,,,,,d
-595,(Common),Trust Statement,TrustStatement_EntryDate,,,Text describing the addition of the entry date,entry_date_required,F,,,,,d
-358,(Common),Trust Statement,TrustStatement_OpeningBalanceAmount,,,,opening_balance_amount,F,,,,,c
-357,(Common),Trust Statement,TrustStatement_OpeningBalanceDate,,,,opening_balance_date,F,,,,,d
-355,(Common),Trust Statement,TrustStatement_StatementDate,,,,statement_date,F,,,,,d
-356,(Common),Trust Statement,TrustStatement_StatementNumber,,,,statement_number,F,,,,,n
-435,(Common),Trust Statement,TrustStatement_TrustAccountAlias,,,Trust/Client/Controlled Money Account,trust_account_alias,F,,,,,s
-411,(Common),Trust Statement Invoices,TrustStatementInvoice_Amount,,,Trust Statement Invoices - Item Amount,amount,F,,,,,n
-413,(Common),Trust Statement Invoices,TrustStatementInvoice_Balance,,,Trust Statement Invoices - Running Balance,balance,F,,,,,c
-410,(Common),Trust Statement Invoices,TrustStatementInvoice_Date,,,Trust Statement Invoices - Item Date,date,F,,,,,d
-424,(Common),Trust Statement Invoices,TrustStatementInvoice_DateFormatted,,,The date for a statement invoice but pre-formatted which may include multiple lines if needed,date_formatted,F,,,,,d
-409,(Common),Trust Statement Invoices,TrustStatementInvoice_Description,,,Trust Statement Invoices - Item Description,description,F,,,,,s
-412,(Common),Trust Statement Invoices,TrustStatementInvoice_Due,,,Trust Statement Invoices - Item Balance Due,due,F,,,,,c
-371,(Common),Trust Statement Item,TrustStatementItem_ActionEntryNumber,,,,action_entry_number,F,,,,,n
-367,(Common),Trust Statement Item,TrustStatementItem_AssociatedParticipantName,,,,associated_participant_name,F,,,,,s
-361,(Common),Trust Statement Item,TrustStatementItem_BankEntryDate,,,,date_on_bank_entry,F,,,,,d
-423,(Common),Trust Statement Item,TrustStatementItem_BankEntryDateFormatted,,,The date for a statement item but pre-formatted which may include multiple lines if needed,date_on_bank_entry_formatted,F,,,,,d
-364,(Common),Trust Statement Item,TrustStatementItem_DepositAmount,,,,deposit_amount,F,,,,,c
-362,(Common),Trust Statement Item,TrustStatementItem_Description,,,,entry_memo,F,,,,,s
-369,(Common),Trust Statement Item,TrustStatementItem_EntryNumber,,,,entry_number,F,,,,,n
-368,(Common),Trust Statement Item,TrustStatementItem_EntryType,,,,entry_type,F,,,,,s
-370,(Common),Trust Statement Item,TrustStatementItem_EntryTypeAndNumber,,,,entry_type_number,F,,,,,s
-366,(Common),Trust Statement Item,TrustStatementItem_RunningBalance,,,,running_balance,F,,,,,c
-365,(Common),Trust Statement Item,TrustStatementItem_TransactionAmount,,,,transaction_amount,F,,,,,c
-363,(Common),Trust Statement Item,TrustStatementItem_WithdrawalAmount,,,,withdrawal_amount,F,,,,,c
+ID,Data Source,Sub-category,Merge Field Label,Merge Field Code,Merge Field Description,Format
+225,Action,,Created Date,Action_CreatedDate,Action Created Date,d
+50,Action,,File Reference,File_Reference,File Reference,s
+49,Action,,ID,Action_ID,Action ID,n
+314,Action,,Name,Action_Name,Name of Action,s
+313,Action,,Sales Invoices Total (excl. tax),Action_SalesInvoicesTotalExcl,Total Sales Invoices Amount (Excluding Taxes),c
+349,Action,,Sales Invoices Total (incl. tax),Action_SalesInvoicesTotalIncl,Total Sales Invoices Amount (Including Taxes),c
+226,Action,,Status,Action_Status,Status of Action,s
+48,Action,,Type,Action_Type,Action Type Name,s
+299,Action Sale Data,,Actual Sale Amount,ActionSale_ActualSaleAmount,Actual Sale Amount,c
+300,Action Sale Data,,Actual Sale Date,ActionSale_ActualSaleDate,Actual Sale Date,d
+285,Action Sale Data,,Currency Code,ActionSale_CurrencyCode,Currency Code,s
+284,Action Sale Data,,Expected Sale Amount,ActionSale_ExpectedSaleAmount,Expected Sale Amount,c
+286,Action Sale Data,,Expected Sale Date,ActionSale_ExpectedSaleDate,Expected Sale Date,d
+287,Action Sale Data,,Lead Source Notes,ActionSale_LeadSourceNotes,Lead Source Notes,s
+297,Action Sale Data,,Linked Order Date,ActionSale_LinkedOrderDate,Linked Order (Sale/Purchase) Sale/Purchase Date,d
+295,Action Sale Data,,Linked Order Description,ActionSale_LinkedOrderDescription,Linked Order (Sale/Purchase) Description,s
+294,Action Sale Data,,Linked Order ID,ActionSale_LinkedOrderSalePurchaseId,Linked Order (Sale/Purchase) Sale/Purchase ID,n
+296,Action Sale Data,,Linked Order Our Reference,ActionSale_LinkedOrderOurReference,Linked Order (Sale/Purchase) Our Reference,s
+293,Action Sale Data,,Linked Quote Date,ActionSale_LinkedQuoteDate,Linked Quote (Sale/Purchase) Sale/Purchase Date,d
+291,Action Sale Data,,Linked Quote Description,ActionSale_LinkedQuoteDescription,Linked Quote (Sale/Purchase) Description,s
+290,Action Sale Data,,Linked Quote ID,ActionSale_LinkedQuoteSalePurchaseId,Linked Quote (Sale/Purchase) Sale/Purchase ID,n
+292,Action Sale Data,,Linked Quote Our Reference,ActionSale_LinkedQuoteOurReference,Linked Quote (Sale/Purchase) Our Reference,s
+289,Action Sale Data,,Marketing Event Name,ActionSale_MarketingEvent,Marketing Event Name,s
+288,Action Sale Data,,Marketing Medium,ActionSale_MarketingMedium,Marketing Medium,s
+283,Action Sale Data,,Probability,ActionSale_Probability,Sale Probability,n
+298,Action Sale Data,,Status,ActionSale_Status,Current Status (Sold alias or Opportunity alias),s
+311,Action Sale Payments Data,,Due On Step Name,ActionSalePaymentSchedule_DueOnStepName,Due on Step Name,s
+303,Action Sale Payments Data,,Expected Days After Sale,ActionSalePaymentSchedule_ExpectedDaysAfterSale,Payment expected days after Sale Date,n
+305,Action Sale Payments Data,,Expected Payment Amount,ActionSalePaymentSchedule_ExpectedAmount,Expected Payment Amount,c
+304,Action Sale Payments Data,,Expected Payment Date,ActionSalePaymentSchedule_ExpectedDate,Expected date (calculated from Days after Sale),d
+308,Action Sale Payments Data,,Invoice Date,ActionSalePaymentSchedule_InvoiceDate,Linked Invoice Date,d
+307,Action Sale Payments Data,,Invoice Item Amount (excl. tax),ActionSalePaymentSchedule_InvoiceAmountExcl,Linked Invoice Item Amount (Excl Tax),c
+306,Action Sale Payments Data,,Invoice Item Amount (incl. tax),ActionSalePaymentSchedule_InvoiceAmountIncl,Linked Invoice Item Amount (Incl Tax),c
+310,Action Sale Payments Data,,Invoice Total Amount (excl. tax),ActionSalePaymentSchedule_InvoiceTotalAmountExcl,Linked Invoice Amount (Excl Tax),c
+309,Action Sale Payments Data,,Invoice Total Amount (incl. tax),ActionSalePaymentSchedule_InvoiceTotalAmountIncl,Linked Invoice Amount (Incl Tax),c
+302,Action Sale Payments Data,,Payment Description,ActionSalePaymentSchedule_PaymentDescription,Description,s
+301,Action Sale Payments Data,,Payment Number,ActionSalePaymentSchedule_PaymentNumber,Payment Number,n
+839,Bill consolidation,,Action ID,BillConsolidation_ActionID,The Action/Matter ID for the invoice in the consolidation,n
+840,Bill consolidation,,Action Name,BillConsolidation_ActionName,The Action/Matter Name for the invoice in the consolidation,s
+841,Bill consolidation,,File Reference,BillConsolidation_FileReference,The Action/Matter File Reference for the invoice in the consolidation,n
+843,Bill consolidation,,Hours and Minutes,BillConsolidation_HoursAndMinutes,Quantity expressed as hours:minutes for all time entries in the invoice in the consolidation,s
+842,Bill consolidation,,Hours as Decimal,BillConsolidation_HoursAsDecimal,Quantity as a decimal (ie Hours) for all time entries in the invoice in the consolidation,n
+846,Bill consolidation,,Total (excl. tax),BillConsolidation_Total,"The total price (excl tax, all items) for the invoice in the consolidation",c
+845,Bill consolidation,,Total Expenses (excl. tax),BillConsolidation_TotalExpenses,The total price (excl tax) of the expenses for the invoice in the consolidation,c
+844,Bill consolidation,,Total Fees (excl. tax),BillConsolidation_TotalFees,The total price (excl tax) of the fees for the invoice in the consolidation,c
+455,Bill expenses/disbursements,,Action ID,BillExpenses_Action_ID,Action ID of this item,n
+456,Bill expenses/disbursements,,Action Name,BillExpenses_Action_Name,Action Name of this item,s
+454,Bill expenses/disbursements,,Date,BillExpenses_Date,Date of the expense (not set if the group/sum flag set),d
+450,Bill expenses/disbursements,,Description,BillExpenses_Description,Description of the expense as per the invoice items,s
+522,Bill expenses/disbursements,,GST Code,BillExpenses_GstCode,Gst code of the expense as per the invoice items,s
+523,Bill expenses/disbursements,,GST Percent,BillExpenses_GstPercent,Gst percent of the expense as per the invoice items,n
+452,Bill expenses/disbursements,,Quantity,BillExpenses_Quantity,Total quantity of the expense (or expenses if group/sum enabled),n
+449,Bill expenses/disbursements,,Title,BillExpenses_Title,Title of the expense as per the invoice items,s
+453,Bill expenses/disbursements,,Total Price (excl. tax),BillExpenses_TotalPriceExcludingTax,Total price of the expense (excluding tax),c
+451,Bill expenses/disbursements,,Unit Price (excl. tax),BillExpenses_UnitPriceExcludingTax,Unit price (excluding tax) of the expense,c
+529,Bill expenses/disbursements,,UTBMS Activity Code,BillExpenses_UtbmsActivityCode,UTBMS Activity Code,s
+532,Bill expenses/disbursements,,UTBMS Expense Code,BillExpenses_UtbmsExpenseCode,UTBMS Expense Code,s
+530,Bill expenses/disbursements,,UTBMS Task Code,BillExpenses_UtbmsTaskCode,UTBMS Task Code,s
+531,Bill expenses/disbursements,,UTBMS Timekeeper Code,BillExpenses_UtbmsTimekeeperCode,UTBMS Timekeeper Code,s
+464,Bill fees,,Action ID,BillFees_Action_ID,Action ID of this item,n
+465,Bill fees,,Action Name,BillFees_Action_Name,Action Name of this item,s
+459,Bill fees,,Date,BillFees_Date,Date of the fee item as per invoice item,d
+458,Bill fees,,Description,BillFees_Description,Description of the fee item as per invoice item,s
+520,Bill fees,,GST Code,BillFees_GstCode,Gst code of the fee item as per invoice item,s
+521,Bill fees,,GST Percent,BillFees_GstPercent,Gst percent of the fee item as per invoice item,n
+462,Bill fees,,Hours and Minutes,BillFees_HoursAndMinutes,Quantity expressed as hours:minutes of the invoice item,s
+461,Bill fees,,Hours as Decimal,BillFees_HoursAsDecimal,Quantity as a decimal of the invoice item (ie Hours),n
+460,Bill fees,,Rate,BillFees_Rate,Unit price of the fee item as per invoice item,n
+787,Bill fees,,Rate Label,BillFees_RateLabel,Rate label of the fee item as per invoice item,s
+512,Bill fees,,Timekeeper Initials,BillFees_TimekeeperInitials,Timekeeper initials,s
+457,Bill fees,,Title,BillFees_Title,Title of the fee item as per invoice item,s
+463,Bill fees,,Total Price (excl. tax),BillFees_TotalPriceExcludingTax,The total price (excl tax) of the invoice item,c
+525,Bill fees,,UTBMS Activity Code,BillFees_UtbmsActivityCode,UTBMS Activity Code,s
+528,Bill fees,,UTBMS Expense Code,BillFees_UtbmsExpenseCode,UTBMS Expense Code,s
+526,Bill fees,,UTBMS Task Code,BillFees_UtbmsTaskCode,UTBMS Task Code,s
+527,Bill fees,,UTBMS Timekeeper Code,BillFees_UtbmsTimekeeperCode,UTBMS Timekeeper Code,s
+475,Bill payments,,Amount,BillStatementPayments_Amount,Payment/Adjustment Amount,c
+472,Bill payments,,Date,BillStatementPayments_Date,Date of the payment/adjustment,d
+474,Bill payments,,Description,BillStatementPayments_Description,Description of the payment/adjustment,s
+473,Bill payments,,Payment Reference,BillStatementPayments_PaymentReference,Payment reference,s
+519,Bill payments,,Payment Reference Long,BillStatementPayments_PaymentReferenceLong,Longer version of the payment reference (no abbreviations used),s
+470,Bill retainers,,Action ID,BillRetainer_Action_ID,Action Id of the retainer,n
+471,Bill retainers,,Action Name,BillRetainer_Action_Name,Action Name of the retainer,s
+469,Bill retainers,,Amount Due,BillRetainer_AmountDue,The amount due on this invoice (as a replenishment) for this retainer,c
+468,Bill retainers,,Current Balance,BillRetainer_CurrentBalance,The current balance of the retainer (after any payments),c
+466,Bill retainers,,Description,BillRetainer_Description,Name/description of the Retainer (General or Trust),s
+467,Bill retainers,,Minimum Balance,BillRetainer_MinimumBalance,The minimum balance for this retainer (if set),c
+479,Bill trust statement,,Amount,BillStatementTrust_Amount,Amount of the entry,c
+480,Bill trust statement,,Balance,BillStatementTrust_Balance,Running balance,c
+476,Bill trust statement,,Date,BillStatementTrust_Date,Date of the entry,d
+478,Bill trust statement,,Description,BillStatementTrust_Description,Description of the entry,s
+477,Bill trust statement,,Payment Reference,BillStatementTrust_PaymentReference,Entry payment reference,s
+431,Check,,Action ID,Check_Action_ID,Action ID associated with a Check (where applicable),n
+176,Check,,Amount,Check_Amount,Check Amount (Currency),c
+177,Check,,Amount (in words),Check_AmountText,Check Amount (English Words),s
+175,Check,,Date,Check_Date,Check Date,d
+180,Check,,Memo,Check_Memo,Check Memo,s
+174,Check,,Number,Check_Number,Check Number,n
+178,Check,,Our Reference (List),Check_SP_OurReferenceList,List of Sale/Purchase Our Reference associated with check,s
+590,Check,,Payee,Check_Payee,Check Payee/Pay TO Text,s
+589,Check,,Their Reference (List),Check_SP_TheirReferenceList,List of Sale/Purchase Their Reference associated with check,s
+179,Check,,Void,Check_Void,Check Void Text (VOID or empty if not void),s
+244,Deposit slip,,Account Name,DS_AccountName,Deposit Slip: Chart-of-Accounts Account Name,s
+243,Deposit slip,,Account Number,DS_AccountNumber,Deposit Slip: Chart-of-Accounts Account Number,n
+241,Deposit slip,,Bank Account Name,DS_BankAccountName,Deposit Slip: Bank Account Name,s
+242,Deposit slip,,Bank Account Number,DS_BankAccountNumber,Deposit Slip: Bank Account Number,n
+246,Deposit slip,,Bank Branch Name,DS_BankBranchName,Deposit Slip: Bank Branch Name,s
+245,Deposit slip,,Bank Name,DS_BankName,Deposit Slip: Bank Name,s
+247,Deposit slip,,Deposit Date,DS_DepositDate,Deposit Slip: Deposit Date,d
+240,Deposit slip,,Deposit Number,DS_DepositNumber,Deposit Slip: Deposit Number,n
+254,Deposit slip,,Holder,DS_Holder,Deposit Slip: Holder,s
+250,Deposit slip,,Total Cash Amount,DS_TotalCashAmount,Deposit Slip: Total Cash (Notes+Coins) Amount (Currency),c
+251,Deposit slip,,Total Check Amount,DS_TotalCheckAmount,Deposit Slip: Total Check Amount (Currency),c
+249,Deposit slip,,Total Coins Amount,DS_TotalCoinsAmount,Deposit Slip: Total Coins Amount (Currency),c
+252,Deposit slip,,Total Credit Card Amount,DS_TotalCreditCardAmount,Deposit Slip: Total Credit Card Amount (Currency),c
+253,Deposit slip,,Total Deposit Amount,DS_TotalDepositAmount,Deposit Slip: Total Deposit Amount (Cash+Check+CreditCard) (Currency),c
+248,Deposit slip,,Total Notes Amount,DS_TotalNotesAmount,Deposit Slip: Total Notes Amount (Currency),c
+255,Deposit slip,,Transit,DS_Transit,Deposit Slip: Transit,s
+267,Deposit slip items,,Action ID,DSI_ActionId,Deposit Slip Item: Action ID,n
+259,Deposit slip items,,Amount,DSI_Amount,Deposit Slip Item: Total Deposit Amount,c
+261,Deposit slip items,,Amount Cash,DSI_AmountCash,Deposit Slip Item: Cash Deposit Amount,c
+260,Deposit slip items,,Amount Check,DSI_AmountCheck,Deposit Slip Item: Check Deposit Amount,c
+262,Deposit slip items,,Amount Credit Card,DSI_AmountCreditCard,Deposit Slip Item: Credit Card Deposit Amount,c
+263,Deposit slip items,,Check Date,DSI_CheckDate,Deposit Slip Item: Check Date (if available),d
+264,Deposit slip items,,Check Number,DSI_CheckNumber,Deposit Slip Item: Check Number (if available),n
+265,Deposit slip items,,Memo,DSI_Memo,Deposit Slip Item: Memo,s
+319,Deposit slip items,,Payee Bank Branch,DSI_PayeeBankBranch,Deposit Slip Item: PAyee Bank Branch (if available),s
+258,Deposit slip items,,Payee Bank Name,DSI_PayeeBankName,Deposit Slip Item: Payee Bank Name (if available),s
+257,Deposit slip items,,Payee Name,DSI_PayeeName,Deposit Slip Item: Payee Name,s
+266,Deposit slip items,,Payment Method,DSI_PaymentMethod,Deposit Slip Item: Payment Method,s
+256,Deposit slip items,,Transaction ID,DSI_TransactionId,Deposit Slip Item: GL Transaction ID,s
+82,Division/Company Data,,Division Logo,DivisionLogo,RTF Logo of the Division,s
+335,Document Data,,Created Date,Document_CreatedDate,Document Created Date (date created/uploaded in Actionstep),d
+333,Document Data,,Date (user defined),Document_Date,Document Date (a user defined date),d
+332,Document Data,,Filename (with file extension),Document_Filename,Document File Name (with file extension),s
+334,Document Data,,Last Modified Date,Document_LastModifiedDate,Document Last Modified Date (in Actionstep),d
+331,Document Data,,Name (without file extension),Document_Name,Document Name (with no file extension),s
+55,Grammar,,Object pronouns (me/us/you),pronoun2,Me/Us/You/Him/Her/Them/It depending on person (1st/2nd/3rd).,s
+56,Grammar,,Possessive adjectives (my/our/your),pronoun3,My/Our/Your/His/Her/Their/Its depending on person (1st/2nd/3rd).,s
+57,Grammar,,Possessive pronouns (mine/ours/yours),pronoun4,Mine/Ours/Yours/His/Hers/Theirs/Its depending on person (1st/2nd/3rd).,s
+58,Grammar,,Singular/Plural text substitution,s_p,Singular or Plural text substitution,s
+52,Grammar,,Subject pronouns (I/we/you),pronoun1,I/We/You/He/She/It/They depending on person (1st/2nd/3rd).,s
+346,Misc/Other,,Document ID,document_id,Document ID (where applicable) is the unique identifier for a document stored inside an action,n
+53,Misc/Other,,Individual or Company text substitution,i_c,Individual or Company text substitution.,s
+54,Misc/Other,,Male or Female text substitution,m_f,Male or Female text substitution.,s
+35,Participant Data,Address (Mailing),Mailing Address Line 1,MailingAddressLine1,Mailing Address_line1,s
+40,Participant Data,Address (Mailing),Mailing Address Line 2,MailingAddressLine2,Mailing Address_line2,s
+41,Participant Data,Address (Mailing),Mailing Address Lines 1 and 2 (no comma),MailingAddressLine,MailingAddress_line1 + MailingAddress_line2,s
+67,Participant Data,Address (Mailing),Mailing Address Lines 1 and 2 (with comma),MailingAddressLineComma,"Mailing_Address_line1, Mailing_Address_line2",s
+36,Participant Data,Address (Mailing),Mailing City,MailingCity,Mailing City,s
+45,Participant Data,Address (Mailing),Mailing Country,MailingCountry,Country of Mailing Address,s
+46,Participant Data,Address (Mailing),Mailing Country If Foreign,MailingCountryIfForeign,Country of Mailing Address if Foreign,s
+317,Participant Data,Address (Mailing),Mailing County,MailingCounty,Mailing Address County,s
+62,Participant Data,Address (Mailing),Mailing Post Code,MailingPostCode,Mailing Zip/Postal Code,s
+61,Participant Data,Address (Mailing),Mailing State Province,MailingStateProvince,Mailing State/Province,s
+228,Participant Data,Address (Shipping),Shipping Address Line 1,ShippingAddressLine1,Shipping Address Line 1,s
+230,Participant Data,Address (Shipping),Shipping Address Line 2,ShippingAddressLine2,Shipping Address Line 2,s
+231,Participant Data,Address (Shipping),Shipping Address Lines 1 + 2 (no comma),ShippingAddressLine,ShippingAddressLine1 + ShippingAddressLine2,s
+236,Participant Data,Address (Shipping),Shipping Address Lines 1 + 2 (with comma),ShippingAddressLineComma,"ShippingAddressLine1, ShippingAddressLine2",s
+229,Participant Data,Address (Shipping),Shipping City,ShippingCity,Shipping City,s
+232,Participant Data,Address (Shipping),Shipping Country,ShippingCountry,Country of Shipping Address,s
+233,Participant Data,Address (Shipping),Shipping Country (if foreign),ShippingCountryIfForeign,Country of Shipping Address if Foreign,s
+235,Participant Data,Address (Shipping),Shipping Post Code,ShippingPostCode,Shipping Zip/Postal Code,s
+234,Participant Data,Address (Shipping),Shipping State Province,ShippingStateProvince,Shipping Sate/Province,s
+37,Participant Data,Address (Street),Address Line 1,AddressLine1,Physical Address_line1,s
+38,Participant Data,Address (Street),Address Line 2,AddressLine2,Physical Address_line2,s
+39,Participant Data,Address (Street),Address Lines 1 + 2 (no comma),AddressLine,Address_line1 + Address_line2,s
+66,Participant Data,Address (Street),Address Lines 1 + 2 (with comma),AddressLineComma,"Address_line1, Address_line2",s
+42,Participant Data,Address (Street),City,City,City,s
+43,Participant Data,Address (Street),Country,Country,Country of Physical Address,s
+44,Participant Data,Address (Street),Country (if foreign),CountryIfForeign,Country of Physical Address if Foreign,s
+316,Participant Data,Address (Street),County,County,Address County,s
+60,Participant Data,Address (Street),Post Code,PostCode,Physical Zip/Postal Code,s
+59,Participant Data,Address (Street),State Province,StateProvince,Physical State/Province,s
+171,Participant Data,Contact details,Additional Email,AdditionalEmail,Additional Email Address,s
+32,Participant Data,Contact details,Email,E_Mail,E-Mail Address,s
+28,Participant Data,Contact details,Fax,Fax,Fax,p
+20,Participant Data,Contact details,Phone 1,Phone1,Phone1,p
+18,Participant Data,Contact details,Phone 2,Phone2,Phone2,p
+19,Participant Data,Contact details,Phone 3,Phone3,Phone3,p
+25,Participant Data,Contact details,Phone 4,Phone4,Phone4,p
+21,Participant Data,Contact details,Phone Assistant,Phone_Assistant,Phone_Assistant,p
+22,Participant Data,Contact details,Phone Business,Phone_Business,Phone Business,p
+26,Participant Data,Contact details,Phone Business 2,Phone_Business_2,Phone_Business_2,p
+23,Participant Data,Contact details,Phone Direct Dial,Phone_Direct_Dial,Phone Direct Dial,p
+24,Participant Data,Contact details,Phone Home,Phone_Home,Phone_Home,p
+27,Participant Data,Contact details,Phone Home 2,Phone_Home_2,Phone_Home_2,p
+17,Participant Data,Contact details,Phone Home Fax,Phone_Home_Fax,Phone Home Fax,p
+279,Participant Data,Contact details,Phone Mobile,Phone_Mobile,Phone_Mobile,p
+280,Participant Data,Contact details,Phone Mobile 2,Phone_Mobile_2,Phone_Mobile_2,p
+281,Participant Data,Contact details,Phone Other,Phone_Other,Phone_Other,p
+591,Participant Data,Contact details,Text SMS,TextSMS,Text or SMS number,p
+63,Participant Data,Contact details,Website,Website,Website Address,s
+518,Participant Data,Miscellaneous,Participant Has Signature,ParticipantHasSignature,Returns T if there is a signature and F if not (used for conditional statement to hide/show a signature),s
+209,Participant Data,Miscellaneous,Participant ID,ParticipantID,Participant ID,s
+268,Participant Data,Miscellaneous,Participant Image,ParticipantImage,The user uploaded image for the participant,s
+517,Participant Data,Miscellaneous,Participant Signature,ParticipantSignature,The signature assigned to a participant,s
+277,Participant Data,Miscellaneous,Participant Type Name,ParticipantTypeName,Participant Type Name,s
+6,Participant Data,Name,First Initial (List),FirstInitialList,List of Initials of First Names for this participant type,s
+13,Participant Data,Name,First Initial First Name,FirstInitial,Initial of First Name e.g John Henry Smith would be J,s
+14,Participant Data,Name,First Initial Last Name,FirstInitialLastName,First Initial followed by last name e.g John Henry Smith would be J Smith,s
+425,Participant Data,Name,First Initial Last Name List,FirstInitialLastNameList,First Initial followed by last name e.g John Henry Smith would be J Smith,s
+426,Participant Data,Name,First Initial Last Name With Salutation,FirstInitialLastNameWithSalutation,FirstInitial with LastName and Salutation prefix (Mr/Mrs etc),s
+7,Participant Data,Name,First Initial Last Name With Salutation List,FirstInitialLastNameWithSalutationList,FirstInitial with LastName and Salutation prefix (Mr/Mrs etc),s
+4,Participant Data,Name,First Name,FirstName,First Name,s
+338,Participant Data,Name,First Name Last Name,FirstNameLastName,First Name + Last Name (or Company name if a company),s
+339,Participant Data,Name,First Name Last Name List,FirstNameLastNameList,List of First Name + Last Name (or Company name if a company),s
+5,Participant Data,Name,First Name List,FirstNameList,List of First Name,s
+16,Participant Data,Name,First Names,FirstNames,"First Name, Middle Name",s
+1,Participant Data,Name,Full Name,FullName,"First, Middle, Last Names",s
+420,Participant Data,Name,Full Name Initials With Salutation,FullNameInitialsWithSalutation,Salutation FirstName {Middle Initial(s)} Last Name,s
+421,Participant Data,Name,Full Name Initials With Salutation List,FullNameInitialsWithSalutationList,List of Salutation FirstName {Middle Initial(s)} Last Name,s
+2,Participant Data,Name,Full Name List,FullNameList,"List of Full Names e.g. Name1, Name2, and Name3",s
+416,Participant Data,Name,Full Name With Salutation,FullNameWithSalutation,Same as FullName but with the Salutation prefix (Mr/Mrs etc),s
+417,Participant Data,Name,Full Name With Salutation List,FullNameWithSalutationList,Same as FullName but with the Salutation prefix (Mr/Mrs etc),s
+9,Participant Data,Name,Initials (all names),InitialsAll,"All initials, with spaces, including last name. (Use |strip_spaces=T to remove spaces). Example John Henry Robert Smith would be J H R S (or JHRS with spaces removed)",s
+239,Participant Data,Name,Initials (first and middle names),Initials,Initials of First and Middle Names e.g John Henry Smith would be J H,s
+11,Participant Data,Name,Initials (List),InitialsList,List Initials of all participants of this type,s
+12,Participant Data,Name,Initials With Last Name,InitialsLastName,Initials followed by last name e.g John Henry Smith would be J H Smith,s
+10,Participant Data,Name,Initials With Last Name (List),InitialsLastNameList,Initials followed by last name e.g John Henry Smith would be J H Smith,s
+524,Participant Data,Name,Last Initial,LastInitial,Initial of Last Name e.g John Henry Smith would be S,s
+15,Participant Data,Name,Last Name,LastName,Last Name,s
+270,Participant Data,Name,Last Name (List),LastNameList,List of Last Name,s
+418,Participant Data,Name,Last Name With Salutation,LastNameWithSalutation,Same as LastName but with the Salutation prefix (Mr/Mrs etc),s
+419,Participant Data,Name,Last Name With Salutation (List),LastNameWithSalutationList,Same as LastName but with the Salutation prefix (Mr/Mrs etc),s
+8,Participant Data,Name,Middle Initial,MiddleInitial,Initial of Middle Name e.g John Henry Smith would be H,s
+271,Participant Data,Name,Middle Name,MiddleName,Middle Name(s),s
+272,Participant Data,Name,Middle Name List,MiddleNameList,List of Middle Name(s),s
+64,Participant Data,Name,Preferred Name,PreferredName,Preferred Name,s
+340,Participant Data,Name,Preferred Name Last Name,PreferredNameLastName,Preferred Name (or First Name if not set) + Last Name (or Company name if a company),s
+341,Participant Data,Name,Preferred Name Last Name (List),PreferredNameLastNameList,List of Preferred Name (or First Name if not set) + Last Name (or Company name if a company),s
+65,Participant Data,Name,Preferred Name List,PreferredNameList,List of Preferred Name,s
+3,Participant Data,Name,Salutation,Salutation,"Mr, Mrs. etc.",s
+330,Participant Data,Name,Suffix,Suffix,"Name Suffix (jr, snr etc)",s
+31,Participant Data,Personal Information,Age,age_in_years,Age in years,n
+318,Participant Data,Personal Information,Citizenship,CitizenOfCountry,Citizenship,s
+47,Participant Data,Personal Information,Company Name,CompanyName,Company Name,s
+337,Participant Data,Personal Information,Company Name (List),CompanyNameList,"List of Company Names e.g. Name1, Name2 and Name3",s
+312,Participant Data,Personal Information,Date of birth,dob,Date of Birth,d
+30,Participant Data,Personal Information,Date of death,date_of_death,Date of Death,d
+29,Participant Data,Personal Information,Gender,Gender,Gender,s
+33,Participant Data,Personal Information,IRD_Number,IRD_Number,IRD Number,n
+273,Participant Data,Personal Information,Marital Status,MaritalStatus,"Marital Status (Married, Single etc)",s
+274,Participant Data,Personal Information,Marital Status (List),MaritalStatusList,List of Marital Status,s
+34,Participant Data,Personal Information,Occupation,Occupation,Occupation,s
+275,Participant Data,Personal Information,Tax Number,TaxNumber,"Tax Number (aka Social Security Number, IRD Number etc)",n
+276,Participant Data,Personal Information,Tax Number (List),TaxNumberList,List of Tax Number(s),n
+445,Receipt Actions,,Action Amount,ReceiptAction_ActionAmount,Receipt Action - Action Amount,c
+442,Receipt Actions,,Action ID,ReceiptAction_ActionID,Receipt Action - Action ID,n
+444,Receipt Actions,,Action Name,ReceiptAction_ActionName,Receipt Action - Action Name,s
+443,Receipt Actions,,Client Names,ReceiptAction_ClientNames,Receipt Action - Client Name(s),s
+446,Receipt Data,,Account Name,Receipt_AccountName,Receipt - Account Name,s
+350,Receipt Data,,Action Summary,Receipt_ActionSummary,Summary of action information associated with the receipt,s
+195,Receipt Data,,Amount,Receipt_Amount,Receipt - Amount (Currency),c
+196,Receipt Data,,Amount Text,Receipt_AmountText,Receipt - Amount (Text),s
+198,Receipt Data,,Beneficiary,Receipt_Beneficiary,Receipt - Beneficiary,s
+422,Receipt Data,,Date Payment Received,Receipt_DatePaymentReceived,"The date the payment was received (only available in some regions, otherwise defaults to the date the record was entered into actionstep)",d
+199,Receipt Data,,Description,Receipt_Description,Receipt - Description/Memo,s
+189,Receipt Data,,Payment Date,Receipt_PaymentDate,"This is the date on the payment associated to the Receipt, for example the date of a Cheque (Check)",d
+194,Receipt Data,,Payment Method,Receipt_PaymentMethod,Receipt - Payment Method,s
+200,Receipt Data,,Payment Reference,Receipt_PaymentReference,Receipt - Payment Reference,s
+447,Receipt Data,,Receipt Date,Receipt_ReceiptDate,This is the physical date/time that the user issued a receipt for payment,d
+193,Receipt Data,,Receipt Entry Date,Receipt_ReceiptEntryDate,This is the physical date/time that the receipt was created in Actionstep,d
+278,Receipt Data,,Receipt ID,Receipt_ID,Receipt - Receipt ID,n
+192,Receipt Data,,Receipt Issued By,Receipt_ReceiptIssuedBy,Receipt - Issued By Name,s
+191,Receipt Data,,Receipt Number,Receipt_ReceiptNumber,Receipt - Receipt Number,n
+197,Receipt Data,,Received From,Receipt_ReceivedFrom,Receipt - Received From Name,s
+396,Receipt Data,,Received From Address (Multi Line),Receipt_ReceivedFromAddressMultiLine,Received from address (trust receipts only),s
+395,Receipt Data,,Received From Address (One Line),Receipt_ReceivedFromAddressOneLine,Received from address (trust receipts only),s
+415,Receipt Data,,Regulatory Text,Receipt_RegulatoryText,Text required by compliance plugin regulations,s
+516,Receipt Data,,Title,Receipt_Title,Title for receipt templates,s
+329,Receipt Data,,Transaction Date,Receipt_TransactionDate,The General Ledger transaction date (which should also be the bank deposit date) for the GL Transaction assocated to the receipt,d
+190,Receipt Data,,Transaction ID,Receipt_TransactionID,Receipt - GL Transaction ID,s
+432,Receipt Data,,Trust Account Alias,Receipt_TrustAccountAlias,Trust/Client/Controlled Money Account,s
+433,Receipt Data,,Trust Account Number,Receipt_TrustAccountNumber,The bank account number,n
+169,Sale/Purchase Data,,Action ID,SP_ActionId,Sale/Purchase Action Id,n
+188,Sale/Purchase Data,,Additional Notes,SP_AdditionalNotes,Sale/Purchase Additional Notes,s
+172,Sale/Purchase Data,,Amount Paid,SP_AmountPaid,Sale/Purchase Total Amount Paid,c
+150,Sale/Purchase Data,,Amounts Include Tax,SP_AmountsIncludeTax,Sale/Purchase Amounts Include Tax,c
+448,Sale/Purchase Data,,Any Payment Total Applied On Invoice Created Date,SP_AnyPaymentTotalAppliedOnInvoiceCreatedDate,Any payments,c
+173,Sale/Purchase Data,,Balance Due,SP_BalanceDue,Sale/Purchase Total Balance Due,c
+138,Sale/Purchase Data,,Bank Account Number,SP_BankAccountNumber,Sale/Purchase Bank Account Number,n
+139,Sale/Purchase Data,,Bank Name,SP_BankName,Sale/Purchase Bank Name,s
+152,Sale/Purchase Data,,Bill Pay Invoice Link,SP_BillPayInvoiceLink,Bill-Pay Link to pay the invoice,s
+203,Sale/Purchase Data,,Billing Address,SP_BillingAddress,Sale/Purchase Billing Address,s
+336,Sale/Purchase Data,,Billing Address No Country,SP_BillingAddressNoCountry,"Sale/Purchase Billing Address, where the Country is removed for the local country",s
+157,Sale/Purchase Data,,Created By,SP_CreatedBy,Sale/Purchase Created By,s
+158,Sale/Purchase Data,,Created Date,SP_CreatedDate,Sale/Purchase Created Date,d
+141,Sale/Purchase Data,,Currency Code,SP_CurrencyCode,Sale/Purchase Currency Code,s
+170,Sale/Purchase Data,,Debt Collection Action ID,SP_DebtCollectionActionId,Sale/Purchase Debt Collection Action Id,n
+168,Sale/Purchase Data,,Description,SP_Description,Sale/Purchase Description,s
+227,Sale/Purchase Data,,Distinct Action ID List,SP_DistinctActionIdList,Sale/Purchase - Distinct list of Action ID's used in the sale/purchase record,n
+151,Sale/Purchase Data,,Exchange Rate,SP_ExchangeRate,Sale/Purchase Exchange Rate,n
+155,Sale/Purchase Data,,Expected Shipping Date,SP_ExpectedShippingDate,Sale/Purchase Expected Shipping Date,d
+488,Sale/Purchase Data,,Expenses Total (excl. tax),SP_ExpensesTotalExcludingTax,,c
+482,Sale/Purchase Data,,Fee Date Summary,SP_FeeDateSummary,A list of dates for the fees,d
+510,Sale/Purchase Data,,Fee Discount Amount,SP_FeeDiscountAmount,Discount on fees amount,c
+509,Sale/Purchase Data,,Fee Discount Description,SP_FeeDiscountDescription,Discount on fees description as per system settings,c
+481,Sale/Purchase Data,,Fee Titles Combined,SP_FeeTitlesCombined,"All ""Fee"" line items ""line titles"" group together as a long string of sentences in their date order to be used as a description field.",s
+483,Sale/Purchase Data,,Fee Total (excl. tax),SP_FeeTotalExcludingTax,,c
+511,Sale/Purchase Data,,Fee Total (excl. tax) After Discount,SP_FeeTotalExcludingTaxAfterDiscount,,c
+487,Sale/Purchase Data,,Fee Total Hours And Minutes,SP_FeeTotalHoursAndMinutes,Sum of the quantity for Fee entries as a hours:minutes,s
+486,Sale/Purchase Data,,Fee Total Hours As Decimal,SP_FeeTotalHoursAsDecimal,Sum of the quantity for Fee entries as a decimal,n
+484,Sale/Purchase Data,,Has Expense Entries,SP_HasExpenseEntries,Boolean to allow hide/show of expenses sections,b
+485,Sale/Purchase Data,,Has Fee Entries,SP_HasFeeEntries,Boolean to allow hide/show of fee sections,b
+493,Sale/Purchase Data,,Has Other Payment Applied On Invoice Created Date,SP_HasOtherPaymentAppliedOnInvoiceCreatedDate,"Flag if there is a Non-Trust, Non-Retainer Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date)",b
+491,Sale/Purchase Data,,Has Retainer Payment Applied On Invoice Created Date,SP_HasRetainerPaymentAppliedOnInvoiceCreatedDate,Flag if there is a Retainer Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date),b
+492,Sale/Purchase Data,,Has Trust Payment Applied On Invoice Created Date,SP_HasTrustPaymentAppliedOnInvoiceCreatedDate,Flag if there is a Trust Payment which was applied on the Invoice created Date (so ignores payments dated After the invoice created date),b
+513,Sale/Purchase Data,,Hide Fee Amounts,SP_HideFeeAmounts,"Hide fee amounts, used for bills with fee adjustments",b
+165,Sale/Purchase Data,,Last Send Date,SP_LastSendDate,Sale/Purchase Last Send Date,d
+166,Sale/Purchase Data,,Last Sent By,SP_LastSentBy,Sale/Purchase Last Sent By,s
+164,Sale/Purchase Data,,Last Sent Method,SP_LastSentMethod,Sale/Purchase Last Sent Method,s
+159,Sale/Purchase Data,,Last Updated By,SP_LastUpdatedBy,Sale/Purchase Last Updated By,s
+160,Sale/Purchase Data,,Last Updated Date,SP_LastUpdatedDate,Sale/Purchase Last Updated Date,d
+497,Sale/Purchase Data,,Net Owing On Invoice Created Date,SP_NetOwingOnInvoiceCreatedDate,Total Inclusive minus any payments on the invoice created date,c
+496,Sale/Purchase Data,,Other Payment Total Applied On Invoice Created Date,SP_OtherPaymentTotalAppliedOnInvoiceCreatedDate,Total amount of Non-Retainer + Non-Trust Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),c
+142,Sale/Purchase Data,,Our Reference,SP_OurReference,Sale/Purchase Our Reference,s
+143,Sale/Purchase Data,,Our Reference Alias,SP_OurReferenceAlias,Sale/Purchase Our Reference Alias,s
+269,Sale/Purchase Data,,Our Reference Bpay,SP_OurReferenceBpay,Sale/Purchase BPAY Calculation for Our Reference,n
+149,Sale/Purchase Data,,Payment Due Date,SP_PaymentDueDate,Sale/Purchase Payment Due Date,d
+148,Sale/Purchase Data,,Payment Terms,SP_PaymentTerms,Sale/Purchase Payment Terms,s
+508,Sale/Purchase Data,,Quote Valid Until Date,SP_QuoteValidUntilDate,Sale/Purchase Quote Valid Until Date,d
+147,Sale/Purchase Data,,Quoted Amount,SP_QuotedAmount,Quoted amount,c
+494,Sale/Purchase Data,,Retainer Total Applied On Invoice Created Date,SP_RetainerTotalAppliedOnInvoiceCreatedDate,Total amount of Retainer Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),c
+146,Sale/Purchase Data,,Sale Purchase Date,SP_SalePurchaseDate,Sale/Purchase Sale Purchase Date,d
+133,Sale/Purchase Data,,Sale Purchase Id,SP_SalePurchaseId,Sale/Purchase Sale Purchase Id,n
+156,Sale/Purchase Data,,Sale Purchase Status,SP_SalePurchaseStatus,Sale/Purchase Sale Purchase Status,s
+136,Sale/Purchase Data,,Sale Purchase Type,SP_SalePurchaseType,Sale/Purchase Sale Purchase Type,s
+137,Sale/Purchase Data,,Sale Purchase Type Title,SP_SalePurchaseTypeTitle,Sale/Purchase Sale Purchase Type Title,s
+140,Sale/Purchase Data,,Sales Person Name,SP_SalesPersonName,Sale/Purchase Sales Person Name,s
+515,Sale/Purchase Data,,Services Date Max,SP_ServicesDateMax,Maximum date for all time entries + expenses on the invoice. When none exist it will fall back to the Invoice date,d
+514,Sale/Purchase Data,,Services Date Min,SP_ServicesDateMin,Minimum date for all time entries + expenses on the invoice. When none exist it will fall back to the Invoice date,d
+153,Sale/Purchase Data,,Shipping Address,SP_ShippingAddress,Sale/Purchase Shipping Address,s
+204,Sale/Purchase Data,,Shipping Address No Country,SP_ShippingAddressNoCountry,"Sale/Purchase Shipping Address, where the Country is removed for the local country",s
+154,Sale/Purchase Data,,Shipping Details,SP_ShippingDetails,Sale/Purchase Shipping Details,s
+788,Sale/Purchase Data,,Show Bill Pay Section,SP_ShowBillPaySection,Boolean flag to hide/show the BillPay section (if available),b
+506,Sale/Purchase Data,,Statement Amount Due Excluding Retainer,SP_StatementAmountDueExcludingRetainer,Subtotal of Bill Statement Info (Excluding Retainer replenishment amount),c
+507,Sale/Purchase Data,,Statement Amount Due Including Retainer,SP_StatementAmountDueIncludingRetainer,The amount due from the Statement PLUS the retainer replenishment amount,c
+503,Sale/Purchase Data,,Statement Current Expenses (excl. tax),SP_StatementCurrentExpensesExcludingTax,This Invoice/Current Expenses (excluding Tax),c
+502,Sale/Purchase Data,,Statement Current Expenses (incl. tax),SP_StatementCurrentExpensesIncludingTax,This Invoice/Current Expenses (including Tax),c
+501,Sale/Purchase Data,,Statement Current Fees (excl. tax),SP_StatementCurrentFeesExcludingTax,This Invoice/Current Fees (excluding tax),c
+500,Sale/Purchase Data,,Statement Current Fees (incl. tax),SP_StatementCurrentFeesIncludingTax,This Invoice/Current Fees (including tax),c
+505,Sale/Purchase Data,,Statement Current Payment,SP_StatementCurrentPayment,"Current Payment (Trust, Retainer and Other)",c
+504,Sale/Purchase Data,,Statement Current Tax,SP_StatementCurrentTax,This Invoice/Tax on Fees/Expenses,c
+499,Sale/Purchase Data,,Statement Payment And Adjustments,SP_StatementPaymentAndAdjustments,"Total payments/adjustments as per ""BillStatementPayments"" repeat block",c
+498,Sale/Purchase Data,,Statement Prior Balance,SP_StatementPriorBalance,Prior/Opening balance from previous invoices,c
+238,Sale/Purchase Data,,Sum Of Quantity,SP_SumOfQuantity,"Sum of all line-item quantities (use |uom=A,B,C to filter)",c
+490,Sale/Purchase Data,,Tax On Expenses,SP_TaxOnExpenses,,c
+489,Sale/Purchase Data,,Tax On Fee Entries,SP_TaxOnFeeEntries,,c
+134,Sale/Purchase Data,,Their Name,SP_TheirName,Sale/Purchase Their Name,s
+135,Sale/Purchase Data,,Their Name Alias,SP_TheirNameAlias,Sale/Purchase Their Name Alias,s
+282,Sale/Purchase Data,,Their Name List,SP_TheirNameList,Sale/Purchase Their Names (comma separated if more than one),s
+323,Sale/Purchase Data,,Their Participant Current Balance,SP_TheirParticipant_CurrentBalance,Sale/purchase current balance (including payments allocated to date) as at the invoice date for their participant id,c
+321,Sale/Purchase Data,,Their Participant Participant Previous Balance,SP_TheirParticipant_PreviousBalance,Sale/purchase Previous invoice balance as at the last invoice date for their participant id,c
+325,Sale/Purchase Data,,Their Participant Total Previous Payments,SP_TheirParticipant_TotalPreviousPayments,Sale/purchase  total payments to date since the last invoice for their participant id,c
+144,Sale/Purchase Data,,Their Reference,SP_TheirReference,Sale/Purchase Their Reference,s
+145,Sale/Purchase Data,,Their Reference Alias,SP_TheirReferenceAlias,Sale/Purchase Their Reference Alias,s
+322,Sale/Purchase Data,,This Action Current Balance,SP_ThisAction_CurrentBalance,Sale/purchase current balance (including payments allocated to date) as at the invoice date for the associated action id,c
+320,Sale/Purchase Data,,This Action Previous Balance,SP_ThisAction_PreviousBalance,Sale/purchase Previous invoice balance as at the last invoice date for the associated action id,c
+324,Sale/Purchase Data,,This Action Total Previous Payments,SP_ThisAction_TotalPreviousPayments,Sale/purchase total payments to date since the last invoice for this action,c
+167,Sale/Purchase Data,,Title,SP_Title,Sale/Purchase Title,s
+162,Sale/Purchase Data,,Total Exclusive,SP_TotalExclusive,Sale/Purchase Total Exclusive,c
+163,Sale/Purchase Data,,Total GST,SP_TotalGst,Sale/Purchase Total Gst,c
+161,Sale/Purchase Data,,Total Inclusive,SP_TotalInclusive,Sale/Purchase Total Inclusive,c
+201,Sale/Purchase Data,,Total Quantity,SP_TotalQuantity,Sale/Purchase Sum of all Line Item Quantities,c
+440,Sale/Purchase Data,,Trust Current Balance,SP_TrustCurrentBalance,Trust current balance (all accounts),c
+436,Sale/Purchase Data,,Trust Previous Balance,SP_TrustPreviousBalance,Trust balance as-at last invoice date (all accounts),c
+594,Sale/Purchase Data,,Trust Regulatory Text,SP_TrustRegulatoryText,Regulatory text required by Trust regulations,s
+495,Sale/Purchase Data,,Trust Total Applied On Invoice Created Date,SP_TrustTotalAppliedOnInvoiceCreatedDate,Total amount of Trust Payments that were applied on the invoice created date (so ignores payments dated After the invoice created date),c
+439,Sale/Purchase Data,,Trust Total Invoice Payments,SP_TrustTotalInvoicePayments,Trust total invoice payments since last invoice date (all accounts),c
+437,Sale/Purchase Data,,Trust Total Receipts,SP_TrustTotalReceipts,Trust total receipts since last invoice date (all accounts),c
+438,Sale/Purchase Data,,Trust Total Withdrawals,SP_TrustTotalWithdrawals,Trust total withdrawals (excl invoice payments) since last invoice date (all accounts),c
+121,Sale/Purchase Line Item Data,,Account,SPI_Account,Sale/Purchase Line Item Account,s
+129,Sale/Purchase Line Item Data,,Action ID,SPI_ActionID,Sale/Purchase Line Item Action Id,n
+130,Sale/Purchase Line Item Data,,Action Name,SPI_ActionName,Sale/Purchase Line Item Action Name,s
+128,Sale/Purchase Line Item Data,,Date,SPI_Date,Sale/Purchase Line Item Date,d
+116,Sale/Purchase Line Item Data,,Description,SPI_Description,Sale/Purchase Line Item Description,s
+539,Sale/Purchase Line Item Data,,Display ID,SPI_DisplayID,Participant ID of Time keeper,s
+538,Sale/Purchase Line Item Data,,Display Initials,SPI_DisplayInitials,Initials of Time keeper,s
+537,Sale/Purchase Line Item Data,,Display Name,SPI_DisplayName,Name of Time keeper,s
+120,Sale/Purchase Line Item Data,,Expense Account,SPI_ExpenseAccount,Sale/Purchase Line Item Expense Account,s
+123,Sale/Purchase Line Item Data,,Expense GST Code,SPI_ExpenseGSTCode,Sale/Purchase Line Item Expense Gst code,s
+126,Sale/Purchase Line Item Data,,Expense GST Percent,SPI_ExpenseGSTPercent,Sale/Purchase Line Item Expense Gst Percent,n
+124,Sale/Purchase Line Item Data,,GST Code,SPI_GSTCode,Sale/Purchase Line Item Gst Code,s
+127,Sale/Purchase Line Item Data,,GST Percent,SPI_GSTPercent,Sale/Purchase Line Item Gst Percent,n
+206,Sale/Purchase Line Item Data,,Heading Quantity,SPI_HeadingQuantity,Sale/Purchase Line Item - Heading Quantity (hidden for Line-Items),n
+119,Sale/Purchase Line Item Data,,Income Account,SPI_IncomeAccount,Sale/Purchase Line Item Income Account,s
+122,Sale/Purchase Line Item Data,,Income GSTCode,SPI_IncomeGSTCode,Sale/Purchase Line Item Income Gst code,s
+125,Sale/Purchase Line Item Data,,Income GSTPercent,SPI_IncomeGSTPercent,Sale/Purchase Line Item Income Gst Percent,n
+428,Sale/Purchase Line Item Data,,Inventory Item Buy Price,SPI_InventoryItemBuyPrice,The purchase price of the inventory item,c
+187,Sale/Purchase Line Item Data,,Inventory Item Code,SPI_InventoryItemCode,Sale/Purchase Line Item Inventory Item Code,s
+429,Sale/Purchase Line Item Data,,Inventory Item Global Local,SPI_InventoryItemGlobalLocal,The inventory item owner,s
+315,Sale/Purchase Line Item Data,,Inventory Item Price List Changed Date,SPI_InventoryItemPriceListChangedDate,Inventory item price last change date (if applicable),d
+430,Sale/Purchase Line Item Data,,Inventory Item Status,SPI_InventoryItemStatus,The inventory item status,s
+207,Sale/Purchase Line Item Data,,Line Item Quantity,SPI_LineItemQuantity,Sale/Purchase Line Item - Line Item Quantity (hidden for Headings),n
+115,Sale/Purchase Line Item Data,,Line Number,SPI_LineNumber,Sale/Purchase Line Item Line Number,n
+118,Sale/Purchase Line Item Data,,Quantity,SPI_Quantity,Sale/Purchase Line Item Quantity,n
+237,Sale/Purchase Line Item Data,,Sum Of Quantity,SPI_SumOfQuantity,"Sum of a heading's child line-item quantity (use |uom=A,B,C to filter) (value is empty for line-items)",n
+224,Sale/Purchase Line Item Data,,Supplier Code,SPI_SupplierCode,Sale/Purchase Line Item Supplier Code / Item Code,s
+132,Sale/Purchase Line Item Data,,Supplier Name,SPI_SupplierName,Sale/Purchase Line Item Supplier Name,s
+131,Sale/Purchase Line Item Data,,Task ID,SPI_TaskID,Sale/Purchase Line Item Task Id,n
+117,Sale/Purchase Line Item Data,,Title,SPI_Title,Sale/Purchase Line Item Title,s
+208,Sale/Purchase Line Item Data,,Top Level Quantity,SPI_TopLevelQuantity,Sale/Purchase Line Item - Quantity for Top-Level Items/Heading (hidden for child headings/items),n
+107,Sale/Purchase Line Item Data,,Total (excl. tax),SPI_TotalExcl,Sale/Purchase Line Item Total Excl,c
+108,Sale/Purchase Line Item Data,,Total (incl. tax),SPI_TotalIncl,Sale/Purchase Line Item Total Incl,c
+113,Sale/Purchase Line Item Data,,Total Cost (excl. tax),SPI_TotalCostExcl,Sale/Purchase Line Item Total Cost Excl,c
+114,Sale/Purchase Line Item Data,,Total Cost (incl. tax),SPI_TotalCostIncl,Sale/Purchase Line Item Total Cost Incl,c
+109,Sale/Purchase Line Item Data,,Total Sell (excl. tax),SPI_TotalSellExcl,Sale/Purchase Line Item Total Sell Excl,c
+110,Sale/Purchase Line Item Data,,Total Sell (incl. tax),SPI_TotalSellIncl,Sale/Purchase Line Item Total Sell Incl,c
+103,Sale/Purchase Line Item Data,,Unit (excl. tax),SPI_UnitExcl,Sale/Purchase Line Item Unit Excl,c
+104,Sale/Purchase Line Item Data,,Unit (incl. tax),SPI_UnitIncl,Sale/Purchase Line Item Unit Incl,c
+111,Sale/Purchase Line Item Data,,Unit Cost (excl. tax),SPI_UnitCostExcl,Sale/Purchase Line Item Unit Cost Excl,c
+112,Sale/Purchase Line Item Data,,Unit Cost (incl. tax),SPI_UnitCostIncl,Sale/Purchase Line Item Unit Cost Incl,c
+105,Sale/Purchase Line Item Data,,Unit Sell (excl. tax),SPI_UnitSellExcl,Sale/Purchase Line Item Unit Sell Excl,c
+106,Sale/Purchase Line Item Data,,Unit Sell (incl. tax),SPI_UnitSellIncl,Sale/Purchase Line Item Unit Sell Incl,c
+205,Sale/Purchase Line Item Data,,UOM,SPI_UOM,Sale/Purchase Line Item Unit of Measure (Symbol),s
+202,Sale/Purchase Line Item Data,,UOM Name,SPI_UomName,Sale/Purchase Line Item Unit of Measure (Singluar/Plural),s
+343,Sale/Purchase Line Item Data,,UTBMS Activity Code,SPI_UtbmsActivityCode,UTBMS Activity Code (if applicable),s
+345,Sale/Purchase Line Item Data,,UTBMS Expense Code,SPI_UtbmsExpenseCode,UTBMS Expense Code (if applicable),s
+342,Sale/Purchase Line Item Data,,UTBMS Task Code,SPI_UtbmsTaskCode,UTBMS Task Code (if applicable),s
+344,Sale/Purchase Line Item Data,,UTBMS Timekeeper Code,SPI_UtbmsTimekeeperCode,UTBMS Timekeeper Code (if applicable),s
+347,System Data,,Action Alias,system_ActionAlias,Action Alias,s
+348,System Data,,Action Alias Plural,system_ActionAliasPlural,Aciton Alias (Plural),s
+181,System Data,,Bank Account Number,ElectronicPayments_BankAccountNumber,Bank Account Number of the Electronic Payments system account,n
+182,System Data,,Bank Name,ElectronicPayments_BankName,Bank Name (from the contact record) of the Electronic Payments system account,s
+374,System Data,,Check Alias,system_CheckAlias,Check/Cheque Alias,s
+184,System Data,,Current Date,system_date,Current date,d
+51,System Data,,Customer Alias,system_CustomerAlias,Customer Participant Type Name,s
+186,System Data,,Disbursement Alias,system_DisbursementAlias,Disbursement Alias,s
+183,System Data,,GST Alias,system_GstAlias,GST/Tax/VAT Alias,s
+427,System Data,,Org Key,system_OrgKey,The Organization Key of the system,s
+414,System Data,,Record Count,system_RecordCount,Record Count for a repeat data source,n
+185,System Data,,Sales Person Alias,system_SalesPersonAlias,Sales Person Participant Type Name,s
+372,System Data,,Trust Alias,system_TrustAlias,Trust Alias,s
+373,System Data,,Trust Client Alias,system_TrustClientAlias,Trust Client Alias,s
+212,Trust Accounting Data,,Account Balance,TRUST_AccountBalance,Trust (By Action) - Account Balance (Sum of All Current and Inventments Accounts),c
+210,Trust Accounting Data,,Current Balance,TRUST_CurrentBalance,Trust (By Action) - Current Account Balance (All Current Accounts),c
+211,Trust Accounting Data,,Investment Balance,TRUST_InvestmentBalance,Trust (By Action) - Investment Account Balance (All Inventment Accounts),c
+219,Trust Accounting Data,,Multi Account Balance,TRUST_MultiAccountBalance,Trust (By Client) - Account Balance (Sum of All Current and Inventments Accounts),c
+217,Trust Accounting Data,,Multi Current Balance,TRUST_MultiCurrentBalance,Trust (By Client) - Current Account Balance (All Current Accounts),c
+218,Trust Accounting Data,,Multi Investment Balance,TRUST_MultiInvestmentBalance,Trust (By Client) - Investment Account Balance (All Inventment Accounts),c
+221,Trust Accounting Data,,Multi Paid By Firm,TRUST_MultiPaidByFirm,Trust (By Client) - Paid By Firm,c
+223,Trust Accounting Data,,Multi Total Funds Less Owing To Firm,TRUST_MultiTotalFundsLessOwingToFirm,Trust (By Client) - Total Funds Less Owing To Firm (AccountBalance minus TotalOwingToFirm),c
+222,Trust Accounting Data,,Multi Total Owing To Firm,TRUST_MultiTotalOwingToFirm,Trust (By Client) - Total Owing To Firm (Sum of Unpaid Sales Invoices + Paid By Firm),c
+220,Trust Accounting Data,,Multi Unpaid Sales Invoices,TRUST_MultiUnpaidSalesInvoices,Trust (By Client)- Unpaid Sales Invoices,s
+214,Trust Accounting Data,,Paid By Firm,TRUST_PaidByFirm,Trust (By Action) - Paid By Firm,c
+216,Trust Accounting Data,,Total Funds Less Owing To Firm,TRUST_TotalFundsLessOwingToFirm,Trust (By Action) - Total Funds Less Owing To Firm (AccountBalance minus TotalOwingToFirm),c
+215,Trust Accounting Data,,Total Owing To Firm,TRUST_TotalOwingToFirm,Trust (By Action) - Total Owing To Firm (Sum of Unpaid Sales Invoices + Paid By Firm),c
+213,Trust Accounting Data,,Unpaid Sales Invoices,TRUST_UnpaidSalesInvoices,Trust (By Action) - Unpaid Sales Invoices,s
+406,Trust EFT Requisition,,Amount,TrustEft_Amount,Trust EFT Requisition - Amount,c
+408,Trust EFT Requisition,,Authorized By Participant Name,TrustEft_AuthorizedByParticipantName,Trust EFT Requisition - Authorized by (Staff) Participant Name,s
+441,Trust EFT Requisition,,Bank Reference,TrustEft_BankReference,Trust EFT Requisition - Bank Reference,s
+398,Trust EFT Requisition,,EFT Requisition Number,TrustEft_Number,Trust EFT Requisition - EFT Requisition Number,n
+397,Trust EFT Requisition,,On Behalf Of Action Name,TrustEft_OnBehalfOfActionName,Trust EFT Requisition - On behalf of Action Name,s
+401,Trust EFT Requisition,,On Behalf Of Action Reference,TrustEft_OnBehalfOfActionReference,Trust EFT Requisition - On behalf of Action Reference,s
+402,Trust EFT Requisition,,On Behalf Of Participant Name,TrustEft_OnBehalfOfParticipantName,Trust EFT Requisition - On behalf of Participant Name,s
+400,Trust EFT Requisition,,Pay To Account Name,TrustEft_PayToAccountName,Trust EFT Requisition - Pay to Bank Account Name,s
+404,Trust EFT Requisition,,Pay To Account Number,TrustEft_PayToAccountNumber,Trust EFT Requisition - Pay to Bank Account Number,n
+403,Trust EFT Requisition,,Pay To Recipient Name,TrustEft_PayToRecipientName,Trust EFT Requisition - Pay to Recipient Name,s
+405,Trust EFT Requisition,,Payment Date,TrustEft_Date,Trust EFT Requisition - Payment Date,d
+407,Trust EFT Requisition,,Reason,TrustEft_Reason,Trust EFT Requisition - Reason/Purpose,s
+399,Trust EFT Requisition,,Requested By Participant Name,TrustEft_RequestedByParticipantName,Trust EFT Requisition - Requested by (Staff) Participant Name,s
+388,Trust Payment Confirmation,,Amount,TrustPayment_Amount,Trust Payment Confirmation - Amount Paid (Currency format),c
+387,Trust Payment Confirmation,,Amount (in words),TrustPayment_AmountText,Trust Payment Confirmation - Amount Paid (In English Text),s
+380,Trust Payment Confirmation,,Date,TrustPayment_Date,Trust Payment Confirmation - Date on Bank Entry,d
+383,Trust Payment Confirmation,,Date If Different,TrustPayment_DateIfDifferent,Trust Payment Confirmation - Date Paid (empty if same as date on Bank Entry),d
+381,Trust Payment Confirmation,,Entry Date,TrustPayment_EntryDate,Trust Payment Confirmation - Date Entered into System,d
+382,Trust Payment Confirmation,,Entry Date If Different,TrustPayment_EntryDateIfDifferent,Trust Payment Confirmation - Date Entered into System (empty if same as date on Bank Paid),d
+393,Trust Payment Confirmation,,Issued By,TrustPayment_IssuedBy,Trust Payment Confirmation - ,s
+389,Trust Payment Confirmation,,Method,TrustPayment_Method,Trust Payment Confirmation - Payment Method,s
+390,Trust Payment Confirmation,,Method And Reference,TrustPayment_MethodAndReference,Trust Payment Confirmation - Payment Method and Payment Reference (if any),s
+379,Trust Payment Confirmation,,Number,TrustPayment_Number,Trust Payment Confirmation - Payment Number,n
+392,Trust Payment Confirmation,,Reason,TrustPayment_Reason,Trust Payment Confirmation - Reason/Description,s
+391,Trust Payment Confirmation,,Reference,TrustPayment_Reference,Trust Payment Confirmation - Payment Reference (EFT Ref/Chk No. etc),s
+394,Trust Payment Confirmation,,Requested By Name,TrustPayment_RequestedByName,Requested by name,s
+386,Trust Payment Confirmation,,To Account,TrustPayment_ToAccount,Trust Payment Confirmation - Paid To EFT Account,s
+384,Trust Payment Confirmation,,To Name,TrustPayment_ToName,Trust Payment Confirmation - Paid To Name,s
+385,Trust Payment Confirmation,,To Name And Account,TrustPayment_ToNameAndAccount,Trust Payment Confirmation - Paid To Name (and account if EFT),s
+434,Trust Payment Confirmation,,Trust Account Alias,TrustPayment_TrustAccountAlias,Trust/Client/Controlled Money Account,s
+378,Trust Receipt Actions,,Action Amount,TrustReceiptAction_ActionAmount,Trust Receipt Action - Action Amount,n
+375,Trust Receipt Actions,,Action ID,TrustReceiptAction_ActionID,Trust Receipt Action - Action ID,n
+377,Trust Receipt Actions,,Action Name,TrustReceiptAction_ActionName,Trust Receipt Action - Action Name,s
+376,Trust Receipt Actions,,Client Names,TrustReceiptAction_ClientNames,Trust Receipt Action - Client Name(s),s
+351,Trust Statement,,Account Name,TrustStatement_AccountName,,s
+354,Trust Statement,,Account Opened Date,TrustStatement_AccountOpenedDate,,d
+353,Trust Statement,,Account Type,TrustStatement_AccountType,,s
+352,Trust Statement,,Bank Account Number,TrustStatement_BankAccountNumber,,n
+360,Trust Statement,,Closing Balance Amount,TrustStatement_ClosingBalanceAmount,,c
+359,Trust Statement,,Closing Balance Date,TrustStatement_ClosingBalanceDate,,d
+595,Trust Statement,,Entry Date,TrustStatement_EntryDate,Text describing the addition of the entry date,d
+358,Trust Statement,,Opening Balance Amount,TrustStatement_OpeningBalanceAmount,,c
+357,Trust Statement,,Opening Balance Date,TrustStatement_OpeningBalanceDate,,d
+355,Trust Statement,,Statement Date,TrustStatement_StatementDate,,d
+356,Trust Statement,,Statement Number,TrustStatement_StatementNumber,,n
+435,Trust Statement,,Trust Account Alias,TrustStatement_TrustAccountAlias,Trust/Client/Controlled Money Account,s
+411,Trust Statement Invoices,,Amount,TrustStatementInvoice_Amount,Trust Statement Invoices - Item Amount,n
+413,Trust Statement Invoices,,Balance,TrustStatementInvoice_Balance,Trust Statement Invoices - Running Balance,c
+410,Trust Statement Invoices,,Date,TrustStatementInvoice_Date,Trust Statement Invoices - Item Date,d
+424,Trust Statement Invoices,,Date (Formatted),TrustStatementInvoice_DateFormatted,The date for a statement invoice but pre-formatted which may include multiple lines if needed,d
+409,Trust Statement Invoices,,Description,TrustStatementInvoice_Description,Trust Statement Invoices - Item Description,s
+412,Trust Statement Invoices,,Due,TrustStatementInvoice_Due,Trust Statement Invoices - Item Balance Due,c
+371,Trust Statement Item,,Action Entry Number,TrustStatementItem_ActionEntryNumber,,n
+367,Trust Statement Item,,Associated Participant Name,TrustStatementItem_AssociatedParticipantName,,s
+361,Trust Statement Item,,Bank Entry Date,TrustStatementItem_BankEntryDate,,d
+423,Trust Statement Item,,Bank Entry Date (Formatted),TrustStatementItem_BankEntryDateFormatted,The date for a statement item but pre-formatted which may include multiple lines if needed,d
+364,Trust Statement Item,,Deposit Amount,TrustStatementItem_DepositAmount,,c
+362,Trust Statement Item,,Description,TrustStatementItem_Description,,s
+369,Trust Statement Item,,Entry Number,TrustStatementItem_EntryNumber,,n
+368,Trust Statement Item,,Entry Type,TrustStatementItem_EntryType,,s
+370,Trust Statement Item,,Entry Type And Number,TrustStatementItem_EntryTypeAndNumber,,s
+366,Trust Statement Item,,Running Balance,TrustStatementItem_RunningBalance,,c
+365,Trust Statement Item,,Transaction Amount,TrustStatementItem_TransactionAmount,,c
+363,Trust Statement Item,,Withdrawal Amount,TrustStatementItem_WithdrawalAmount,,c

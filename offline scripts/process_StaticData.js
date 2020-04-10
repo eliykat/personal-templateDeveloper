@@ -9,6 +9,13 @@
 // n = number (e.g. integer, floating point, percentage)
 // p = phone number
 // b = boolean
+// h = header (in dropdown list)
+
+// ASSUMPTIONS (EXTREMELY IMPORTANT):
+// The spreadsheet is in the following order:
+// Data source
+// Sub-category
+// Label
 
 const papa = require('papaparse');
 const fs = require('fs');
@@ -17,6 +24,7 @@ const csv = process.argv[2];
 const csv_string = fs.readFileSync(csv).toString('utf-8');
 
 let prevDataSource;
+let prevSubCategory;
 
 const json = {
     dataSources: []
@@ -38,12 +46,17 @@ papa.parse(csv_string, {
                 continue
             }
 
-            let source = results.data[i][2];
-            let desc = results.data[i][6];
-            let code = results.data[i][3];
-            let format = results.data[i][13];
+            let column = results.data[i];
+
+            let source = column[1];
+            let subcategory = column[2];
+            let label = column[3];
+            let code = column[4];
+            let desc = column[5];
+            let format = column[6];
 
             // Create new datasource if required. This assumes the source file is ordered by data source
+            // NB: key and text properties must be used as this reflects IDropdownOption
             if (source != prevDataSource) {
                 currentIndex = dataSources.push(
                     {
@@ -54,15 +67,27 @@ papa.parse(csv_string, {
                 ) - 1;
             }
 
+            // Create new subcat if required. This assumes proper ordering of data file.
+            if (subcategory != prevSubCategory && subcategory) {
+                let field = {
+                    key: subcategory,
+                    text: subcategory,
+                    format: 'h'
+                }
+                dataSources[currentIndex].fields.push(field);
+            }
+
+            // NB: key and text properties must be used as this reflects IDropdownOption
             let field = {
-                text: desc,
                 key: code,
+                text: label,
                 format: format
             }
 
             dataSources[currentIndex].fields.push(field);
 
             prevDataSource = source;
+            prevSubCategory = subcategory;
             
         }
 
