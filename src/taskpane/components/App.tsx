@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+
 import { FieldsTab } from './FieldsTab';
 import { OptionsTab } from './OptionsTab';
-import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { ConditionalTab } from './ConditionalTab';
+import { SettingsTab } from './SettingsTab';
+
+import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { IFormState } from '../common/interfaces';
 import { replaceSpaces } from '../common/miscFunctions';
 
@@ -23,19 +26,15 @@ export default class App extends React.Component {
             participantType: undefined,
             dataCollection: undefined,
             field: undefined,
+
+            // Options tab
             ifNull: "",
             ignoreIfNull: false,
             recordNo: "",
             repeatrn: false,
             prefix: "",
             suffix: "",
-
-            // Options tab
-            useMailMergeFields: false,
-            resetOnChange: true,
             case: defaultCase,
-            dateFormat: defaultDateFormat,
-            phoneFormat: defaultPhoneFormat,
             newLine: defaultNewLine,
             currencyToWords: false,
             noCurrencySymbol: false,
@@ -47,7 +46,13 @@ export default class App extends React.Component {
             condition1IsField: false,
             conditionalOperator: undefined,
             condition2: "",
-            condition2IsField: false
+            condition2IsField: false,
+
+            // Settings tab
+            useMailMergeFields: false,
+            resetOnChange: true,
+            dateFormat: defaultDateFormat,
+            phoneFormat: defaultPhoneFormat
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -115,12 +120,18 @@ export default class App extends React.Component {
                     <OptionsTab handleChange={this.handleChange} 
                         insertFieldBtn={this.insertFieldBtn} 
                         formState={this.state} 
-                        handleChangeReplaceSpaces = {this.handleChangeReplaceSpaces} />
+                        handleChangeReplaceSpaces = {this.handleChangeReplaceSpaces} 
+                        handleChangeNumbersOnly = {this.handleChangeNumbersOnly} />
                 </PivotItem>
                 <PivotItem headerText="Conditional">
                     <ConditionalTab handleChange={this.handleChange} 
                         formState={this.state} 
                         insertConditionalBtn={this.insertConditionalBtn} />
+                </PivotItem>
+                <PivotItem headerText="Settings">
+                    <SettingsTab 
+                    formState={this.state}
+                    handleChange={this.handleChange} />
                 </PivotItem>
             </Pivot>
         )

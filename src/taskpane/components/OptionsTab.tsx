@@ -6,8 +6,7 @@ import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
 import { stackTokens } from '../common/tokens';
 import { Stack } from 'office-ui-fabric-react';
-import { InsertButton } from './InsertButton';
-import { caseList, dateFormatList, newLineList, phoneFormatList } from '../common/dropdownOptions';
+import { caseList, newLineList } from '../common/dropdownOptions';
 
 // Required for checkboxes
 initializeIcons();
@@ -16,29 +15,60 @@ interface IOptionsTab {
     handleChange: any,
     insertFieldBtn: any,
     formState: any,
-    handleChangeReplaceSpaces: any
+    handleChangeReplaceSpaces: any,
+    handleChangeNumbersOnly: any
 }
 
 export function OptionsTab (props: IOptionsTab) {
         
-    const { handleChange, insertFieldBtn, formState, handleChangeReplaceSpaces } = props;
+    const { handleChange, formState, handleChangeReplaceSpaces, handleChangeNumbersOnly } = props;
 
     return (
         <div>
             <Stack tokens={stackTokens} verticalFill={true}>
 
-                <Stack.Item>
-                    <Checkbox id="useMailMergeFields" 
-                        label="Use mail merge fields instead of square brackets" 
-                        onChange={handleChange} 
-                        checked={formState.useMailMergeFields} />
+            <Stack.Item>
+                    <TextField id="ifNull" 
+                        label="If null" 
+                        onChange={handleChangeReplaceSpaces} 
+                        disabled={formState.ignoreIfNull} 
+                        value={formState.ifNull} />
                 </Stack.Item>
 
                 <Stack.Item>
-                    <Checkbox id="resetOnChange" 
-                        label="Reset options when a different field is selected" 
+                    <Checkbox id="ignoreIfNull" 
+                        label="Ignore if null" 
                         onChange={handleChange} 
-                        checked={formState.resetOnChange} />
+                        checked={formState.ignoreIfNull} />
+                </Stack.Item>
+
+                <Stack.Item>
+                    <TextField id="recordNo" 
+                        label="Record number (inside REPEAT block)" 
+                        onChange={handleChangeNumbersOnly} 
+                        disabled={formState.repeatrn} 
+                        value={formState.recordNo} />
+                </Stack.Item>
+
+                <Stack.Item>
+                    <Checkbox id="repeatrn" 
+                        label="Repeat record (inside REPEAT block)" 
+                        onChange={handleChange} 
+                        checked={formState.repeatrn} />
+                </Stack.Item>
+                
+                <Stack.Item>
+                    <TextField id="prefix" 
+                        label="Prefix" 
+                        onChange={handleChangeReplaceSpaces} 
+                        value={formState.prefix} />
+                </Stack.Item>
+
+                <Stack.Item>
+                    <TextField id="suffix" 
+                        label="Suffix" 
+                        onChange={handleChangeReplaceSpaces} 
+                        value={formState.suffix} />
                 </Stack.Item>
 
                 <Stack.Item>                    
@@ -47,24 +77,6 @@ export function OptionsTab (props: IOptionsTab) {
                         options={caseList} 
                         onChange={handleChange}
                         label="Case" />
-                </Stack.Item>
-
-                <Stack.Item>
-                    <Dropdown id="dateFormat" 
-                        label="Date Format" 
-                        selectedKey={formState.dateFormat ? formState.dateFormat.key : undefined} 
-                        onChange={handleChange} 
-                        placeholder="Select date format" 
-                        options={dateFormatList} />
-                </Stack.Item>
-
-                <Stack.Item>
-                    <Dropdown id="phoneFormat" 
-                        label="Phone number format" 
-                        selectedKey={formState.phoneFormat ? formState.phoneFormat.key : undefined} 
-                        onChange={handleChange} 
-                        placeholder="Select phone number format" 
-                        options={phoneFormatList} />
                 </Stack.Item>
                 
                 <Stack.Item>
@@ -104,8 +116,6 @@ export function OptionsTab (props: IOptionsTab) {
                         value={formState.customOption} />
                 </Stack.Item>
             </Stack>
-
-            <InsertButton handleClick={insertFieldBtn} buttonText="Insert Field" />
 
         </div>
     )
