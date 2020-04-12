@@ -1,30 +1,35 @@
-export interface IFormState {
+export interface IFormState extends IFieldsState, IOptionsState, ISettingsState, IConditionalState {}
 
-    // Fields tab
+export interface IFieldsState {
     dataSource: IDataSource,
     participantType: IOptions,
     dataCollection: IOptions,
-    field: IField,
+    field: IField
+}
+
+export interface IOptionsState {
     ifNull: string,
     ignoreIfNull: boolean,
     recordNo: string,
     repeatrn: boolean,
     prefix: string,
     suffix: string,
-
-    // Options tab
-    useMailMergeFields: boolean,
-    resetOnChange: boolean,
     case: IOptions,
-    dateFormat: IOptions,
-    phoneFormat: IOptions,
     newLine: IOptions,
     currencyToWords: boolean,
     noCurrencySymbol: boolean,
     customOption: string,
-    stripSpaces: boolean,
+    stripSpaces: boolean
+}
 
-    // Conditional tab
+export interface ISettingsState {
+    useMailMergeFields: boolean,
+    resetOnChange: boolean,
+    dateFormat: IOptions,
+    phoneFormat: IOptions
+}
+
+export interface IConditionalState {
     condition1: string,
     condition1IsField: boolean,
     conditionalOperator: IOptions,
@@ -45,5 +50,4 @@ type formatTypes = 's' | 'd' | 'c' | 'n' | 'p' | 'h';
 
 export interface IField extends IOptions {
     format: formatTypes
-    //format: string
 }

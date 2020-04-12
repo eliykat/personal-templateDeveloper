@@ -7,7 +7,7 @@ import { SettingsTab } from './SettingsTab';
 
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
-import { IFormState } from '../common/interfaces';
+import { IFormState, IFieldsState, IOptionsState, IConditionalState, ISettingsState } from '../common/interfaces';
 import { replaceSpaces } from '../common/miscFunctions';
 
 import { defaultNewLine, defaultDateFormat, defaultCase, defaultPhoneFormat} from '../common/dropdownOptions';
@@ -16,18 +16,22 @@ import { buildFieldCode, insertField } from '../common/officeAPI';
 export default class App extends React.Component {
 
     state: IFormState;
+    defaultFields: IFieldsState;
+    defaultOptions: IOptionsState;
+    defaultConditional: IConditionalState;
+    defaultSettings: ISettingsState;
 
     constructor(props: object) {
         super(props);
 
-        this.state = {
-            // Fields tab
+        this.defaultFields = {
             dataSource: undefined,
             participantType: undefined,
             dataCollection: undefined,
             field: undefined,
+        }
 
-            // Options tab
+        this.defaultOptions = {
             ifNull: "",
             ignoreIfNull: false,
             recordNo: "",
@@ -40,24 +44,29 @@ export default class App extends React.Component {
             noCurrencySymbol: false,
             customOption: "",
             stripSpaces: false,
+        }
 
-            // Conditional tab
+        this.defaultConditional = {
             condition1: "",
             condition1IsField: false,
             conditionalOperator: undefined,
             condition2: "",
             condition2IsField: false,
+        }
 
-            // Settings tab
+        this.defaultSettings = {
             useMailMergeFields: false,
             resetOnChange: true,
             dateFormat: defaultDateFormat,
             phoneFormat: defaultPhoneFormat
         }
 
+        this.state = Object.assign({}, this.defaultFields, this.defaultOptions, this.defaultConditional, this.defaultSettings);
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeNumbersOnly = this.handleChangeNumbersOnly.bind(this);
         this.handleChangeReplaceSpaces = this.handleChangeReplaceSpaces.bind(this);
+        this.handleFieldChange = this.handleFieldChange.bind(this);
         this.insertFieldBtn = this.insertFieldBtn.bind(this);
         this.insertConditionalBtn = this.insertConditionalBtn.bind(this);
         this.insertRepeatBtn = this.insertRepeatBtn.bind(this);
@@ -75,6 +84,14 @@ export default class App extends React.Component {
         this.handleChange(event, replaceSpaces(newValue));
     }
 
+    handleFieldChange(event: any, newValue: IDropdownOption): void {
+        if (this.state.resetOnChange) {
+            this.resetForm(this.defaultOptions);
+        }
+
+        this.handleChange(event, newValue);
+    }
+
     handleChange(event: any, newValue?: string | IDropdownOption | boolean | undefined): void {
         let id = event.target.id;
 
@@ -83,6 +100,10 @@ export default class App extends React.Component {
                 [id]: newValue
             });
         }
+    }
+
+    resetForm(defaults: IFieldsState | IOptionsState | IConditionalState | ISettingsState) {
+        Object.assign(this.state, defaults);
     }
 
     insertFieldBtn() {
@@ -114,7 +135,8 @@ export default class App extends React.Component {
                         insertFieldBtn={this.insertFieldBtn} 
                         formState={this.state} 
                         handleChangeNumbersOnly={this.handleChangeNumbersOnly} 
-                        handleChangeReplaceSpaces={this.handleChangeReplaceSpaces} />
+                        handleChangeReplaceSpaces={this.handleChangeReplaceSpaces}
+                        handleFieldChange={this.handleFieldChange} />
                 </PivotItem>
                 <PivotItem headerText="Options">
                     <OptionsTab handleChange={this.handleChange} 

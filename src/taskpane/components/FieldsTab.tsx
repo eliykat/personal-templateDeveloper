@@ -15,16 +15,17 @@ interface IFieldsTab {
     handleChange: any,
     insertFieldBtn: any,
     formState: any,
-    handleChangeNumbersOnly: any
-    handleChangeReplaceSpaces: any
-} 
+    handleChangeNumbersOnly: any,
+    handleChangeReplaceSpaces: any,
+    handleFieldChange: any
+}
 
 export function FieldsTab(props: IFieldsTab) {
 
     const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
-    const { handleChange, insertFieldBtn, formState } = props;
+    const { handleChange, insertFieldBtn, formState, handleFieldChange } = props;
 
     return (
         <div>
@@ -56,7 +57,7 @@ export function FieldsTab(props: IFieldsTab) {
                     <Dropdown id="field" 
                         label="Field" 
                         selectedKey={formState.field ? formState.field.key : undefined} 
-                        onChange={handleChange} 
+                        onChange={handleFieldChange} 
                         placeholder="Select a field" 
                         options={formState.dataSource ? formState.dataSource.fields : undefined} />
                 </Stack.Item>
