@@ -3,7 +3,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
-import { InsertButton } from './InsertButton';
+import { DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
@@ -17,7 +17,8 @@ interface IFieldsTab {
     formState: any,
     handleChangeNumbersOnly: any,
     handleChangeReplaceSpaces: any,
-    handleFieldChange: any
+    handleFieldChange: any,
+    resetOptions: any
 }
 
 export function FieldsTab(props: IFieldsTab) {
@@ -25,7 +26,31 @@ export function FieldsTab(props: IFieldsTab) {
     const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
-    const { handleChange, insertFieldBtn, formState, handleFieldChange } = props;
+    const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions } = props;
+
+    const splitButtonItems: IContextualMenuProps = {
+        items: [
+            {
+                key: 'copy',
+                text: 'Copy to clipboard'
+            },
+            {
+                key: 'resetOptions',
+                text: 'Clear options',
+                onClick: resetOptions
+            },
+            {
+                key: 'repeat',
+                text: 'Insert REPEAT block',
+                disabled: !formState.dataSource ||
+                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data")
+            },
+            {
+                key: 'repeatend',
+                text: 'Insert REPEAT END'
+            }
+        ]
+    }
 
     return (
         <div>
@@ -50,7 +75,7 @@ export function FieldsTab(props: IFieldsTab) {
                         onChange={handleChange} 
                         placeholder="Select an option" 
                         options={participantTypeList}
-                        disabled={(!formState.dataSource || !(formState.dataSource.key == "Participant Data"))} />
+                        disabled={!formState.dataSource || !(formState.dataSource.key == "Participant Data")} />
                 </Stack.Item>
 
                 <Stack.Item>
@@ -62,10 +87,17 @@ export function FieldsTab(props: IFieldsTab) {
                         options={formState.dataSource ? formState.dataSource.fields : undefined} />
                 </Stack.Item>
 
+                <Stack.Item align="center">
+                    <DefaultButton 
+                        text="Insert"
+                        primary
+                        split
+                        splitButtonAriaLabel="More options"
+                        menuProps={splitButtonItems}
+                        onClick={insertFieldBtn} />
+                </Stack.Item>
+
             </Stack>
-
-            <InsertButton handleClick={insertFieldBtn} buttonText="Insert Field" />
-
         </div>
 
     )

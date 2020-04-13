@@ -5,7 +5,7 @@ import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
 import { stackTokens } from '../common/tokens';
-import { Stack } from 'office-ui-fabric-react';
+import { Stack, DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { caseList, newLineList } from '../common/dropdownOptions';
 
 // Required for checkboxes
@@ -16,12 +16,27 @@ interface IOptionsTab {
     insertFieldBtn: any,
     formState: any,
     handleChangeReplaceSpaces: any,
-    handleChangeNumbersOnly: any
+    handleChangeNumbersOnly: any,
+    resetOptions: any,
 }
 
 export function OptionsTab (props: IOptionsTab) {
         
-    const { handleChange, formState, handleChangeReplaceSpaces, handleChangeNumbersOnly } = props;
+    const { handleChange, formState, handleChangeReplaceSpaces, handleChangeNumbersOnly, resetOptions, insertFieldBtn } = props;
+
+    const splitButtonItems: IContextualMenuProps = {
+        items: [
+            {
+                key: 'copy',
+                text: 'Copy to clipboard'
+            },
+            {
+                key: 'resetOptions',
+                text: 'Clear options',
+                onClick: resetOptions
+            }
+        ]
+    }
 
     return (
         <div>
@@ -115,6 +130,17 @@ export function OptionsTab (props: IOptionsTab) {
                         onChange={handleChangeReplaceSpaces} 
                         value={formState.customOption} />
                 </Stack.Item>
+
+                <Stack.Item align="center">
+                    <DefaultButton 
+                        text="Insert"
+                        primary
+                        split
+                        splitButtonAriaLabel="More options"
+                        menuProps={splitButtonItems}
+                        onClick={insertFieldBtn} />
+                </Stack.Item>
+                
             </Stack>
 
         </div>

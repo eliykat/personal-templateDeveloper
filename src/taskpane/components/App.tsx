@@ -70,6 +70,8 @@ export default class App extends React.Component {
         this.insertFieldBtn = this.insertFieldBtn.bind(this);
         this.insertConditionalBtn = this.insertConditionalBtn.bind(this);
         this.insertRepeatBtn = this.insertRepeatBtn.bind(this);
+        this.resetOptions = this.resetOptions.bind(this);
+        this.resetConditional = this.resetConditional.bind(this);
     }
 
     // Used for 'restricted' inputs, i.e. where only certain characters cause an update in state
@@ -86,7 +88,7 @@ export default class App extends React.Component {
 
     handleFieldChange(event: any, newValue: IDropdownOption): void {
         if (this.state.resetOnChange) {
-            this.resetForm(this.defaultOptions);
+            this.resetOptions()
         }
 
         this.handleChange(event, newValue);
@@ -102,11 +104,15 @@ export default class App extends React.Component {
         }
     }
 
-    resetForm(defaults: IFieldsState | IOptionsState | IConditionalState | ISettingsState) {
-        Object.assign(this.state, defaults);
+    resetOptions(): void {
+        this.setState(this.defaultOptions);
     }
 
-    insertFieldBtn() {
+    resetConditional(): void {
+        this.setState(this.defaultConditional);
+    }
+
+    insertFieldBtn(): void {
                 
         const field = buildFieldCode(this.state);
 
@@ -116,7 +122,6 @@ export default class App extends React.Component {
             // TODO: handle form errors
             console.log("Error");
         }
-        
     }
 
     insertConditionalBtn() {
@@ -136,19 +141,22 @@ export default class App extends React.Component {
                         formState={this.state} 
                         handleChangeNumbersOnly={this.handleChangeNumbersOnly} 
                         handleChangeReplaceSpaces={this.handleChangeReplaceSpaces}
-                        handleFieldChange={this.handleFieldChange} />
+                        handleFieldChange={this.handleFieldChange}
+                        resetOptions={this.resetOptions} />
                 </PivotItem>
                 <PivotItem headerText="Options">
                     <OptionsTab handleChange={this.handleChange} 
                         insertFieldBtn={this.insertFieldBtn} 
                         formState={this.state} 
                         handleChangeReplaceSpaces = {this.handleChangeReplaceSpaces} 
-                        handleChangeNumbersOnly = {this.handleChangeNumbersOnly} />
+                        handleChangeNumbersOnly = {this.handleChangeNumbersOnly}
+                        resetOptions={this.resetOptions} />
                 </PivotItem>
                 <PivotItem headerText="Conditional">
                     <ConditionalTab handleChange={this.handleChange} 
                         formState={this.state} 
-                        insertConditionalBtn={this.insertConditionalBtn} />
+                        insertConditionalBtn={this.insertConditionalBtn}
+                        resetConditional={this.resetConditional} />
                 </PivotItem>
                 <PivotItem headerText="Settings">
                     <SettingsTab 

@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { Stack, TextField, Checkbox, Dropdown, IDropdownOption } from 'office-ui-fabric-react';
+import { Stack, TextField, Checkbox, Dropdown, IDropdownOption, DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
-import { InsertButton } from './InsertButton';
 
 interface IConditionalTab {
     handleChange: any,
     insertConditionalBtn: any,
-    formState: any
+    formState: any,
+    resetConditional: any
 }
 
 export function ConditionalTab(props: IConditionalTab) {
 
-    const { handleChange, formState, insertConditionalBtn } = props;
+    const { handleChange, formState, resetConditional } = props;
 
     const conditionalOperatorList: IDropdownOption[] = [
         { key: "==", text: "is equal to" },
@@ -21,6 +21,32 @@ export function ConditionalTab(props: IConditionalTab) {
         { key: "<", text: "is less than" },
         { key: "<=", text: "is less than or equal to" }
     ]
+
+    const splitButtonItems: IContextualMenuProps = {
+        items: [
+            {
+                key: 'ifelse',
+                text: 'Insert IF ELSE'
+            },
+            {
+                key: 'else',
+                text: 'Insert ELSE'
+            },
+            {
+                key: 'end',
+                text: 'Insert IF END'
+            },
+            {
+                key: 'copy',
+                text: 'Copy to clipboard'
+            },
+            {
+                key: 'resetConditional',
+                text: 'Clear',
+                onClick: resetConditional
+            }
+        ]
+    }
 
     return (
         <div>
@@ -63,9 +89,18 @@ export function ConditionalTab(props: IConditionalTab) {
                         checked={formState.condition2IsField} />
                 </Stack.Item>
                 
-            </Stack>
+                <Stack.Item align="center">
+                    <DefaultButton 
+                        text="Insert IF block"
+                        primary
+                        split
+                        splitButtonAriaLabel="More options"
+                        menuProps={splitButtonItems}
+                        // TO IMPLEMENT ONCLICK
+                        onClick={() => {}} />   
+                </Stack.Item>
 
-            <InsertButton handleClick={insertConditionalBtn} buttonText="Insert Condition" />
+            </Stack>
 
         </div>
     )
