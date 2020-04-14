@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Stack, TextField, Checkbox, Dropdown, IDropdownOption, DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
+import { insertField } from '../common/officeAPI';
+import { buildEndIf, buildIf, buildElse } from '../common/fieldBuilders';
 
 interface IConditionalTab {
     handleChange: any,
-    insertConditionalBtn: any,
     formState: any,
     resetConditional: any
 }
@@ -12,6 +13,12 @@ interface IConditionalTab {
 export function ConditionalTab(props: IConditionalTab) {
 
     const { handleChange, formState, resetConditional } = props;
+    
+    const insertIfBlock = () => insertField(formState.useMailMergeFields, buildIf(formState, 'IF'), buildEndIf());
+    const insertIf = () => insertField(formState.useMailMergeFields, buildIf(formState, 'IF'), undefined);
+    const insertElseIf = () => insertField(formState.useMailMergeFields, buildIf(formState, 'ELSEIF'), buildEndIf());
+    const insertElse = () => insertField(formState.useMailMergeFields, buildElse(), undefined);
+    const insertEnd = () => insertField(formState.useMailMergeFields, buildEndIf(), undefined);
 
     const conditionalOperatorList: IDropdownOption[] = [
         { key: "==", text: "is equal to" },
@@ -24,17 +31,26 @@ export function ConditionalTab(props: IConditionalTab) {
 
     const splitButtonItems: IContextualMenuProps = {
         items: [
+            { 
+                key: 'if',
+                text: 'Insert IF only',
+                onClick: insertIf
+            },
             {
-                key: 'ifelse',
-                text: 'Insert IF ELSE'
+                key: 'elseif',
+                text: 'Insert ELSE IF',
+                onClick: insertElseIf
             },
             {
                 key: 'else',
-                text: 'Insert ELSE'
+                text: 'Insert ELSE',
+                onClick: insertElse
+                
             },
             {
                 key: 'end',
-                text: 'Insert IF END'
+                text: 'Insert IF END',
+                onClick: insertEnd
             },
             {
                 key: 'copy',
@@ -96,8 +112,7 @@ export function ConditionalTab(props: IConditionalTab) {
                         split
                         splitButtonAriaLabel="More options"
                         menuProps={splitButtonItems}
-                        // TO IMPLEMENT ONCLICK
-                        onClick={() => {}} />   
+                        onClick={insertIfBlock} />   
                 </Stack.Item>
 
             </Stack>

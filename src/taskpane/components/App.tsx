@@ -11,7 +11,8 @@ import { IFormState, IFieldsState, IOptionsState, IConditionalState, ISettingsSt
 import { replaceSpaces } from '../common/miscFunctions';
 
 import { defaultNewLine, defaultDateFormat, defaultCase, defaultPhoneFormat} from '../common/dropdownOptions';
-import { buildFieldCode, insertField } from '../common/officeAPI';
+import { insertField } from '../common/officeAPI';
+import { buildFieldCode } from '../common/fieldBuilders';
 
 export default class App extends React.Component {
 
@@ -63,30 +64,21 @@ export default class App extends React.Component {
 
         this.state = Object.assign({}, this.defaultFields, this.defaultOptions, this.defaultConditional, this.defaultSettings);
         
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChangeNumbersOnly = this.handleChangeNumbersOnly.bind(this);
-        this.handleChangeReplaceSpaces = this.handleChangeReplaceSpaces.bind(this);
-        this.handleFieldChange = this.handleFieldChange.bind(this);
-        this.insertFieldBtn = this.insertFieldBtn.bind(this);
-        this.insertConditionalBtn = this.insertConditionalBtn.bind(this);
-        this.insertRepeatBtn = this.insertRepeatBtn.bind(this);
-        this.resetOptions = this.resetOptions.bind(this);
-        this.resetConditional = this.resetConditional.bind(this);
     }
 
     // Used for 'restricted' inputs, i.e. where only certain characters cause an update in state
     // For now: allows numbers only, for the recordNo input. Can be expanded if other inputs have other restrictions.
-    handleChangeNumbersOnly(event: any, newValue: string): void {
+    handleChangeNumbersOnly = (event: any, newValue: string): void  => {
         if (newValue.indexOf(' ') == -1 && !isNaN(Number(newValue))) {
             this.handleChange(event, newValue);
         }
     }
 
-    handleChangeReplaceSpaces(event: any, newValue: string): void {
+    handleChangeReplaceSpaces = (event: any, newValue: string): void  => {
         this.handleChange(event, replaceSpaces(newValue));
     }
 
-    handleFieldChange(event: any, newValue: IDropdownOption): void {
+    handleFieldChange = (event: any, newValue: IDropdownOption): void => {
         if (this.state.resetOnChange) {
             this.resetOptions()
         }
@@ -94,7 +86,7 @@ export default class App extends React.Component {
         this.handleChange(event, newValue);
     }
 
-    handleChange(event: any, newValue?: string | IDropdownOption | boolean | undefined): void {
+    handleChange = (event: any, newValue?: string | IDropdownOption | boolean | undefined): void => {
         let id = event.target.id;
 
         if (newValue !== undefined) {
@@ -104,16 +96,11 @@ export default class App extends React.Component {
         }
     }
 
-    resetOptions(): void {
-        this.setState(this.defaultOptions);
-    }
+    resetOptions = () => this.setState(this.defaultOptions);
 
-    resetConditional(): void {
-        this.setState(this.defaultConditional);
-    }
+    resetConditional = () => this.setState(this.defaultConditional);
 
-    insertFieldBtn(): void {
-                
+    insertFieldBtn = () => {
         const field = buildFieldCode(this.state);
 
         if (field) {
@@ -124,11 +111,30 @@ export default class App extends React.Component {
         }
     }
 
-    insertConditionalBtn() {
+    copyCondition1 = () => {
 
+        let field = buildFieldCode(this.state);
+
+        if (field) {
+            this.setState({
+                condition1: field.code,
+                condition1IsField: true,
+            })
+        }
     }
 
-    insertRepeatBtn() {
+    copyCondition2 = () => {
+        let field = buildFieldCode(this.state);
+
+        if (field) {
+            this.setState({
+                condition2: field.code,
+                condition2IsField: true,
+            })
+        }
+    }
+
+    insertRepeatBtn = () => {
 
     }
 
@@ -142,7 +148,9 @@ export default class App extends React.Component {
                         handleChangeNumbersOnly={this.handleChangeNumbersOnly} 
                         handleChangeReplaceSpaces={this.handleChangeReplaceSpaces}
                         handleFieldChange={this.handleFieldChange}
-                        resetOptions={this.resetOptions} />
+                        resetOptions={this.resetOptions}
+                        copyCondition1={this.copyCondition1}
+                        copyCondition2={this.copyCondition2} />
                 </PivotItem>
                 <PivotItem headerText="Options">
                     <OptionsTab handleChange={this.handleChange} 
@@ -155,8 +163,7 @@ export default class App extends React.Component {
                 <PivotItem headerText="Conditional">
                     <ConditionalTab handleChange={this.handleChange} 
                         formState={this.state} 
-                        insertConditionalBtn={this.insertConditionalBtn}
-                        resetConditional={this.resetConditional} />
+                        resetConditional={this.resetConditional}  />
                 </PivotItem>
                 <PivotItem headerText="Settings">
                     <SettingsTab 

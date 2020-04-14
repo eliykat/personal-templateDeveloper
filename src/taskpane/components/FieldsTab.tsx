@@ -18,7 +18,9 @@ interface IFieldsTab {
     handleChangeNumbersOnly: any,
     handleChangeReplaceSpaces: any,
     handleFieldChange: any,
-    resetOptions: any
+    resetOptions: any,
+    copyCondition1: any,
+    copyCondition2: any
 }
 
 export function FieldsTab(props: IFieldsTab) {
@@ -26,13 +28,24 @@ export function FieldsTab(props: IFieldsTab) {
     const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
-    const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions } = props;
+    const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions,
+        copyCondition1, copyCondition2 } = props;
 
     const splitButtonItems: IContextualMenuProps = {
         items: [
             {
                 key: 'copy',
                 text: 'Copy to clipboard'
+            },
+            {
+                key: 'copyCondition1',
+                text: 'Copy to condition 1',
+                onClick: copyCondition1
+            },
+            {
+                key: 'copyCondition2',
+                text: 'Copy to condition 2',
+                onClick: copyCondition2
             },
             {
                 key: 'resetOptions',

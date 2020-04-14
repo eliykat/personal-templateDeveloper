@@ -48,6 +48,13 @@ export interface IDataSource extends IOptions {
 
 type formatTypes = 's' | 'd' | 'c' | 'n' | 'p' | 'h';
 
+// represents a field in the dropdown interface
 export interface IField extends IOptions {
     format: formatTypes
+}
+
+// represents an actionstep mergefield for insertion into the document
+export interface IASField {
+    code: string,
+    label: string
 }
