@@ -12,7 +12,7 @@ import { replaceSpaces } from '../common/miscFunctions';
 
 import { defaultNewLine, defaultDateFormat, defaultCase, defaultPhoneFormat} from '../common/dropdownOptions';
 import { insertField } from '../common/officeAPI';
-import { buildFieldCode } from '../common/fieldBuilders';
+import { buildField } from '../common/fieldBuilders';
 
 export default class App extends React.Component {
 
@@ -101,7 +101,7 @@ export default class App extends React.Component {
     resetConditional = () => this.setState(this.defaultConditional);
 
     insertFieldBtn = () => {
-        const field = buildFieldCode(this.state);
+        const field = buildField(this.state);
 
         if (field) {
             insertField(this.state.useMailMergeFields, field, undefined);
@@ -113,7 +113,7 @@ export default class App extends React.Component {
 
     copyCondition1 = () => {
 
-        let field = buildFieldCode(this.state);
+        let field = buildField(this.state);
 
         if (field) {
             this.setState({
@@ -124,7 +124,7 @@ export default class App extends React.Component {
     }
 
     copyCondition2 = () => {
-        let field = buildFieldCode(this.state);
+        let field = buildField(this.state);
 
         if (field) {
             this.setState({

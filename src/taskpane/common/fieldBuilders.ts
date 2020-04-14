@@ -1,7 +1,7 @@
 import { IFormState, IASField } from "./interfaces";
 import { replaceSpaces } from "./miscFunctions";
 
-export function buildFieldCode(formState: IFormState): IASField | void {
+export function buildField(formState: IFormState): IASField | void {
 
     let field: IASField = {
         label: formState.field.key,
@@ -89,23 +89,6 @@ export function buildFieldCode(formState: IFormState): IASField | void {
     return(field);
 }
 
-export function buildRepeat(formState: IFormState): IASField | void {
-    
-    const repeat: IASField = {
-        code: null,
-        label: null
-    };
-
-    if (formState.dataSource.key == "Participant Data") {
-        repeat.code = "*REPEAT|data_source=action_participant." + formState.participantType.key + "|*";
-        repeat.label = "REPEAT: " + formState.participantType.key;
-    }
-    else if (formState.dataSource.key == "Sale/Purchase Line Item Data") {
-        repeat.code = "*REPEAT|data_source=SP_LineItems|*";
-        repeat.label = "REPEAT: SPLineItems";
-    }
-}
-
 export function buildIf(formState: IFormState, ifType: 'IF' | 'ELSEIF'): IASField {
     let condition1;
     let condition2;
@@ -146,4 +129,37 @@ export function buildEndIf(): IASField {
     }
 
     return  field;
+}
+
+export function buildRepeat(formState: IFormState): IASField {
+    
+    const field: IASField = {
+        code: null,
+        label: null
+    };
+
+    if (formState.dataSource.key == "Participant Data") {
+        field.code = "*REPEAT|data_source=action_participant." + formState.participantType.key + "|*";
+        field.label = "REPEAT: " + formState.participantType.key;
+    }
+    else if (formState.dataSource.key == "Sale/Purchase Line Item Data") {
+        field.code = "*REPEAT|data_source=SP_LineItems|*";
+        field.label = "REPEAT: SPLineItems";
+    }
+    else {
+        field.code = "Error: data source is not compatible with REPEAT",
+        field.label = "Error: data source is not compatible with REPEAT"
+    }
+
+    return field;
+}
+
+export function buildRepeatEnd(): IASField {
+
+    const field: IASField = {
+        code: '*REPEAT|END*',
+        label: 'END REPEAT'
+    };
+
+    return field;
 }

@@ -7,6 +7,8 @@ import { DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
+import { buildRepeat, buildRepeatEnd } from '../common/fieldBuilders';
+import { insertField } from '../common/officeAPI';
 
 // Required for checkboxes
 initializeIcons();
@@ -31,6 +33,12 @@ export function FieldsTab(props: IFieldsTab) {
     const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions,
         copyCondition1, copyCondition2 } = props;
 
+    const insertRepeatBlock = () => insertField(formState.useMailMergeFields, buildRepeat(formState), buildRepeatEnd());
+
+    const insertRepeat = () => insertField(formState.useMailMergeFields, buildRepeat(formState), undefined);
+
+    const insertEndRepeat = () => insertField(formState.useMailMergeFields, buildRepeatEnd(), undefined);
+
     const splitButtonItems: IContextualMenuProps = {
         items: [
             {
@@ -53,14 +61,23 @@ export function FieldsTab(props: IFieldsTab) {
                 onClick: resetOptions
             },
             {
-                key: 'repeat',
+                key: 'repeatBlock',
                 text: 'Insert REPEAT block',
                 disabled: !formState.dataSource ||
-                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data")
+                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data"),
+                onClick: insertRepeatBlock
+            },
+            {
+                key: 'repeat',
+                text: 'Insert REPEAT only',
+                disabled: !formState.dataSource ||
+                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data"),
+                onClick: insertRepeat
             },
             {
                 key: 'repeatend',
-                text: 'Insert REPEAT END'
+                text: 'Insert REPEAT END',
+                onClick: insertEndRepeat
             }
         ]
     }
