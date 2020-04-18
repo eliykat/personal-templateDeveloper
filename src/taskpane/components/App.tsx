@@ -57,7 +57,7 @@ export default class App extends React.Component {
 
         this.defaultSettings = {
             useMailMergeFields: false,
-            resetOnChange: true,
+            resetOnChange: false,
             dateFormat: defaultDateFormat,
             phoneFormat: defaultPhoneFormat
         }
