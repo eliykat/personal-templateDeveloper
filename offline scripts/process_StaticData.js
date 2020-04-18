@@ -55,6 +55,17 @@ papa.parse(csv_string, {
             let desc = column[5];
             let format = column[6];
 
+            // Create empty Custom Data datasource immediately before "Deposit slip"
+            if (source != prevDataSource && source == "Deposit slip") {
+                dataSources.push(
+                    {
+                        key: 'Custom Data',
+                        text: 'Custom Data',
+                        fields: []
+                    }
+                ) - 1;
+            }
+
             // Create new datasource if required. This assumes the source file is ordered by data source
             // NB: key and text properties must be used as this reflects IDropdownOption
             if (source != prevDataSource) {
