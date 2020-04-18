@@ -39,7 +39,12 @@ export function FieldsTab(props: IFieldsTab) {
 
     const insertEndRepeat = () => insertField(formState.useMailMergeFields, buildRepeatEnd(), undefined);
 
-    const splitButtonItems: IContextualMenuProps = {
+    const repeatIsValid = () => {
+        return !formState.dataSource ||
+        !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data")
+    }
+
+    const fieldButtonItems: IContextualMenuProps = {
         items: [
             {
                 key: 'copy',
@@ -59,20 +64,17 @@ export function FieldsTab(props: IFieldsTab) {
                 key: 'resetOptions',
                 text: 'Clear options',
                 onClick: resetOptions
-            },
-            {
-                key: 'repeatBlock',
-                text: 'Insert REPEAT block',
-                disabled: !formState.dataSource ||
-                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data"),
-                onClick: insertRepeatBlock
-            },
+            }
+        ]
+    }
+
+    const repeatButtonItems: IContextualMenuProps = {
+        items: [
             {
                 key: 'repeat',
                 text: 'Insert REPEAT only',
-                disabled: !formState.dataSource ||
-                    !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data"),
-                onClick: insertRepeat
+                onClick: insertRepeat,
+                disabled: repeatIsValid()
             },
             {
                 key: 'repeatend',
@@ -119,11 +121,21 @@ export function FieldsTab(props: IFieldsTab) {
 
                 <Stack.Item align="center">
                     <DefaultButton 
-                        text="Insert"
+                        text="Insert REPEAT block"
+                        split
+                        splitButtonAriaLabel="More REPEAT options"
+                        menuProps={repeatButtonItems}
+                        onClick={insertRepeatBlock}
+                        primaryDisabled={repeatIsValid()} />
+                </Stack.Item>
+
+                <Stack.Item align="center">
+                    <DefaultButton 
+                        text="Insert field"
                         primary
                         split
-                        splitButtonAriaLabel="More options"
-                        menuProps={splitButtonItems}
+                        splitButtonAriaLabel="More field options"
+                        menuProps={fieldButtonItems}
                         onClick={insertFieldBtn} />
                 </Stack.Item>
 
