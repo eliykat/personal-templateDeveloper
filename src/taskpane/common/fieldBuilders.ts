@@ -24,7 +24,7 @@ export function buildField(formState: IFormState): IASField | void {
             field.code += '|pt=' + formState.participantType.key;
         }
 
-        field.label = formState.participantType + ' ' + field.label;
+        field.label = formState.participantType.key + ' ' + field.label;
     }
 
     if (formState.ignoreIfNull) {
