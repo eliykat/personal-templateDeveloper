@@ -13,7 +13,7 @@ export function buildField(formState: IFormState): IASField | void {
         return;
     }
     
-    if (formState.dataSource.key == 'Participant Data' || formState.dataSource.key == 'Participant Data - System') {
+    if (formState.dataSource.key == 'Participant Data') {
             
         if (formState.case.key == "upper") {
             field.code += '|pt=' + formState.participantType.key.toUpperCase();
@@ -58,7 +58,7 @@ export function buildField(formState: IFormState): IASField | void {
     // Case option only applies if it is not participant data (capitalisation set in option) 
     // and if it is a string or date type (being the only types that can have alphabetic representation,
     // except for currency|fm=text, which is set via the option).
-    if (formState.case.key != "na" && formState.dataSource.key != 'Participant Data' && formState.dataSource.key != 'Participant Data - System'
+    if (formState.case.key != "na" && formState.dataSource.key != 'Participant Data'
         && (formState.field.format == 's' || formState.field.format == 'd' )) {
             field.code += "|case=" + formState.case.key;
     }
