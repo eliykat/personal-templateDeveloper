@@ -3,7 +3,9 @@ import { replaceSpaces } from "./miscFunctions";
 
 export function buildField(formState: IFormState): IASField | void {
 
-    let field: IASField = {
+
+
+    let newField: IASField = {
         label: formState.field.key,
         code: formState.field.key
     }
@@ -16,43 +18,43 @@ export function buildField(formState: IFormState): IASField | void {
     if (formState.dataSource.key == 'Participant Data') {
             
         if (formState.case.key == "upper") {
-            field.code += '|pt=' + formState.participantType.key.toUpperCase();
+            newField.code += '|pt=' + formState.participantType.key.toUpperCase();
         } else if (formState.case.key == "lower") {
-            field.code += '|pt=' + formState.participantType.key.toLowerCase();
+            newField.code += '|pt=' + formState.participantType.key.toLowerCase();
         } else {
             // Title case is used by default for participants
-            field.code += '|pt=' + formState.participantType.key;
+            newField.code += '|pt=' + formState.participantType.key;
         }
 
-        field.label = formState.participantType.key + ' ' + field.label;
+        newField.label = formState.participantType.key + ' ' + newField.label;
     }
 
     if (formState.ignoreIfNull) {
-        field.code += "|ifnull=ignore";
+        newField.code += "|ifnull=ignore";
     } else if (formState.ifNull) {
-        field.code += "|ifnull=" + replaceSpaces(formState.ifNull);
+        newField.code += "|ifnull=" + replaceSpaces(formState.ifNull);
     }
 
     if (formState.repeatrn) {
-        field.code += "|rn=*";
+        newField.code += "|rn=*";
     } else if (formState.recordNo) {
-        field.code += "|rn=" + formState.recordNo;
+        newField.code += "|rn=" + formState.recordNo;
     }
 
     if (formState.prefix) {
-        field.code += "|prefix=" + replaceSpaces(formState.prefix);
+        newField.code += "|prefix=" + replaceSpaces(formState.prefix);
     }
 
     if (formState.suffix) {
-        field.code += "|suffix=" + replaceSpaces(formState.suffix);
+        newField.code += "|suffix=" + replaceSpaces(formState.suffix);
     }
 
     if (formState.newLine.key != "na") {
-        field.code += "|newline=" + formState.newLine.key;
+        newField.code += "|newline=" + formState.newLine.key;
     }
 
     if (formState.stripSpaces) {
-        field.code += "|strip_spaces=T";
+        newField.code += "|strip_spaces=T";
     }
 
     // Case option only applies if it is not participant data (capitalisation set in option) 
@@ -60,33 +62,33 @@ export function buildField(formState: IFormState): IASField | void {
     // except for currency|fm=text, which is set via the option).
     if (formState.case.key != "na" && formState.dataSource.key != 'Participant Data'
         && (formState.field.format == 's' || formState.field.format == 'd' )) {
-            field.code += "|case=" + formState.case.key;
+            newField.code += "|case=" + formState.case.key;
     }
 
     if ( formState.field.format == 'd' && formState.dateFormat.key != 'na') {
-        field.code += "|fm=" + formState.dateFormat.key;
+        newField.code += "|fm=" + formState.dateFormat.key;
     } else if ( formState.field.format == 'p' && formState.phoneFormat.key != 'na') {
-        field.code += "|fm=" + formState.phoneFormat.key;
+        newField.code += "|fm=" + formState.phoneFormat.key;
     } else if ( formState.field.format == 'c') {
         // Set capitalisation
         if (formState.currencyToWords) {
             if (formState.case.key == "upper") {
-                field.code += "|fm=TEXT";
+                newField.code += "|fm=TEXT";
             } else if (formState.case.key == "uclowerwords") {
-                field.code += "|fm=Text";
+                newField.code += "|fm=Text";
             } else {
-                field.code += "|fm=text";
+                newField.code += "|fm=text";
             }               
         } else if (formState.noCurrencySymbol) {
-            field.code += "|show_currency_symbol=F";
+            newField.code += "|show_currency_symbol=F";
         }
     } 
 
     if (formState.customOption) {
-        field.code += "|" + replaceSpaces(formState.customOption);
+        newField.code += "|" + replaceSpaces(formState.customOption);
     }
 
-    return(field);
+    return(newField);
 }
 
 export function buildIf(formState: IFormState, ifType: 'IF' | 'ELSEIF'): IASField {
@@ -133,25 +135,25 @@ export function buildEndIf(): IASField {
 
 export function buildRepeat(formState: IFormState): IASField {
     
-    const field: IASField = {
+    const newField: IASField = {
         code: null,
         label: null
     };
 
     if (formState.dataSource.key == "Participant Data") {
-        field.code = "*REPEAT|data_source=action_participant." + formState.participantType.key + "|*";
-        field.label = "REPEAT: " + formState.participantType.key;
+        newField.code = "*REPEAT|data_source=action_participant." + formState.participantType.key + "|*";
+        newField.label = "REPEAT: " + formState.participantType.key;
     }
     else if (formState.dataSource.key == "Sale/Purchase Line Item Data") {
-        field.code = "*REPEAT|data_source=SP_LineItems|*";
-        field.label = "REPEAT: SPLineItems";
+        newField.code = "*REPEAT|data_source=SP_LineItems|*";
+        newField.label = "REPEAT: SPLineItems";
     }
     else {
-        field.code = "Error: data source is not compatible with REPEAT",
-        field.label = "Error: data source is not compatible with REPEAT"
+        newField.code = "Error: data source is not compatible with REPEAT",
+        newField.label = "Error: data source is not compatible with REPEAT"
     }
 
-    return field;
+    return newField;
 }
 
 export function buildRepeatEnd(): IASField {
