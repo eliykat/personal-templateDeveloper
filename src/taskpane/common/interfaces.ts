@@ -4,7 +4,8 @@ export interface IFieldsState {
     dataSource: IDataSource,
     participantType: IOptions,
     dataCollection: IOptions,
-    field: IField
+    field: IField,
+    customField: string
 }
 
 export interface IOptionsState {

@@ -3,7 +3,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
-import { DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
+import { DefaultButton, IContextualMenuProps, TextField } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
@@ -31,7 +31,7 @@ export function FieldsTab(props: IFieldsTab) {
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
     const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions,
-        copyCondition1, copyCondition2 } = props;
+        copyCondition1, copyCondition2, handleChangeReplaceSpaces } = props;
 
     const insertRepeatBlock = () => insertField(formState.useMailMergeFields, buildRepeat(formState), buildRepeatEnd());
 
@@ -39,9 +39,12 @@ export function FieldsTab(props: IFieldsTab) {
 
     const insertEndRepeat = () => insertField(formState.useMailMergeFields, buildRepeatEnd(), undefined);
 
+    const customDataSelected = () => formState.dataSource && formState.dataSource.key == "Custom Data";
+
     const repeatIsValid = () => {
-        return !formState.dataSource ||
-        !(formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data")
+        return formState.dataSource &&
+            (formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data" ||
+            formState.dataSource.key == "Custom Data")
     }
 
     const fieldButtonItems: IContextualMenuProps = {
@@ -74,7 +77,7 @@ export function FieldsTab(props: IFieldsTab) {
                 key: 'repeat',
                 text: 'Insert REPEAT only',
                 onClick: insertRepeat,
-                disabled: repeatIsValid()
+                disabled: !repeatIsValid()
             },
             {
                 key: 'repeatend',
@@ -88,8 +91,6 @@ export function FieldsTab(props: IFieldsTab) {
         <div>
 
             <Stack tokens={stackTokens} verticalFill={true}>
-
-                {/* MAIN DROPDOWNS */}
 
                 <Stack.Item>
                     <Dropdown id="dataSource" 
@@ -110,14 +111,27 @@ export function FieldsTab(props: IFieldsTab) {
                         disabled={!formState.dataSource || !(formState.dataSource.key == "Participant Data")} />
                 </Stack.Item>
 
-                <Stack.Item>
-                    <Dropdown id="field" 
-                        label="Field" 
-                        selectedKey={formState.field ? formState.field.key : undefined} 
-                        onChange={handleFieldChange} 
-                        placeholder="Select a field" 
-                        options={formState.dataSource ? formState.dataSource.fields : undefined} />
-                </Stack.Item>
+                { !customDataSelected() && 
+                    <Stack.Item>
+                        <Dropdown id="field" 
+                            label="Field" 
+                            selectedKey={formState.field ? formState.field.key : undefined} 
+                            onChange={handleFieldChange} 
+                            placeholder="Select a field" 
+                            options={formState.dataSource ? formState.dataSource.fields : undefined} />
+                    </Stack.Item>
+                }
+
+                { customDataSelected() && 
+                    <Stack.Item>
+                        <TextField id="customField"
+                            label="Custom Data Field"
+                            placeholder="Enter custom data field code"
+                            onChange={handleChangeReplaceSpaces}
+                            value={formState.customField}
+                        />
+                    </Stack.Item>
+                }
 
                 <Stack.Item align="center">
                     <DefaultButton 
@@ -126,7 +140,7 @@ export function FieldsTab(props: IFieldsTab) {
                         splitButtonAriaLabel="More REPEAT options"
                         menuProps={repeatButtonItems}
                         onClick={insertRepeatBlock}
-                        primaryDisabled={repeatIsValid()} />
+                        primaryDisabled={!repeatIsValid()} />
                 </Stack.Item>
 
                 <Stack.Item align="center">

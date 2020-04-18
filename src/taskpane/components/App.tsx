@@ -30,6 +30,7 @@ export default class App extends React.Component {
             participantType: undefined,
             dataCollection: undefined,
             field: undefined,
+            customField: ""
         }
 
         this.defaultOptions = {

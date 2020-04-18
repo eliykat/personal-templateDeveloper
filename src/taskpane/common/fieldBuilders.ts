@@ -3,14 +3,16 @@ import { replaceSpaces } from "./miscFunctions";
 
 export function buildField(formState: IFormState): IASField | void {
 
-
+    const isCustomField = formState.dataSource.key == "Custom Data";
+    const selectedFieldCode = isCustomField ? formState.customField : formState.field.key;
 
     let newField: IASField = {
-        label: formState.field.key,
-        code: formState.field.key
+        label: selectedFieldCode,
+        code: selectedFieldCode
     }
 
-    if (formState.dataSource === undefined || formState.field === undefined) {
+    // TODO: consistent error checking on inputs
+    if (formState.dataSource === undefined || (!isCustomField && formState.field === undefined)) {
         console.log("Error: dataSource or field === undefined");
         return;
     }
@@ -61,15 +63,15 @@ export function buildField(formState: IFormState): IASField | void {
     // and if it is a string or date type (being the only types that can have alphabetic representation,
     // except for currency|fm=text, which is set via the option).
     if (formState.case.key != "na" && formState.dataSource.key != 'Participant Data'
-        && (formState.field.format == 's' || formState.field.format == 'd' )) {
+        && (isCustomField || formState.field.format == 's' || formState.field.format == 'd' )) {
             newField.code += "|case=" + formState.case.key;
     }
 
-    if ( formState.field.format == 'd' && formState.dateFormat.key != 'na') {
+    if ( (isCustomField || formState.field.format == 'd') && formState.dateFormat.key != 'na') {
         newField.code += "|fm=" + formState.dateFormat.key;
-    } else if ( formState.field.format == 'p' && formState.phoneFormat.key != 'na') {
+    } else if ( (isCustomField || formState.field.format == 'p') && formState.phoneFormat.key != 'na') {
         newField.code += "|fm=" + formState.phoneFormat.key;
-    } else if ( formState.field.format == 'c') {
+    } else if ( formState.field && formState.field.format == 'c') {
         // Set capitalisation
         if (formState.currencyToWords) {
             if (formState.case.key == "upper") {
@@ -147,6 +149,10 @@ export function buildRepeat(formState: IFormState): IASField {
     else if (formState.dataSource.key == "Sale/Purchase Line Item Data") {
         newField.code = "*REPEAT|data_source=SP_LineItems|*";
         newField.label = "REPEAT: SPLineItems";
+    }
+    else if (formState.dataSource.key == "Custom Data") {
+        newField.code = "*REPEAT|data_source=" + formState.customField + "|*";
+        newField.label = "REPEAT: " + formState.customField;
     }
     else {
         newField.code = "Error: data source is not compatible with REPEAT",
