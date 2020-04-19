@@ -79,12 +79,12 @@ export default class App extends React.Component {
         this.handleChange(event, replaceSpaces(newValue));
     }
 
-    handleFieldChange = (event: any, newValue: IDropdownOption): void => {
+    handleFieldChange = (newValue: IDropdownOption): void => {
         if (this.state.resetOnChange) {
             this.resetOptions()
         }
 
-        this.handleChange(event, newValue);
+        this.setState({'field': newValue});
     }
 
     handleChange = (event: any, newValue?: string | IDropdownOption | boolean | undefined): void => {

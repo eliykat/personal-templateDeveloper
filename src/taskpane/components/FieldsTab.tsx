@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
-import { DefaultButton, IContextualMenuProps, TextField, DetailsList, Selection } from 'office-ui-fabric-react';
+import { DefaultButton, IContextualMenuProps, TextField, DetailsList } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
@@ -30,8 +31,8 @@ export function FieldsTab(props: IFieldsTab) {
     const dataSourceList:IDataSource[] = compileDataSourceList();
     const participantTypeList:IDropdownOption[] = compileParticipantsList();
 
-    const { handleChange, formState, handleFieldChange, insertFieldBtn, resetOptions,
-        copyCondition1, copyCondition2, handleChangeReplaceSpaces } = props;
+    const { handleChange, formState, insertFieldBtn, resetOptions,
+        copyCondition1, copyCondition2, handleChangeReplaceSpaces, handleFieldChange } = props;
 
     const insertRepeatBlock = () => insertField(formState.useMailMergeFields, buildRepeat(formState), buildRepeatEnd());
 
@@ -46,6 +47,15 @@ export function FieldsTab(props: IFieldsTab) {
             (formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data" ||
             formState.dataSource.key == "Custom Data")
     }
+
+    const [getFilteredFields, setFilteredFields] = useState([]);
+
+    const [getFilter, setFilter] = useState("");
+
+    useEffect(() => {
+        setFilter("");
+        formState.dataSource ? setFilteredFields(formState.dataSource.fields) : [];
+    }, [formState.dataSource])
 
     const fieldButtonItems: IContextualMenuProps = {
         items: [
@@ -91,7 +101,14 @@ export function FieldsTab(props: IFieldsTab) {
         { key: 'column1', name: 'Name', fieldName: 'text', minWidth: 100, maxWidth: 200, isResizable: true }
       ];
 
-    const activeItemChanged = (item?: any) => handleFieldChange(undefined, item);
+    const onFilter = (_ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, query: string): void => {
+        
+        setFilter(query);
+
+        setFilteredFields(
+          query ? formState.dataSource.fields.filter(i => i.text.toLowerCase().indexOf(query.toLowerCase()) > -1) : formState.dataSource.fields
+        );
+    }
 
     return (
         <div>
@@ -117,31 +134,34 @@ export function FieldsTab(props: IFieldsTab) {
                         disabled={!formState.dataSource || !(formState.dataSource.key == "Participant Data")} />
                 </Stack.Item>
 
-                { !customDataSelected() && 
-                    <Stack.Item>
+                <Stack.Item>
+                    <TextField
+                        label="Filter"
+                        onChange={onFilter}
+                        value={getFilter} />
+                </Stack.Item>
+
+                {!customDataSelected() && 
+                <Stack.Item>
                     <DetailsList
-                        items={formState.dataSource ? formState.dataSource.fields : [{key: 0, text: "empty", value: 0}] }
-                        checkboxVisibility={2}
+                        items={formState.dataSource ? getFilteredFields : [] }
                         columns={columns}
-                        setKey="set"
                         selectionPreservedOnEmptyClick={true}
-                        ariaLabelForSelectionColumn="Toggle selection"
-                        ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-                        checkButtonAriaLabel="Row checkbox"
-                        onActiveItemChanged={activeItemChanged}
+                        selectionMode={1}
+                        onActiveItemChanged={handleFieldChange}
                     />
-                    </Stack.Item>
+                </Stack.Item>
                 }
 
-                { customDataSelected() && 
-                    <Stack.Item>
-                        <TextField id="customField"
-                            label="Custom Data Field"
-                            placeholder="Enter custom data field code"
-                            onChange={handleChangeReplaceSpaces}
-                            value={formState.customField}
-                        />
-                    </Stack.Item>
+                {customDataSelected() &&
+                <Stack.Item>
+                    <TextField id="customField"
+                        label="Custom Data Field"
+                        placeholder="Enter custom data field code"
+                        onChange={handleChangeReplaceSpaces}
+                        value={formState.customField}
+                    />
+                </Stack.Item>
                 }
 
                 <Stack.Item align="center">
