@@ -3,7 +3,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
-import { DefaultButton, IContextualMenuProps, TextField } from 'office-ui-fabric-react';
+import { DefaultButton, IContextualMenuProps, TextField, DetailsList, Selection } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
@@ -87,6 +87,12 @@ export function FieldsTab(props: IFieldsTab) {
         ]
     }
 
+    const columns = [
+        { key: 'column1', name: 'Name', fieldName: 'text', minWidth: 100, maxWidth: 200, isResizable: true }
+      ];
+
+    const activeItemChanged = (item?: any) => handleFieldChange(undefined, item);
+
     return (
         <div>
 
@@ -113,12 +119,17 @@ export function FieldsTab(props: IFieldsTab) {
 
                 { !customDataSelected() && 
                     <Stack.Item>
-                        <Dropdown id="field" 
-                            label="Field" 
-                            selectedKey={formState.field ? formState.field.key : undefined} 
-                            onChange={handleFieldChange} 
-                            placeholder="Select a field" 
-                            options={formState.dataSource ? formState.dataSource.fields : undefined} />
+                    <DetailsList
+                        items={formState.dataSource ? formState.dataSource.fields : [{key: 0, text: "empty", value: 0}] }
+                        checkboxVisibility={2}
+                        columns={columns}
+                        setKey="set"
+                        selectionPreservedOnEmptyClick={true}
+                        ariaLabelForSelectionColumn="Toggle selection"
+                        ariaLabelForSelectAllCheckbox="Toggle selection for all items"
+                        checkButtonAriaLabel="Row checkbox"
+                        onActiveItemChanged={activeItemChanged}
+                    />
                     </Stack.Item>
                 }
 
