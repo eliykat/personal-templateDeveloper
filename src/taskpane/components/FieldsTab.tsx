@@ -5,7 +5,7 @@ import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack } from 'office-ui-fabric-react/lib/Stack';
 
 import { DefaultButton, IContextualMenuProps, TextField, DetailsList } from 'office-ui-fabric-react';
-import { stackTokens } from '../common/tokens';
+import { stackTokens, stackStyles } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
 import { buildRepeat, buildRepeatEnd } from '../common/fieldBuilders';
@@ -98,7 +98,7 @@ export function FieldsTab(props: IFieldsTab) {
     }
 
     const columns = [
-        { key: 'column1', name: 'Name', fieldName: 'text', minWidth: 100, maxWidth: 200, isResizable: true }
+        { key: 'column1', name: 'Field name', fieldName: 'text', minWidth: 100, maxWidth: 200 }
       ];
 
     const onFilter = (_ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, query: string): void => {
@@ -113,7 +113,7 @@ export function FieldsTab(props: IFieldsTab) {
     return (
         <div>
 
-            <Stack tokens={stackTokens} verticalFill={true}>
+            <Stack tokens={stackTokens} verticalFill={true} styles={stackStyles}>
 
                 <Stack.Item>
                     <Dropdown id="dataSource" 
@@ -136,19 +136,22 @@ export function FieldsTab(props: IFieldsTab) {
 
                 <Stack.Item>
                     <TextField
-                        label="Filter"
+                        label="Filter fields by name:"
                         onChange={onFilter}
-                        value={getFilter} />
+                        value={getFilter} 
+                        disabled={!formState.dataSource}/>
                 </Stack.Item>
 
                 {!customDataSelected() && 
-                <Stack.Item>
+                <Stack.Item styles={{root: [{overflow: 'auto', maxHeight: '400px'}]}}>
                     <DetailsList
                         items={formState.dataSource ? getFilteredFields : [] }
                         columns={columns}
                         selectionPreservedOnEmptyClick={true}
                         selectionMode={1}
                         onActiveItemChanged={handleFieldChange}
+                        compact={true}
+                        checkboxVisibility={2}
                     />
                 </Stack.Item>
                 }

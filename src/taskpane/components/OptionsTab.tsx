@@ -4,7 +4,7 @@ import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 
-import { stackTokens } from '../common/tokens';
+import { stackTokens, stackStyles } from '../common/tokens';
 import { Stack, DefaultButton, IContextualMenuProps } from 'office-ui-fabric-react';
 import { caseList, newLineList } from '../common/dropdownOptions';
 
@@ -40,7 +40,7 @@ export function OptionsTab (props: IOptionsTab) {
 
     return (
         <div>
-            <Stack tokens={stackTokens} verticalFill={true}>
+            <Stack tokens={stackTokens} verticalFill={true} styles={stackStyles}>
 
             <Stack.Item>
                     <TextField id="ifNull" 
