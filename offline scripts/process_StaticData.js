@@ -79,14 +79,14 @@ papa.parse(csv_string, {
             }
 
             // Create new subcat if required. This assumes proper ordering of data file.
-            if (subcategory != prevSubCategory && subcategory) {
-                let field = {
-                    key: subcategory,
-                    text: subcategory,
-                    format: 'h'
-                }
-                dataSources[currentIndex].fields.push(field);
-            }
+            // if (subcategory != prevSubCategory && subcategory) {
+            //     let field = {
+            //         key: subcategory,
+            //         text: subcategory,
+            //         format: 'h'
+            //     }
+            //     dataSources[currentIndex].fields.push(field);
+            // }
 
             // NB: key and text properties must be used as this reflects IDropdownOption
             let field = {

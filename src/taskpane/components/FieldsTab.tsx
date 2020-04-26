@@ -4,7 +4,7 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Stack, IStackItemStyles } from 'office-ui-fabric-react/lib/Stack';
 
-import { DefaultButton, IContextualMenuProps, TextField, DetailsList } from 'office-ui-fabric-react';
+import { DefaultButton, IContextualMenuProps, TextField, DetailsList, IGroup, IDetailsGroupRenderProps } from 'office-ui-fabric-react';
 import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
@@ -119,6 +119,60 @@ export function FieldsTab(props: IFieldsTab) {
         ]
     }
 
+    const _group: IGroup[] = [
+        {
+            count: 10,
+            key: 'addressMailing',
+            name: 'Address (Mailing)',
+            startIndex: 0,
+            level: 0
+        },
+        {
+            count: 9,
+            key: 'addressShipping',
+            name: 'Address (Shipping)',
+            startIndex: 10
+        },
+        {
+            count: 10,
+            key: 'addressStreet',
+            name: 'Address (Street)',
+            startIndex: 19
+        },
+        {
+            count: 19,
+            key: 'contactDetails',
+            name: 'Contact Details',
+            startIndex: 29
+        },
+        {
+            count: 5,
+            key: 'miscellaneous',
+            name: 'Miscellaneous',
+            startIndex: 48
+        },
+        {
+            count: 36,
+            key: '_name',
+            name: 'Name',
+            startIndex: 53
+        },
+        {
+            count: 13,
+            key: 'personaInformation',
+            name: 'Personal Information',
+            startIndex: 89
+        }
+    ]
+
+    const _onRenderGroupHeader: IDetailsGroupRenderProps['onRenderHeader'] = props => {
+        return (
+            <div>
+                {props && props.group.name}
+            </div>
+        )
+    }
+    
     return (
         <div>
 
@@ -161,6 +215,11 @@ export function FieldsTab(props: IFieldsTab) {
                         onActiveItemChanged={handleFieldChange}
                         compact={true}
                         checkboxVisibility={2}
+                        groups={formState.dataSource && formState.dataSource.key == "Participant Data" ? _group : null} // TODO: also disable if searching
+                        indentWidth={0}
+                        groupProps={{onRenderHeader: _onRenderGroupHeader, 
+                            headerProps: {indentWidth: 0}, 
+                            collapseAllVisibility: 0}}
                     />
                 </Stack.Item>
                 }
