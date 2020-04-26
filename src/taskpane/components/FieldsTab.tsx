@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
-import { Stack } from 'office-ui-fabric-react/lib/Stack';
+import { Stack, IStackItemStyles } from 'office-ui-fabric-react/lib/Stack';
 
 import { DefaultButton, IContextualMenuProps, TextField, DetailsList } from 'office-ui-fabric-react';
-import { stackTokens, stackStyles } from '../common/tokens';
+import { stackTokens } from '../common/tokens';
 import { IDataSource } from '../common/interfaces';
 import { compileParticipantsList, compileDataSourceList } from '../common/miscFunctions';
 import { buildRepeat, buildRepeatEnd } from '../common/fieldBuilders';
@@ -110,10 +110,19 @@ export function FieldsTab(props: IFieldsTab) {
         );
     }
 
+    const detailsListStackStyles: IStackItemStyles = {
+        root: [
+            {
+                overflow: 'auto', 
+                height: '400px'
+            }
+        ]
+    }
+
     return (
         <div>
 
-            <Stack tokens={stackTokens} verticalFill={true} styles={stackStyles}>
+            <Stack tokens={stackTokens} verticalFill={true}>
 
                 <Stack.Item>
                     <Dropdown id="dataSource" 
@@ -143,7 +152,7 @@ export function FieldsTab(props: IFieldsTab) {
                 </Stack.Item>
 
                 {!customDataSelected() && 
-                <Stack.Item styles={{root: [{overflow: 'auto', maxHeight: '400px'}]}}>
+                <Stack.Item styles={detailsListStackStyles}>
                     <DetailsList
                         items={formState.dataSource ? getFilteredFields : [] }
                         columns={columns}
