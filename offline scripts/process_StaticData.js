@@ -35,8 +35,6 @@ let currentIndex;
 
 papa.parse(csv_string, {
     complete: function (results){
-
-        console.log('parsed');
         
         // Starts at 1 to skip headers
         for (var i = 1; i < results.data.length; i++) {
@@ -63,7 +61,18 @@ papa.parse(csv_string, {
                         text: 'Custom Data',
                         fields: []
                     }
-                ) - 1;
+                );
+            }
+
+            // Create empty participant option for static participant types
+            if (prevDataSource == "Participant Data" && source != prevDataSource) {
+                dataSources.push(
+                    {
+                        key: "Participant Data (custom type)",
+                        text: "Participant  Data (custom type)",
+                        fields: []
+                    }
+                );
             }
 
             // Create new datasource if required. This assumes the source file is ordered by data source
@@ -77,16 +86,6 @@ papa.parse(csv_string, {
                     }
                 ) - 1;
             }
-
-            // Create new subcat if required. This assumes proper ordering of data file.
-            // if (subcategory != prevSubCategory && subcategory) {
-            //     let field = {
-            //         key: subcategory,
-            //         text: subcategory,
-            //         format: 'h'
-            //     }
-            //     dataSources[currentIndex].fields.push(field);
-            // }
 
             // NB: key and text properties must be used as this reflects IDropdownOption
             let field = {

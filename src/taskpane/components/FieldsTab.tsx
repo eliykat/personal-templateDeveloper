@@ -45,7 +45,12 @@ export function FieldsTab(props: IFieldsTab) {
     const repeatIsValid = () => {
         return formState.dataSource &&
             (formState.dataSource.key == "Sale/Purchase Line Item Data" || formState.dataSource.key == "Participant Data" ||
-            formState.dataSource.key == "Custom Data")
+            formState.dataSource.key == "Participant Data (custom type)" || formState.dataSource.key == "Custom Data")
+    }
+
+    const participantDataSelected = () => {
+        return formState.dataSource && 
+            (formState.dataSource.key == "Participant Data" || formState.dataSource.key == "Participant Data (custom type)")
     }
 
     const [getFilteredFields, setFilteredFields] = useState([]);
@@ -165,10 +170,11 @@ export function FieldsTab(props: IFieldsTab) {
         }
     ]
 
+    // TODO: style headers - copy same style as default divider
     const _onRenderGroupHeader: IDetailsGroupRenderProps['onRenderHeader'] = props => {
         return (
             <div>
-                {props && props.group.name}
+                {props && props.group.name} 
             </div>
         )
     }
@@ -187,15 +193,27 @@ export function FieldsTab(props: IFieldsTab) {
                         options={dataSourceList} />
                 </Stack.Item>
 
+                { formState.dataSource && formState.dataSource.key == "Participant Data" &&
                 <Stack.Item>
                     <Dropdown id="participantType" 
                         label="Participant Type" 
                         selectedKey={formState.participantType ? formState.participantType.key : undefined} 
                         onChange={handleChange} 
                         placeholder="Select an option" 
-                        options={participantTypeList}
-                        disabled={!formState.dataSource || !(formState.dataSource.key == "Participant Data")} />
+                        options={participantTypeList} />
                 </Stack.Item>
+                }
+
+                { (!formState.dataSource || !(formState.dataSource.key == "Participant Data")) &&
+                <Stack.Item>
+                    <TextField
+                            id="participantTypeCustom"
+                            label="Participant type"
+                            onChange={handleChangeReplaceSpaces}
+                            value={formState.participantTypeCustom}
+                            disabled={!formState.dataSource || !(formState.dataSource.key == "Participant Data (custom type)")}/>   
+                </Stack.Item>
+                } 
 
                 <Stack.Item>
                     <TextField
@@ -215,7 +233,7 @@ export function FieldsTab(props: IFieldsTab) {
                         onActiveItemChanged={handleFieldChange}
                         compact={true}
                         checkboxVisibility={2}
-                        groups={formState.dataSource && formState.dataSource.key == "Participant Data" ? _group : null} // TODO: also disable if searching
+                        groups={participantDataSelected() && !getFilter ? _group : null}
                         indentWidth={0}
                         groupProps={{onRenderHeader: _onRenderGroupHeader, 
                             headerProps: {indentWidth: 0}, 

@@ -28,6 +28,7 @@ export default class App extends React.Component {
         this.defaultFields = {
             dataSource: undefined,
             participantType: undefined,
+            participantTypeCustom: "",
             dataCollection: undefined,
             field: undefined,
             customField: ""

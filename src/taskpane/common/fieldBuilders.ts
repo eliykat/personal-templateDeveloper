@@ -6,6 +6,10 @@ export function buildField(formState: IFormState): IASField | void {
     const isCustomField = formState.dataSource.key == "Custom Data";
     const selectedFieldCode = isCustomField ? formState.customField : formState.field.key;
 
+    const isParticipantData = formState.dataSource.key == "Participant Data" || 
+        formState.dataSource.key == "Participant Data (custom type)"
+    const selectedParticipantType = formState.dataSource.key == "Participant Data" ? formState.participantType.key : formState.participantTypeCustom
+
     let newField: IASField = {
         label: selectedFieldCode,
         code: selectedFieldCode
@@ -17,18 +21,18 @@ export function buildField(formState: IFormState): IASField | void {
         return;
     }
     
-    if (formState.dataSource.key == 'Participant Data') {
+    if (isParticipantData) {
             
         if (formState.case.key == "upper") {
-            newField.code += '|pt=' + formState.participantType.key.toUpperCase();
+            newField.code += '|pt=' + selectedParticipantType.toUpperCase();
         } else if (formState.case.key == "lower") {
-            newField.code += '|pt=' + formState.participantType.key.toLowerCase();
+            newField.code += '|pt=' + selectedParticipantType.toLowerCase();
         } else {
             // Title case is used by default for participants
-            newField.code += '|pt=' + formState.participantType.key;
+            newField.code += '|pt=' + selectedParticipantType;
         }
 
-        newField.label = formState.participantType.key + ' ' + newField.label;
+        newField.label = selectedParticipantType + ' ' + newField.label;
     }
 
     if (formState.ignoreIfNull) {
@@ -62,7 +66,7 @@ export function buildField(formState: IFormState): IASField | void {
     // Case option only applies if it is not participant data (capitalisation set in option) 
     // and if it is a string or date type (being the only types that can have alphabetic representation,
     // except for currency|fm=text, which is set via the option).
-    if (formState.case.key != "na" && formState.dataSource.key != 'Participant Data'
+    if (formState.case.key != "na" && !isParticipantData
         && (isCustomField || formState.field.format == 's' || formState.field.format == 'd' )) {
             newField.code += "|case=" + formState.case.key;
     }
@@ -142,9 +146,13 @@ export function buildRepeat(formState: IFormState): IASField {
         label: null
     };
 
-    if (formState.dataSource.key == "Participant Data") {
-        newField.code = "*REPEAT|data_source=action_participant." + formState.participantType.key + "|*";
-        newField.label = "REPEAT: " + formState.participantType.key;
+    const isParticipantData = formState.dataSource.key == "Participant Data" || 
+        formState.dataSource.key == "Participant Data (custom type)"
+    const selectedParticipantType = formState.dataSource.key == "Participant Data" ? formState.participantType.key : formState.participantTypeCustom
+
+    if (isParticipantData) {
+        newField.code = "*REPEAT|data_source=action_participant." + selectedParticipantType + "|*";
+        newField.label = "REPEAT: " + selectedParticipantType;
     }
     else if (formState.dataSource.key == "Sale/Purchase Line Item Data") {
         newField.code = "*REPEAT|data_source=SP_LineItems|*";

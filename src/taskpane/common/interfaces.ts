@@ -3,6 +3,7 @@ export interface IFormState extends IFieldsState, IOptionsState, ISettingsState,
 export interface IFieldsState {
     dataSource: IDataSource,
     participantType: IOptions,
+    participantTypeCustom: string,
     dataCollection: IOptions,
     field: IField,
     customField: string

@@ -39,5 +39,15 @@ export function compileDataSourceList(): IDataSource[] {
         }
     })
 
-    return dataSourcejson.dataSources as IDataSource[];
+    const dataSourceList: IDataSource[] = dataSourcejson.dataSources as IDataSource[]
+
+    // Hack to copy Participant Data fields to Participant Data (custom type) fields
+    // Assumes that the latter immediately follows the former
+    for (let i=0; i<dataSourceList.length; i++) {
+        if (dataSourceList[i].key == "Participant Data (custom type)") {
+            dataSourceList[i].fields = dataSourceList[i-1].fields
+        }
+    }
+
+    return dataSourceList;
 }
