@@ -90,13 +90,13 @@ export function FieldsTab(props: IFieldsTab) {
         items: [
             {
                 key: 'repeat',
-                text: 'Insert REPEAT only',
+                text: 'Insert REPEAT start',
                 onClick: insertRepeat,
                 disabled: !repeatIsValid()
             },
             {
                 key: 'repeatend',
-                text: 'Insert REPEAT END',
+                text: 'Insert REPEAT end',
                 onClick: insertEndRepeat
             }
         ]
@@ -170,11 +170,10 @@ export function FieldsTab(props: IFieldsTab) {
         }
     ]
 
-    // TODO: style headers - copy same style as default divider
     const _onRenderGroupHeader: IDetailsGroupRenderProps['onRenderHeader'] = props => {
         return (
-            <div>
-                {props && props.group.name} 
+            <div style={{display: 'flex', alignItems: 'center', fontSize: '14px', fontWeight: 550, height: '40px'}}>
+                {props && props.group.name}
             </div>
         )
     }
@@ -220,7 +219,7 @@ export function FieldsTab(props: IFieldsTab) {
                         label="Filter fields by name:"
                         onChange={onFilter}
                         value={getFilter} 
-                        disabled={!formState.dataSource}/>
+                        disabled={!formState.dataSource || formState.dataSource.key == "Custom Data"}/>
                 </Stack.Item>
 
                 {!customDataSelected() && 
@@ -243,7 +242,7 @@ export function FieldsTab(props: IFieldsTab) {
                 }
 
                 {customDataSelected() &&
-                <Stack.Item>
+                <Stack.Item styles={{root: [{height: '400px'}]}}>
                     <TextField id="customField"
                         label="Custom Data Field"
                         placeholder="Enter custom data field code"
@@ -255,7 +254,7 @@ export function FieldsTab(props: IFieldsTab) {
 
                 <Stack.Item align="center">
                     <DefaultButton 
-                        text="Insert REPEAT block"
+                        text="Insert REPEAT"
                         split
                         splitButtonAriaLabel="More REPEAT options"
                         menuProps={repeatButtonItems}

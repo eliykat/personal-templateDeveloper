@@ -33,7 +33,7 @@ export function ConditionalTab(props: IConditionalTab) {
         items: [
             { 
                 key: 'if',
-                text: 'Insert IF only',
+                text: 'Insert IF start',
                 onClick: insertIf
             },
             {
@@ -49,7 +49,7 @@ export function ConditionalTab(props: IConditionalTab) {
             },
             {
                 key: 'end',
-                text: 'Insert IF END',
+                text: 'Insert IF end',
                 onClick: insertEnd
             },
             {
@@ -107,7 +107,7 @@ export function ConditionalTab(props: IConditionalTab) {
                 
                 <Stack.Item align="center">
                     <DefaultButton 
-                        text="Insert IF block"
+                        text="Insert IF"
                         primary
                         split
                         splitButtonAriaLabel="More options"
